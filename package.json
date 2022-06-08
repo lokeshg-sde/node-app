@@ -1,0 +1,33 @@
+{
+  "name": "rest-api-express-mongo",
+  "version": "1.0.0",
+  "description": "Rest Full API Built on top of Express and MongoDB with NodeJS",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lokeshg-fsd/rest-api-emn.git"
+  },
+  "keywords": [
+    "nodejs",
+    "mongodb",
+    "express"
+  ],
+  "author": "Lokesh G",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lokeshg-fsd/rest-api-emn/issues"
+  },
+  "homepage": "https://github.com/lokeshg-fsd/rest-api-emn#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.6",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
+  }
+}

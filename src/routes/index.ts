@@ -1,5 +1,7 @@
 import express from 'express'
-import type { Router, Request, Response, NextFunction } from 'express'
+import type { Router, Request, Response } from 'express'
+
+import UserControllers from '../controllers/UserController'
 
 const router: Router = express.Router()
 
@@ -27,5 +29,7 @@ router.patch('/update/:id', (req: Request, res: Response) => {
 router.delete('/delete/:id', (req: Request, res: Response) => {
   res.send('Delete by ID API')
 })
+
+router.use('/users', UserControllers)
 
 export default router

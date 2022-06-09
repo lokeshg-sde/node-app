@@ -10,7 +10,6 @@ const userSchema = new Schema(
     username: {
       type: String,
       unique: true,
-      required: true,
     },
     email: {
       type: String,
@@ -19,12 +18,10 @@ const userSchema = new Schema(
     },
     password: {
       type: String,
-      unique: true,
       required: true,
     },
     role: {
       type: String,
-      unique: true,
       required: true,
       enum: {
         values: ['admin', 'user', 'guest'],

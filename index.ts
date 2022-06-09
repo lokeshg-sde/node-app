@@ -2,7 +2,7 @@ import env from 'dotenv'
 
 import express from 'express'
 import mongoose from 'mongoose'
-import routes from './routes'
+import routes from './src/routes'
 
 env.config()
 

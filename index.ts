@@ -1,15 +1,17 @@
 import env from 'dotenv'
-import unless from 'express-unless'
 import express from 'express'
 import mongoose from 'mongoose'
+import unless from 'express-unless'
 
 import { authenticateToken } from './src/helpers/jwt'
+
 import routes from './src/routes'
 
 env.config()
 
+const DEFAULT_PORT = 3000
 const mongoString: string = process.env.DATABASE_URL as string
-const portNumber: number | string = process.env.PORT || 3000
+const portNumber: number | string = process.env.PORT || DEFAULT_PORT
 const app = express()
 
 // middleware for authenticating token submitted with requests
@@ -28,7 +30,7 @@ app.use('/', routes)
 mongoose.connect(mongoString)
 const database = mongoose.connection
 
-database.on('error', (error: any) => {
+database.on('error', (error: unknown) => {
   console.log(error)
 })
 

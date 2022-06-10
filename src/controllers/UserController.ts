@@ -1,5 +1,6 @@
 import express from 'express'
 import bcrypt from 'bcryptjs'
+
 import type { Router, Request, Response, NextFunction } from 'express'
 
 import { register, login, getById } from '../services/UserServices'
@@ -9,6 +10,7 @@ const router: Router = express.Router()
 router.post('/register', (req: Request, res: Response, next: NextFunction) => {
   const { password } = req.body
   const salt = bcrypt.genSaltSync(10)
+
   req.body.password = bcrypt.hashSync(password, salt)
 
   register(req.body)
@@ -18,6 +20,7 @@ router.post('/register', (req: Request, res: Response, next: NextFunction) => {
 
 router.post('/login', (req: Request, res: Response, next: NextFunction) => {
   const { username, password } = req.body
+
   login({ username, password })
     .then((user) => {
       if (user) {

@@ -1,4 +1,4 @@
-import { model, Schema } from 'mongoose'
+import { Schema, model } from 'mongoose'
 
 const userSchema = new Schema(
   {
@@ -33,6 +33,7 @@ const userSchema = new Schema(
   { timestamps: true }
 )
 
+// eslint-disable-next-line func-names
 userSchema.statics.findByLogin = async function (login) {
   let user = await this.findOne({
     username: login

@@ -1,5 +1,6 @@
 {
   "env": {
+    "es6": true,
     "browser": true,
     "es2021": true
   },
@@ -11,8 +12,88 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts"]
+      },
+      "modules": ["./src", "./node_modules"]
+    }
+  },
   "rules": {
-    "no-console": 1, // Means 0 Disable, 1 warning, 2 error
-    "prettier/prettier": 2 // Means error
+    // Means 0 Disable, 1 warning, 2 error
+
+    // Typescript
+    "no-use-before-define": 0,
+    "@typescript-eslint/no-use-before-define": 2,
+    "no-shadow": 0,
+    "@typescript-eslint/no-shadow": 2,
+    "@typescript-eslint/consistent-type-imports": 2,
+
+    // Explicitly set recommended rules from warnings to errors or people ignore them
+    "@typescript-eslint/explicit-module-boundary-types": 2,
+    "@typescript-eslint/no-explicit-any": 2,
+    "@typescript-eslint/no-non-null-assertion": 2,
+    "@typescript-eslint/no-unused-vars": 2,
+
+    // Javascript
+    "class-methods-use-this": 0,
+    "consistent-return": 0,
+    "func-names": 2,
+    "no-console": 0,
+    "prettier/prettier": 2,
+    "camelcase": 1,
+    "curly": [2, "all"],
+    "id-length": [2, { "exceptions": ["i", "j", "x", "y", "z", "_", "a", "b", "t"] }],
+    "max-len": [2, 120, 4],
+    "default-case": 2,
+    "array-bracket-spacing": 1,
+    "multiline-ternary": 2,
+    "no-duplicate-imports": 1,
+    "no-magic-numbers": [
+      2,
+      { "ignoreArrayIndexes": true, "ignore": [-1, 0, 0.5, 1, 2, 100, 450, 560, 1024, 1360] }
+    ],
+    "spaced-comment": [2, "always", { "exceptions": ["::"] }],
+    "padding-line-between-statements": [
+      2,
+      { "blankLine": "always", "prev": "*", "next": "return" },
+      { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+      { "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] }
+    ],
+    "no-lonely-if": 2,
+
+    // These are the default groups, but without "+" and "-"
+    "no-mixed-operators": [
+      2,
+      {
+        "groups": [
+          ["*", "/", "%", "**"],
+          ["&", "|", "^", "~", "<<", ">>", ">>>"],
+          ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
+          ["&&", "||"],
+          ["in", "instanceof"]
+        ]
+      }
+    ],
+    "no-underscore-dangle": [2, { "allow": ["__typename", "_id", "_v"] }],
+    "no-implicit-coercion": [2, { "allow": ["!!"] }],
+    "no-alert": 2,
+    "prefer-const": 2,
+    "no-const-assign": 2,
+    "no-restricted-globals": 2,
+
+    // Import
+    "import/extensions": [2, "always", { "ts": "never" }],
+    "import/no-unresolved": 2,
+    "import/no-duplicates": 2,
+    "import/no-named-as-default": 2,
+
+    // Typescript will error if we have an import cycle, eslint doesn't need to do the same work.
+    "import/no-cycle": 0,
+    "import/prefer-default-export": 0,
+
+    // Eslint Comments
+    "eslint-comments/disable-enable-pair": 0
   }
 }

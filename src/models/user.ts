@@ -4,38 +4,38 @@ const userSchema = new Schema(
   {
     firstName: {
       type: String,
-      required: true,
+      required: true
     },
     lastName: String,
     username: {
       type: String,
-      unique: true,
+      unique: true
     },
     email: {
       type: String,
       unique: true,
-      required: true,
+      required: true
     },
     password: {
       type: String,
-      required: true,
+      required: true
     },
     role: {
       type: String,
       required: true,
       enum: {
         values: ['admin', 'user', 'guest'],
-        message: '{VALUE} is not supported',
+        message: '{VALUE} is not supported'
       },
-      default: 'guest',
-    },
+      default: 'guest'
+    }
   },
-  { timestamps: true },
+  { timestamps: true }
 )
 
 userSchema.statics.findByLogin = async function (login) {
   let user = await this.findOne({
-    username: login,
+    username: login
   })
 
   if (!user) {

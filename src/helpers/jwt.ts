@@ -8,9 +8,9 @@ dotenv.config()
 export function authenticateToken(
   req: Request,
   res: Response,
-  next: NextFunction,
+  next: NextFunction
 ): Response | undefined {
-  const authHeader = req.headers['authorization']
+  const authHeader = req.headers.authorization
   const token = authHeader && authHeader.split(' ')[1]
 
   if (token == null) return res.sendStatus(401)
@@ -27,6 +27,6 @@ export function authenticateToken(
 
 export function generateAccessToken(username: string): string {
   return jwt.sign({ data: username }, process.env.JWT_TOKEN_SECRET as string, {
-    expiresIn: '1h',
+    expiresIn: '1h'
   })
 }

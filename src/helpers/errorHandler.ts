@@ -4,7 +4,7 @@ export default function errorHandler(
   err: any,
   req: Request,
   res: Response,
-  next: NextFunction,
+  next: NextFunction
 ): Response {
   if (typeof err === 'string') {
     // custom application error

@@ -2,7 +2,9 @@ const __awaiter =
   (this && this.__awaiter) ||
   function (thisArg, _arguments, P, generator) {
     function adopt(value) {
-      return value instanceof P? value: new P((resolve) => {
+      return value instanceof P
+        ? value
+        : new P((resolve) => {
             resolve(value)
           })
     }

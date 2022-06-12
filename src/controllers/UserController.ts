@@ -1,6 +1,8 @@
+/* eslint-disable no-magic-numbers */
 import express from 'express'
 import bcrypt from 'bcryptjs'
 
+// eslint-disable-next-line no-duplicate-imports
 import type { Router, Request, Response, NextFunction } from 'express'
 
 import { register, login, getById } from '../services/UserServices'

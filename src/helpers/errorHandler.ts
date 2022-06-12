@@ -1,9 +1,12 @@
+/* eslint-disable no-magic-numbers */
 import type { Request, Response, NextFunction } from 'express'
 
 export default function errorHandler(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
   err: any,
   req: Request,
   res: Response,
+  // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
   next: NextFunction
 ): Response {
   if (typeof err === 'string') {

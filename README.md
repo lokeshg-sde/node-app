@@ -1,2 +1,2 @@
 # rest-api-emn
-RESTFull API Built on top Node JS, ExpressJS and MongoDB
+REST API Built on top Node JS, ExpressJS and MongoDB

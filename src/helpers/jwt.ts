@@ -1,9 +1,10 @@
-import dotenv from 'dotenv'
+/* eslint-disable no-magic-numbers */
+import { config } from 'dotenv'
 import jwt from 'jsonwebtoken'
 import type { Request, Response, NextFunction } from 'express'
 
 // get password vars from .env file
-dotenv.config()
+config()
 
 export function authenticateToken(
   req: Request,

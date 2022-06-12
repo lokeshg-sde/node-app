@@ -1,0 +1,57 @@
+version: 2.1
+
+commands:
+  js_steps:
+    steps:
+      - checkout
+      - run:
+          name: 'Update Node.js and npm'
+          command: |
+            curl -sSL "https://nodejs.org/dist/v14.17.6/node-v14.17.6-linux-x64.tar.xz" | sudo tar --strip-components=2 -xJ -C /usr/local/bin/ node-v11.10.0-linux-x64/bin/node
+            curl https://www.npmjs.com/install.sh | sudo bash
+      - run:
+          name: Check current version of node
+          command: node -v
+      - run: npm install
+
+default_job: &default_job
+  working_directory: ~/
+
+jobs:
+  run-prettier:
+    working_directory: ~/
+    steps:
+      - js_steps
+      - run:
+          name: 'Run Prettier'
+          when: 'always'
+          command: npm run prettier:fix
+      - run:
+          name: 'Run Eslint'
+          when: 'always'
+          command: npm run eslint
+    docker:
+      - image: cimg/ruby:2.7.1-node
+        environment:
+          PGHOST: localhost
+          PGUSER: administrate
+  run-eslint:
+    working_directory: ~/
+    steps:
+      - js_steps
+      - run:
+          name: 'Run Eslint'
+          when: 'always'
+          command: npm run eslint
+    docker:
+      - image: cimg/ruby:2.7.1-node
+        environment:
+          PGHOST: localhost
+          PGUSER: administrate
+
+workflows:
+  version: 2
+  multiple-rubies:
+    jobs:
+      - run-prettier
+      - run-eslint

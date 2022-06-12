@@ -1,4 +1,7 @@
 import express from 'express'
+
+// TODO Update no-duplicate-imports config to use separate imports for values and types
+// eslint-disable-next-line no-duplicate-imports
 import type { Request, Response, Router } from 'express'
 
 import UserControllers from '../controllers/UserController'

@@ -1019,7 +1019,7 @@ express-jwt@^7.7.5:
     express-unless "^2.0.2"
     jsonwebtoken "^8.5.1"
 
-express-unless@^2.0.2, express-unless@^2.1.0:
+express-unless@^2.0.2:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/express-unless/-/express-unless-2.1.0.tgz#090a56de501130e63b8c1aa708cf0bbf4e9c2320"
   integrity sha512-666xLp2L3eM1hYhabyZq0HTdedDdcM9QdKsQSROl610VMc2f98KKenc8M3XTPuS/4zpa0QoB8gyDh8K1d8jgDw==

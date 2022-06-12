@@ -24,11 +24,15 @@ export async function register(params: unknown): Promise<void> {
   const user = new User(params)
 
   await user.save()
+
+  console.log('User created Succesfully')
 }
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export async function getById(id: string) {
   const user = await User.findById(id)
+
+  console.log(`user id ${id}`)
 
   return user.toJSON()
 }

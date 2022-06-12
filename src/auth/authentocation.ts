@@ -1,26 +1,27 @@
-import type { MiddleWareCallBackFunction } from '../types'
+import type { Request, Response, NextFunction } from 'express'
 
-function isUrlMatch(p: string | { url: string }, url: string): boolean {
-  if (typeof p === 'string') {
-    return p === url
-  }
+import type { MiddlewareCallBackFunction, Paths, UrlPath, Method } from '../types'
 
-  if (typeof p === 'object' && p.url) {
-    return isUrlMatch(p.url, url)
+function matchCurrentUrl(paths: Paths, urlPath: string, method: string): boolean {
+  const matchedUrl: UrlPath | undefined = paths.find((item) => item.url === urlPath)
+
+  if (matchedUrl) {
+    return matchedUrl.methods ? matchedUrl.methods.includes(method.toUpperCase() as Method) : true
   }
 
   return false
 }
 
-function isMethodMatch(methods: string[] | undefined, method: string): boolean {
-  if (!methods) {
-    return true
+const authenticateUser =
+  (paths: Paths, middleware: MiddlewareCallBackFunction): MiddlewareCallBackFunction =>
+  (req: Request, res: Response, next: NextFunction) => {
+    const isMatched = matchCurrentUrl(paths, req.path, req.method)
+
+    if (isMatched) {
+      return next()
+    }
+
+    middleware(req, res, next)
   }
 
-  return methods.includes(method)
-}
-
-export const authenticateUser = (paths: any[], middleware: MiddleWareCallBackFunction) => {
-  if (paths) {
-  }
-}
+export default authenticateUser

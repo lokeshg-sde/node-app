@@ -15,19 +15,29 @@ const portNumber: number | string = process.env.PORT || DEFAULT_PORT
 const app = express()
 
 // middleware for authenticating token submitted with requests
-authenticateToken.unless = unless
-app.use(
-  authenticateToken.unless({
-    path: [
-      { url: '/users/login', methods: ['POST'] },
-      { url: '/users/register', methods: ['POST'] }
-    ]
-  })
-)
+// authenticateToken.unless = unless
+
+// unless({
+//   path: [
+//     { url: '/users/login', methods: ['POST'] },
+//     { url: '/users/register', methods: ['POST'] }
+//   ]
+// })
+app.use(authenticateToken)
 app.use(express.json())
 app.use('/', routes)
 
 mongoose.connect(mongoString)
+// .then(() => {
+//   app.listen(portNumber, () => {
+//     console.log('Database Connected')
+//     console.log(`Server Started at ${portNumber}`)
+//   })
+// })
+// .catch((error) => {
+//   console.log(error.message)
+//   console.log('URI: ' + mongoString)
+// })
 const database = mongoose.connection
 
 database.on('error', (error: unknown) => {

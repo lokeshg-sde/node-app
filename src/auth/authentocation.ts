@@ -8,6 +8,7 @@ function isUrlMatch(p: string | { url: string }, url: string): boolean {
   if (typeof p === 'object' && p.url) {
     return isUrlMatch(p.url, url)
   }
+
   return false
 }
 
@@ -19,6 +20,7 @@ function isMethodMatch(methods: string[] | undefined, method: string): boolean {
   return methods.includes(method)
 }
 
-export const authenticateUser = (paths: any[]) => {
-   if(pa)
+export const authenticateUser = (paths: any[], middleware: MiddleWareCallBackFunction) => {
+  if (paths) {
+  }
 }

@@ -1,4 +1,4 @@
-import type { Reqest, response, NextFunction } from '@types/express'
+import type { Request, Response, NextFunction } from 'express'
 
 export type MiddlewareCallBackFunction = (
   req: Request,

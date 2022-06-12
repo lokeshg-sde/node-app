@@ -1,15 +1,13 @@
-'use strict'
-var __awaiter =
+const __awaiter =
   (this && this.__awaiter) ||
   function (thisArg, _arguments, P, generator) {
     function adopt(value) {
-      return value instanceof P
-        ? value
-        : new P(function (resolve) {
+      return value instanceof P? value: new P((resolve) => {
             resolve(value)
           })
     }
-    return new (P || (P = Promise))(function (resolve, reject) {
+
+    return new (P || (P = Promise))((resolve, reject) => {
       function fulfilled(value) {
         try {
           step(generator.next(value))
@@ -19,7 +17,7 @@ var __awaiter =
       }
       function rejected(value) {
         try {
-          step(generator['throw'](value))
+          step(generator.throw(value))
         } catch (e) {
           reject(e)
         }
@@ -30,16 +28,19 @@ var __awaiter =
       step((generator = generator.apply(thisArg, _arguments || [])).next())
     })
   }
+
 Object.defineProperty(exports, '__esModule', { value: true })
 exports.unless = void 0
 const URL = require('url')
+
 function unless(options) {
   // eslint-disable-next-line @typescript-eslint/no-this-alias
   const middleware = this
-  const opts = Object.assign(
-    Object.assign({}, options),
-    typeof options === 'function' ? { custom: options } : {}
-  )
+  const opts = {
+    ...options,
+    ...(typeof options === 'function' ? { custom: options } : {})
+  }
+
   opts.useOriginalUrl = typeof opts.useOriginalUrl === 'undefined' ? true : opts.useOriginalUrl
   const result = function (req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -48,31 +49,31 @@ function unless(options) {
         true
       )
       let skip = false
+
       if (opts.custom) {
         skip = skip || (yield opts.custom(req))
       }
       const paths = toArray(opts.path)
+
       if (paths) {
         skip =
           skip ||
-          paths.some(function (p) {
+          paths.some((p) => {
             if (typeof p === 'string' || p instanceof RegExp) {
               return isUrlMatch(p, url.pathname)
-            } else {
-              return isUrlMatch(p, url.pathname) && isMethodMatch(p.method || p.methods, req.method)
             }
+
+            return isUrlMatch(p, url.pathname) && isMethodMatch(p.method || p.methods, req.method)
           })
       }
       if (typeof opts.ext !== 'undefined') {
         const exts = toArray(opts.ext)
-        skip =
-          skip ||
-          exts.some(function (ext) {
-            return url.pathname.substr(ext.length * -1) === ext
-          })
+
+        skip = skip || exts.some((ext) => url.pathname.substr(ext.length * -1) === ext)
       }
       if (typeof opts.method !== 'undefined') {
         const methods = toArray(opts.method)
+
         skip = skip || methods.indexOf(req.method) > -1
       }
       if (skip) {
@@ -81,7 +82,9 @@ function unless(options) {
       middleware(req, res, next)
     })
   }
+
   result.unless = unless
+
   return result
 }
 exports.unless = unless
@@ -98,11 +101,13 @@ function isUrlMatch(p, url) {
   if (typeof p === 'object' && p.url) {
     return isUrlMatch(p.url, url)
   }
+
   return false
 }
 function isMethodMatch(methods, m) {
   if (typeof methods === 'undefined') {
     return true
   }
+
   return toArray(methods).includes(m)
 }

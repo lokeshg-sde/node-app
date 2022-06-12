@@ -3,7 +3,7 @@ import { config } from 'dotenv'
 import jwt from 'jsonwebtoken'
 import type { Request, Response, NextFunction } from 'express'
 
-// import { User } from '../models'
+import { JWT_TOKEN_SECRET } from '../config'
 
 // get password vars from .env file
 config()
@@ -29,7 +29,7 @@ export function authenticateToken(
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  jwt.verify(token, process.env.JWT_TOKEN_SECRET as string, async (err: any, user: any) => {
+  jwt.verify(token, JWT_TOKEN_SECRET, async (err: any, user: any) => {
     console.log(`Authentication Error: ${JSON.stringify(user)}`)
 
     if (err) {
@@ -53,7 +53,7 @@ export function authenticateToken(
 }
 
 export function generateAccessToken(username: string): string {
-  return jwt.sign({ data: username }, process.env.JWT_TOKEN_SECRET as string, {
+  return jwt.sign({ data: username }, JWT_TOKEN_SECRET, {
     expiresIn: '1h'
   })
 }

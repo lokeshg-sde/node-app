@@ -1,9 +1,9 @@
 import env from 'dotenv'
 import express from 'express'
 import mongoose from 'mongoose'
-// import unless from 'express-unless'
 
 import { authenticateToken } from './src/helpers/jwt'
+import excludePublicUrlOnAuthenticate from './src/auth/authentocation'
 
 import routes from './src/routes'
 
@@ -15,15 +15,15 @@ const portNumber: number | string = process.env.PORT || DEFAULT_PORT
 const app = express()
 
 // middleware for authenticating token submitted with requests
-// authenticateToken.unless = unless
-
-// unless({
-//   path: [
-//     { url: '/users/login', methods: ['POST'] },
-//     { url: '/users/register', methods: ['POST'] }
-//   ]
-// })
-app.use(authenticateToken)
+app.use(
+  excludePublicUrlOnAuthenticate(
+    [
+      { url: '/users/login', methods: ['POST'] },
+      { url: '/users/register', methods: ['POST'] }
+    ],
+    authenticateToken
+  )
+)
 app.use(express.json())
 app.use('/', routes)
 

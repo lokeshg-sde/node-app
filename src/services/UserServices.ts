@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs'
 
 import { User } from '../models'
-import { generateAccessToken } from '../helpers/jwt'
+import { generateAccessToken } from '../auth/jwt'
 
 type Credentials = {
   // git push --set-upstream origin conver_to_typescript

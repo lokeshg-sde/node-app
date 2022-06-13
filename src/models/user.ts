@@ -1,5 +1,7 @@
 import { Schema, model } from 'mongoose'
 
+export const UserRoles = ['admin', 'user', 'guest']
+
 const userSchema = new Schema(
   {
     firstName: {
@@ -24,7 +26,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
       enum: {
-        values: ['admin', 'user', 'guest'],
+        values: UserRoles,
         message: '{VALUE} is not supported'
       },
       default: 'guest'

@@ -1,4 +1,4 @@
-import type { UserRoles, UserRole } from './UserModel'
+import type { UserRole, UserRoles } from './UserModel'
 
 export type Method = 'GET' | 'POST' | 'DELETE' | 'PATCH'
 

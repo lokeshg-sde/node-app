@@ -1,7 +1,7 @@
-import type { Request, Response, NextFunction } from 'express'
+import type { NextFunction, Request, Response } from 'express'
 
 import { URL_EXCLUDED } from '../config'
-import type { MiddlewareCallBackFunction, Paths, UrlPath, Method, UserRoles } from '../types'
+import type { Method, MiddlewareCallBackFunction, Paths, UrlPath, UserRoles } from '../types'
 
 function matchCurrentUrl(
   paths: Paths,

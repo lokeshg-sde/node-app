@@ -82,6 +82,7 @@
     "prefer-const": 2,
     "no-const-assign": 2,
     "no-restricted-globals": 2,
+    "no-nested-ternary": 2,
 
     // Import
     "import/extensions": [2, "always", { "ts": "never" }],

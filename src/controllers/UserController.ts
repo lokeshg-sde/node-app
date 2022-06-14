@@ -3,9 +3,9 @@ import express from 'express'
 import bcrypt from 'bcryptjs'
 
 // eslint-disable-next-line no-duplicate-imports
-import type { Router, Request, Response, NextFunction } from 'express'
+import type { NextFunction, Request, Response, Router } from 'express'
 
-import { register, login, getById } from '../services/UserServices'
+import { getById, login, register } from '../services/UserServices'
 
 const router: Router = express.Router()
 

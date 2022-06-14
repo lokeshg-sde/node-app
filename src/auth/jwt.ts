@@ -1,12 +1,12 @@
 /* eslint-disable no-magic-numbers */
 import { sign, verify } from 'jsonwebtoken'
 // eslint-disable-next-line no-duplicate-imports
-import type { SignOptions, VerifyOptions, VerifyErrors } from 'jsonwebtoken'
-import type { Request, Response, NextFunction } from 'express'
+import type { SignOptions, VerifyErrors, VerifyOptions } from 'jsonwebtoken'
+import type { NextFunction, Request, Response } from 'express'
 
 import { JWT_TOKEN_SECRET } from '../config'
 import HttpError from '../helpers/HttpError'
-import type { UserRoles, JwtTokePayload, UserRole } from '../types'
+import type { JwtTokePayload, UserRole, UserRoles } from '../types'
 
 const signOptions: SignOptions = { expiresIn: '1d', algorithm: 'HS512' }
 

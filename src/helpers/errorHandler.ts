@@ -1,5 +1,5 @@
 /* eslint-disable no-magic-numbers */
-import type { Request, Response, NextFunction } from 'express'
+import type { NextFunction, Request, Response } from 'express'
 
 export default function errorHandler(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types

@@ -11,9 +11,9 @@ function matchCurrentUrl(
   const matchedUrl: UrlPath | undefined = paths.find((item) => item.url === urlPath)
 
   if (matchedUrl) {
-    const isMatched = matchedUrl.methods
-      ? matchedUrl.methods.includes(method.toUpperCase() as Method)
-      : true
+    const reqMethod = method.toUpperCase() as Method
+
+    const isMatched = matchedUrl.methods ? matchedUrl.methods.includes(reqMethod) : true
 
     return { isMatched, userRoles: matchedUrl.userRoles }
   }
@@ -34,7 +34,10 @@ const authenticateUser =
       return next()
     }
 
+    // eslint-disable-next-line no-magic-numbers
     res.status(500).send({ message: 'Route Mismatch' })
   }
+
+export const cars: ('🚗' | '🚙' | '🚕')[] = ['🚗', '🚙', '🚕']
 
 export default authenticateUser

@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs'
 
 import { User } from '../models'
-import { generateAccessToken } from '../helpers/jwt'
+import { generateAccessToken } from '../auth/jwt'
 
 type Credentials = {
   // git push --set-upstream origin conver_to_typescript
@@ -14,7 +14,7 @@ export async function login({ username, password }: Credentials) {
   const user = await User.findOne({ username })
 
   if (user && bcrypt.compareSync(password, user.password)) {
-    const token = generateAccessToken(username)
+    const token = generateAccessToken({ username, role: user.role, id: user._id })
 
     return { ...user.toJSON(), token }
   }

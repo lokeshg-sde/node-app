@@ -1,8 +1,8 @@
 import express from 'express'
 import mongoose from 'mongoose'
 
-import { PORT_NUMBER, DATABASE_URL } from './src/config'
-import { authenticateToken } from './src/helpers/jwt'
+import { PORT_NUMBER, DATABASE_URL, URL_CONFIG } from './src/config'
+import { authenticateToken } from './src/auth/jwt'
 import excludePublicUrlOnAuthenticate from './src/auth/authentocation'
 
 import routes from './src/routes'
@@ -12,10 +12,7 @@ const app = express()
 // middleware for authenticating token submitted with requests
 app.use(
   excludePublicUrlOnAuthenticate(
-    [
-      { url: '/users/login', methods: ['POST'] },
-      { url: '/users/register', methods: ['POST'] }
-    ],
+    URL_CONFIG,
     authenticateToken
   )
 )

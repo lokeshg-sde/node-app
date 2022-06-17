@@ -9,15 +9,20 @@ import routes from './src/routes'
 
 const app = express()
 
+const path = `${__dirname}/build/`
+
 // middleware for authenticating token submitted with requests
-app.use(
-  excludePublicUrlOnAuthenticate(
-    URL_CONFIG,
-    authenticateToken
-  )
-)
 app.use(express.json())
+app.use(express.static(path))
+
+app.use(excludePublicUrlOnAuthenticate(URL_CONFIG, authenticateToken))
 app.use('/', routes)
+app.use('/', (req, res)=> {
+  res.redirect('/home')
+})
+app.use('/home', (req, res) => {
+  res.sendFile(path, 'index.html')
+})
 
 mongoose.connect(DATABASE_URL)
 // .then(() => {

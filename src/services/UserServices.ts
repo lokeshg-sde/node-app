@@ -4,7 +4,6 @@ import { User } from '../models'
 import { generateAccessToken } from '../auth/jwt'
 
 type Credentials = {
-  // git push --set-upstream origin conver_to_typescript
   username: string
   password: string
 }
@@ -25,7 +24,7 @@ export async function register(params: unknown): Promise<void> {
 
   await user.save()
 
-  console.log('User created Succesfully')
+  console.log('User created Successfully')
 }
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types

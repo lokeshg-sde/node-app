@@ -19,11 +19,11 @@ export function authenticateToken(
   const authHeader = JSON.parse(JSON.stringify(req.headers)).authorization
   const token = authHeader && authHeader.split(' ')[0]
 
-  console.log(`Resquest Type : ${JSON.stringify(req.headers)}`)
-  console.log(`Autherizaton Token: ${authHeader}`)
+  console.log(`Request Type : ${JSON.stringify(req.headers)}`)
+  console.log(`Authorization Token: ${authHeader}`)
   if (token == null) {
-    console.log('Unauthorised User or Token')
-    res.status(401).send({ message: 'user not authorised' })
+    console.log('Unauthorized User or Token')
+    res.status(401).send({ message: 'user not authorized' })
 
     return
   }
@@ -45,19 +45,19 @@ export function authenticateToken(
         req.body.user = JSON.parse(JSON.stringify(user)).data as JwtTokePayload
 
         if (userRole && userRole.includes(role)) {
-          console.log(`Autherized User ${JSON.stringify(username)} as ${role.toLocaleUpperCase()}`)
+          console.log(`Authorized User ${JSON.stringify(username)} as ${role.toLocaleUpperCase()}`)
           next()
         } else if (!userRole && username) {
-          console.log(`Autherized User ${JSON.stringify(username)} as ${role.toLocaleUpperCase()}`)
+          console.log(`Authorized User ${JSON.stringify(username)} as ${role.toLocaleUpperCase()}`)
           next()
         } else {
-          throw new HttpError(401, 'Permission Denied, Please login with diffrent credentials', {
+          throw new HttpError(401, 'Permission Denied, Please login with different credentials', {
             username,
             role
           })
         }
       } else {
-        throw new HttpError(404, 'User Credentials Not Found and Not Authorised', {})
+        throw new HttpError(404, 'User Credentials Not Found and Not Authorized', {})
       }
     }
   )

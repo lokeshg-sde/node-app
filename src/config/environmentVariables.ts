@@ -2,7 +2,7 @@ import { config } from 'dotenv'
 
 config()
 
-const defaultPort = 3000
+const defaultPort = 5000
 
 export const PORT_NUMBER = (process.env.PORT_NUMBER || defaultPort) as number
 export const JWT_TOKEN_SECRET = process.env.JWT_TOKEN_SECRET as string

@@ -8,7 +8,11 @@
     "eslint": "eslint src/**/*.ts --ext .ts",
     "eslint:fix": "eslint src/**/*.ts --fix",
     "prettier:fix": "prettier --config .prettierrc src/**/*.ts --write",
-    "start": "nodemon index.ts"
+    "start": "nodemon index.ts",
+    "start:dev-server": "nodemon index.ts",
+    "postinstall": "cd app && yarn install",
+    "prestart": "cd app && yarn build",
+    "start:dev-app": "cp app && yarn start"
   },
   "repository": {
     "type": "git",

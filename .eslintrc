@@ -41,7 +41,6 @@
     "consistent-return": 0,
     "func-names": 2,
     "no-console": 0,
-    "prettier/prettier": 2,
     "camelcase": 1,
     "curly": [2, "all"],
     "id-length": [2, { "exceptions": ["i", "j", "x", "y", "z", "_", "a", "b", "t"] }],

@@ -1,1 +1,1 @@
-declare module 'becryptjs'
+declare module 'bcryptjs'

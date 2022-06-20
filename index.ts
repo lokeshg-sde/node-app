@@ -16,12 +16,12 @@ app.use(express.json())
 app.use(express.static(path))
 
 app.use(excludePublicUrlOnAuthenticate(URL_CONFIG, authenticateToken))
-app.use('/', routes)
-app.use('/', (req, res)=> {
-  res.redirect('/home')
-})
-app.use('/home', (req, res) => {
+app.get('/home', (req, res) => {
   res.sendFile(path, 'index.html')
+})
+app.use('/', routes)
+app.get('/', (req, res)=> {
+  res.redirect('/home')
 })
 
 mongoose.connect(DATABASE_URL)

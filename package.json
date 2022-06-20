@@ -11,7 +11,7 @@
     "start": "nodemon index.ts",
     "start:server": "nodemon index.ts",
     "postinstall": "cd app && yarn install",
-    "prestart": "cd app && yarn build PUBLIC_URL='app/public'",
+    "prestart": "cd app && yarn build",
     "webpack-dev-server": "cd app && yarn start"
   },
   "repository": {

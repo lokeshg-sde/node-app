@@ -9,7 +9,7 @@ import routes from './src/routes'
 
 const app = express()
 
-const path = `${__dirname}/app/build/`
+const path = `${__dirname}/client/build/`
 
 // middleware for authenticating token submitted with requests
 app.use(express.json())

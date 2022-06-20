@@ -10,9 +10,9 @@
     "prettier:fix": "prettier --config .prettierrc src/**/*.ts --write",
     "start": "nodemon index.ts",
     "start:server": "nodemon index.ts",
-    "postinstall": "cd app && yarn install",
-    "prestart": "cd app && yarn build",
-    "webpack-dev-server": "cd app && yarn start"
+    "postinstall": "cd client && yarn install",
+    "prestart": "cd client && yarn build",
+    "webpack-dev-server": "cd client && yarn start"
   },
   "repository": {
     "type": "git",

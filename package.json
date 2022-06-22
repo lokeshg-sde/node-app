@@ -1,6 +1,6 @@
 {
   "name": "rest-api-express-mongo",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "description": "Rest Full API Built on top of Express and MongoDB with NodeJS",
   "main": "index.ts",
   "scripts": {

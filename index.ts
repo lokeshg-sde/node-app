@@ -38,7 +38,7 @@ database.on('error', (error: unknown) => {
 })
 
 database.once('connected', () => {
-  app.listen(PORT_NUMBER, () => {
+  app.listen(PORT_NUMBER, '0.0.0.0', () => {
     console.log('Database Connected')
     console.log(`Server Started at ${PORT_NUMBER}`)
   })

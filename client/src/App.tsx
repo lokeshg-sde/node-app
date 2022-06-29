@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <img src={'/d.ico'} alt="logo" />
         <img src={Icon} className="App-logo" alt="logo" />
         <p>
           Node JS App built with <strong>ReactJS</strong> Library as <code>Fron End</code> and{' '}

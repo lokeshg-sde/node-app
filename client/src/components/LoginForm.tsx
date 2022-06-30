@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React, { ReactChild, ReactFragment, ReactPortal } from 'react'
@@ -53,14 +54,14 @@ const OtherMethods = (props: any) => (
     <label>Or sign in with:</label>
     <div id="iconGroup">
       <a href="#">
-        <Facebook htmlColor='darkblue' />
+        <Facebook htmlColor="darkblue" />
       </a>
       <a href="#">
-        <Twitter htmlColor='blue' />
+        <Twitter htmlColor="blue" />
       </a>
-      <Google />
+      <img src="./google.ico" />
     </div>
   </div>
 )
 
-const Google = (props: any) => <a href="#" id="googleIcon"></a>
+// const Google = (props: any) => <a href="#" id="googleIcon"></a>

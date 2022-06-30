@@ -70,6 +70,13 @@ html {
   color: rgba(187, 187, 187, 0.9);
 }
 
+img {
+  width: 27px;
+  height: 20px;
+  margin-top: 3px;
+  padding-right: 10px;
+}
+
 .row button {
   border-radius: 25px;
   width: 80%;

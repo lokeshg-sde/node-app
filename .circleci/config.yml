@@ -34,7 +34,7 @@ jobs:
       - run:
           name: Run Eslint
           command: yarn eslint
-  js-tests:
+  test-web-app:
     docker:
       - image: cimg/node:14.17.6
     steps:
@@ -46,13 +46,14 @@ jobs:
           command: cd client && yarn test
 
 workflows:
-  # Below is the definition of your workflow.
-  # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
-  # CircleCI will run this workflow on every commit.
   # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
-  expressjs-app:
+  express-js-app:
     jobs:
       - build
       # For running simple node tests, you could optionally use the node/test job from the orb to replicate and replace the job above in fewer lines.
-      - js-linters
-      - js-tests
+      - js-linters:
+        requires:
+          - build
+      - test-web-app:
+        requires:
+          - build

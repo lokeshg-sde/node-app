@@ -1,0 +1,151 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "es2021": true
+  },
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier"],
+  "extends": ["airbnb-base", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".tsx"]
+      },
+      "modules": ["./src", "./node_modules"]
+    }
+  },
+  "rules": {
+    // Means 0 Disable, 1 warning, 2 error
+
+    // Typescript
+    "no-use-before-define": 0,
+    "@typescript-eslint/no-use-before-define": 2,
+    "no-shadow": 0,
+    "@typescript-eslint/no-shadow": 2,
+    "@typescript-eslint/consistent-type-imports": 2,
+
+    // Explicitly set recommended rules from warnings to errors or people ignore them
+    "@typescript-eslint/explicit-module-boundary-types": 2,
+    "@typescript-eslint/no-explicit-any": 2,
+    "@typescript-eslint/no-non-null-assertion": 2,
+    "@typescript-eslint/no-unused-vars": 2,
+
+    // Javascript
+    "class-methods-use-this": 0,
+    "consistent-return": 0,
+    "func-names": 2,
+    "no-console": 0,
+    "camelcase": 1,
+    "curly": [2, "all"],
+    "id-length": [2, { "exceptions": ["i", "j", "x", "y", "z", "_", "a", "b", "t"] }],
+    "max-len": [2, 120, 4],
+    "default-case": 2,
+    "array-bracket-spacing": 1,
+    "no-duplicate-imports": 1,
+    "no-magic-numbers": [
+      2,
+      { "ignoreArrayIndexes": true, "ignore": [-1, 0, 0.5, 1, 2, 100, 450, 560, 1024, 1360] }
+    ],
+    "spaced-comment": [2, "always", { "exceptions": ["::"] }],
+    "padding-line-between-statements": [
+      2,
+      { "blankLine": "always", "prev": "*", "next": "return" },
+      { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+      { "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] }
+    ],
+    "no-lonely-if": 2,
+
+    // These are the default groups, but without "+" and "-"
+    "no-mixed-operators": [
+      2,
+      {
+        "groups": [
+          ["*", "/", "%", "**"],
+          ["&", "|", "^", "~", "<<", ">>", ">>>"],
+          ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
+          ["&&", "||"],
+          ["in", "instanceof"]
+        ]
+      }
+    ],
+    "no-underscore-dangle": [2, { "allow": ["__typename", "_id", "_v"] }],
+    "no-implicit-coercion": [2, { "allow": ["!!"] }],
+    "no-alert": 2,
+    "prefer-const": 2,
+    "no-const-assign": 2,
+    "no-restricted-globals": 2,
+    "no-nested-ternary": 2,
+
+    // Import
+    "import/extensions": [2, "always", { "ts": "never" }],
+    "import/no-unresolved": 2,
+    "import/no-duplicates": 2,
+    "import/no-named-as-default": 2,
+
+    // Typescript will error if we have an import cycle, eslint doesn't need to do the same work.
+    "import/no-cycle": 0,
+    "import/prefer-default-export": 0,
+
+    // Eslint Comments
+    "eslint-comments/disable-enable-pair": 0,
+    // ReactJS
+    "react/destructuring-assignment": 0,
+    "react/forbid-prop-types": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/no-unused-prop-types": 0,
+    "react/no-danger": 0,
+    "react/sort-comp": [
+      2,
+      {
+        "order": ["type-annotations", "static-methods", "lifecycle", "everything-else", "render"]
+      }
+    ],
+    "react/no-find-dom-node": 0,
+    "react/prefer-stateless-function": [2, { "ignorePureComponents": true }],
+    "react/sort-prop-types": 2,
+    "react/no-deprecated": 2,
+    "react/no-did-mount-set-state": 2,
+    "react/no-did-update-set-state": 2,
+    "react/no-direct-mutation-state": 2,
+    "react/no-is-mounted": 2,
+    "react/prefer-es6-class": 2,
+    "react/self-closing-comp": 2,
+    "react/require-default-props": 0,
+    "react/no-array-index-key": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
+
+    // JSX
+    "react/jsx-sort-props": 2,
+    "react/jsx-boolean-value": [2, "never"],
+    "react/jsx-filename-extension": 0,
+    "react/jsx-handler-names": [
+      2,
+      { "eventHandlerPrefix": "handle", "eventHandlerPropPrefix": "on" }
+    ],
+    "react/jsx-key": 2,
+    "react/jsx-no-bind": 2,
+    "react/jsx-no-duplicate-props": [2, { "ignoreCase": false }],
+    "jsx-a11y/control-has-associated-label": 0,
+    "jsx-a11y/label-has-associated-control": [2, { "assert": "either" }],
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-a11y/no-redundant-roles": 0,
+    "jsx-a11y/no-autofocus": 0,
+    "jsx-a11y/alt-text": 0,
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["to", "hrefLeft", "hrefRight"],
+        "aspects": ["noHref", "invalidHref", "preferButton"]
+      }
+    ],
+    "jsx-a11y/click-events-have-key-events": 0
+  }
+}

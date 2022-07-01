@@ -6,12 +6,12 @@ const userSchema = new Schema(
   {
     firstName: {
       type: String,
-      required: true
+      // required: true
     },
     lastName: String,
     username: {
       type: String,
-      unique: true
+      // unique: true
     },
     email: {
       type: String,
@@ -24,7 +24,7 @@ const userSchema = new Schema(
     },
     role: {
       type: String,
-      required: true,
+      // required: true,
       enum: {
         values: UserRoles,
         message: '{VALUE} is not supported'

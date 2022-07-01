@@ -21,7 +21,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <LOGO />
+      <LOGO product="My Cart" />
       <LoginForm />
       <Button variant="contained" color="primary" onClick={handleOpen}>
         Signup

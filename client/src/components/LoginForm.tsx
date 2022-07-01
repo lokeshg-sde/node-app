@@ -3,6 +3,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React, { ReactChild, ReactFragment, ReactPortal } from 'react'
 import { Facebook, Twitter } from '@material-ui/icons'
+import LOGO from './Logo'
 
 import './login.css'
 
@@ -20,7 +21,11 @@ export default class LoginForm extends React.Component {
 
 const FormHeader = (props: {
   title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined
-}) => <h2 id="headerTitle">{props.title}</h2>
+}) => (
+  <h2 id="headerTitle">
+    <LOGO product={props.title as 'Portfolio'} />
+  </h2>
+)
 
 const Form = (props: any) => (
   <div>

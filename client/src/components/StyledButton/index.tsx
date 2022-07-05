@@ -17,7 +17,7 @@ type Props = {
     | 'dark'
   circular: boolean
   iconOnly: boolean
-  children: Node
+  children?: any
 }
 
 const StyledButton = forwardRef(

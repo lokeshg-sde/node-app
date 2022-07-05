@@ -8,10 +8,7 @@ import {
   Google as GoogleIcon
 } from '@mui/icons-material'
 
-import StyledBox from '../../../components/BoxContainer'
-import StyledTypography from '../../../components/StyledTypoGraphy'
-import StyledInput from '../../../components/InputContainer'
-import StyledButton from '../../../components/StyledButton'
+import { StyledBox, StyledTypography, StyledInput, StyledButton } from '../../../components'
 
 function Basic() {
   const [rememberMe, setRememberMe] = useState(false)

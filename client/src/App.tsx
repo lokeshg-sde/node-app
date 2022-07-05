@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Button from '@material-ui/core/Button'
 import ModalDialog from './components/ModalDialog'
-import LoginForm from './components/LoginForm'
+import LoginForm from './Layouts/Authentication/Login'
 
 const App = () => {
   // declare a new state variable for modal open

@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
 
-import TypoGraphy from './TypoGraphy'
+import TypoGraphy from './Typography'
 
 const StyledTypography = forwardRef(
   (
@@ -50,9 +50,6 @@ type Props = {
     | 'white'
   fontWeight: false | 'light' | 'regular' | 'medium' | 'bold'
   textTransform: 'none'
-  capitalize
-  uppercase
-  lowercase
   verticalAlign:
     | 'unset'
     | 'baseline'
@@ -64,7 +61,7 @@ type Props = {
     | 'top'
     | 'bottom'
   textGradient: boolean
-  children: Node
+  children?: any
   opacity: number
 }
 

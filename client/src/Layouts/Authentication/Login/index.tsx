@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from "react"
+import { Link } from "react-router-dom"
 
-import { Card, Grid, Link as MuiLink, Switch } from '@mui/material'
+import { Card, Grid, Link as MuiLink, Switch } from "@mui/material"
 import {
   Facebook as FacebookIcon,
   GitHub as GitHubIcon,
-  Google as GoogleIcon
-} from '@mui/icons-material'
+  Google as GoogleIcon,
+} from "@mui/icons-material"
 
-import { StyledBox, StyledTypography, StyledInput, StyledButton } from '../../../components'
+import { StyledBox, StyledTypography, StyledInput, StyledButton } from "../../../components"
 
 function Basic() {
   const [rememberMe, setRememberMe] = useState(false)
@@ -26,7 +26,8 @@ function Basic() {
         mt={-3}
         p={2}
         mb={1}
-        textAlign="center">
+        textAlign="center"
+      >
         <StyledTypography variant="h4" fontWeight="medium" color="white" mt={1}>
           Sign in
         </StyledTypography>
@@ -63,7 +64,8 @@ function Basic() {
               fontWeight="regular"
               color="text"
               onClick={handleSetRememberMe}
-              sx={{ cursor: 'pointer', userSelect: 'none', ml: -1 }}>
+              sx={{ cursor: "pointer", userSelect: "none", ml: -1 }}
+            >
               &nbsp;&nbsp;Remember me
             </StyledTypography>
           </StyledBox>
@@ -74,14 +76,15 @@ function Basic() {
           </StyledBox>
           <StyledBox mt={3} mb={1} textAlign="center">
             <StyledTypography variant="button" color="text">
-              Don&apos;t have an account?{' '}
+              Don&apos;t have an account?{" "}
               <StyledTypography
                 component={Link}
                 to="/authentication/sign-up"
                 variant="button"
                 color="info"
                 fontWeight="medium"
-                textGradient>
+                textGradient
+              >
                 Sign up
               </StyledTypography>
             </StyledTypography>

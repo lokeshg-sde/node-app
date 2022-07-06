@@ -1,24 +1,24 @@
-import { forwardRef } from 'react'
+import { forwardRef } from "react"
 
-import MDBoxRoot from './Box'
+import MDBoxRoot from "./Box"
 
 type Props = {
-  variant: 'contained' | 'gradient'
+  variant: "contained" | "gradient"
   bgColor: string
   color: string
   opacity: number
   borderRadius: string
   shadow: string
   coloredShadow:
-    | 'primary'
-    | 'secondary'
-    | 'info'
-    | 'success'
-    | 'warning'
-    | 'error'
-    | 'light'
-    | 'dark'
-    | 'none'
+    | "primary"
+    | "secondary"
+    | "info"
+    | "success"
+    | "warning"
+    | "error"
+    | "light"
+    | "dark"
+    | "none"
 }
 
 const MDBox = forwardRef(
@@ -36,7 +36,7 @@ const MDBox = forwardRef(
         opacity,
         borderRadius,
         shadow,
-        coloredShadow
+        coloredShadow,
       }}
     />
   )

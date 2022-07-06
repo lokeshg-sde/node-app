@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/anchor-has-content */
-import React, { ReactChild, ReactFragment, ReactPortal, useState, useRef } from 'react'
-import { Facebook, Twitter } from '@material-ui/icons'
-import LOGO from './Logo'
+import React, { ReactChild, ReactFragment, ReactPortal, useState, useRef } from "react"
+import { Facebook, Twitter } from "@material-ui/icons"
+import LOGO from "./Logo"
 
-import './login.css'
+import "./login.css"
 
 export default class LoginForm extends React.Component {
   render() {
@@ -23,7 +23,7 @@ const FormHeader = (props: {
   title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined
 }) => (
   <h2 id="headerTitle">
-    <LOGO product={props.title as 'Portfolio'} />
+    <LOGO product={props.title as "Portfolio"} />
   </h2>
 )
 
@@ -47,10 +47,11 @@ const Form = (props: any) => {
   return (
     <form
       ref={formRef}
-      action={'http://localhost:3000/users/login'}
+      action={"http://localhost:3000/users/login"}
       autoComplete="off"
       method="post"
-      onSubmit={handleFormSubmit}>
+      onSubmit={handleFormSubmit}
+    >
       <FormInput
         name="username"
         description="Username"

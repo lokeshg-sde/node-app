@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React from 'react'
+import React from "react"
 // import SvgIcon from '@material-ui/core/SvgIcon'
-import useStyles from './styles'
-import Icon from '@material-ui/core/Icon'
+import useStyles from "./styles"
+import Icon from "@material-ui/core/Icon"
 
 type Props = {
-  product?: 'Portfolio' | 'My Cart'
-  productType?: ''
+  product?: "Portfolio" | "My Cart"
+  productType?: ""
   textStyle?: React.CSSProperties
 }
 

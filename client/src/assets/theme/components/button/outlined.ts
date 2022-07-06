@@ -1,6 +1,6 @@
-import { colors, typography } from '../../base'
+import { colors, typography } from "../../base"
 
-import { pxToRem } from '../../functions'
+import { pxToRem } from "../../functions"
 
 const { transparent, light, info, secondary } = colors
 const { size } = typography
@@ -12,14 +12,14 @@ const outlined = {
     borderColor: light.main,
     padding: `${pxToRem(10)} ${pxToRem(24)}`,
 
-    '&:hover': {
+    "&:hover": {
       opacity: 0.75,
-      backgroundColor: transparent.main
+      backgroundColor: transparent.main,
     },
 
-    '& .material-icon, .material-icons-round, svg': {
-      fontSize: `${pxToRem(16)} !important`
-    }
+    "& .material-icon, .material-icons-round, svg": {
+      fontSize: `${pxToRem(16)} !important`,
+    },
   },
 
   small: {
@@ -27,9 +27,9 @@ const outlined = {
     padding: `${pxToRem(6)} ${pxToRem(16)}`,
     fontSize: size.xs,
 
-    '& .material-icon, .material-icons-round, svg': {
-      fontSize: `${pxToRem(12)} !important`
-    }
+    "& .material-icon, .material-icons-round, svg": {
+      fontSize: `${pxToRem(12)} !important`,
+    },
   },
 
   large: {
@@ -37,28 +37,28 @@ const outlined = {
     padding: `${pxToRem(12)} ${pxToRem(28)}`,
     fontSize: size.sm,
 
-    '& .material-icon, .material-icons-round, svg': {
-      fontSize: `${pxToRem(22)} !important`
-    }
+    "& .material-icon, .material-icons-round, svg": {
+      fontSize: `${pxToRem(22)} !important`,
+    },
   },
 
   primary: {
     backgroundColor: transparent.main,
     borderColor: info.main,
 
-    '&:hover': {
-      backgroundColor: transparent.main
-    }
+    "&:hover": {
+      backgroundColor: transparent.main,
+    },
   },
 
   secondary: {
     backgroundColor: transparent.main,
     borderColor: secondary.main,
 
-    '&:hover': {
-      backgroundColor: transparent.main
-    }
-  }
+    "&:hover": {
+      backgroundColor: transparent.main,
+    },
+  },
 }
 
 export default outlined

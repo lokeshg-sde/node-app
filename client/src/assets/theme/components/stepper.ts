@@ -1,5 +1,5 @@
-import { colors, typography, borders, boxShadows } from '../base'
-import { boxShadow, pxToRem, linearGradient, rgba } from '../functions'
+import { colors, typography, borders, boxShadows } from "../base"
+import { boxShadow, pxToRem, linearGradient, rgba } from "../functions"
 
 const { transparent, gradients, white } = colors
 const { borderRadius, borderWidth } = borders
@@ -14,80 +14,80 @@ export const stepper = {
       borderRadius: borderRadius.lg,
       boxShadow: colored.info,
 
-      '&.MuiPaper-root': {
-        backgroundColor: transparent.main
-      }
-    }
-  }
+      "&.MuiPaper-root": {
+        backgroundColor: transparent.main,
+      },
+    },
+  },
 }
 
 export const step = {
   styleOverrides: {
     root: {
-      padding: `0 ${pxToRem(6)}`
-    }
-  }
+      padding: `0 ${pxToRem(6)}`,
+    },
+  },
 }
 
 export const stepConnector = {
   styleOverrides: {
     root: {
-      color: '#9fc9ff',
-      transition: 'all 200ms linear',
+      color: "#9fc9ff",
+      transition: "all 200ms linear",
 
-      '&.Mui-active': {
-        color: white.main
+      "&.Mui-active": {
+        color: white.main,
       },
 
-      '&.Mui-completed': {
-        color: white.main
-      }
+      "&.Mui-completed": {
+        color: white.main,
+      },
     },
 
     alternativeLabel: {
-      top: '14%',
-      left: '-50%',
-      right: '50%'
+      top: "14%",
+      left: "-50%",
+      right: "50%",
     },
 
     line: {
       borderWidth: `${borderWidth[2]} !important`,
-      borderColor: 'currentColor',
-      opacity: 0.5
-    }
-  }
+      borderColor: "currentColor",
+      opacity: 0.5,
+    },
+  },
 }
 
 export const stepIcon = {
   styleOverrides: {
     root: {
-      background: '#9fc9ff',
-      fill: '#9fc9ff',
-      stroke: '#9fc9ff',
+      background: "#9fc9ff",
+      fill: "#9fc9ff",
+      stroke: "#9fc9ff",
       strokeWidth: pxToRem(10),
       width: pxToRem(13),
       height: pxToRem(13),
-      borderRadius: '50%',
+      borderRadius: "50%",
       zIndex: 99,
-      transition: 'all 200ms linear',
+      transition: "all 200ms linear",
 
-      '&.Mui-active': {
+      "&.Mui-active": {
         background: white.main,
         fill: white.main,
         stroke: white.main,
         borderColor: white.main,
-        boxShadow: boxShadow([0, 0], [0, 2], white.main, 1)
+        boxShadow: boxShadow([0, 0], [0, 2], white.main, 1),
       },
 
-      '&.Mui-completed': {
+      "&.Mui-completed": {
         background: white.main,
         fill: white.main,
         stroke: white.main,
         borderColor: white.main,
-        boxShadow: boxShadow([0, 0], [0, 2], white.main, 1)
-      }
-    }
-  }
+        boxShadow: boxShadow([0, 0], [0, 2], white.main, 1),
+      },
+    },
+  },
 }
 
 export const stepLabel = {
@@ -96,18 +96,18 @@ export const stepLabel = {
       marginTop: `${pxToRem(8)} !important`,
       fontWeight: fontWeightRegular,
       fontSize: size.xs,
-      color: '#9fc9ff',
-      textTransform: 'uppercase',
+      color: "#9fc9ff",
+      textTransform: "uppercase",
 
-      '&.Mui-active': {
+      "&.Mui-active": {
         fontWeight: `${fontWeightRegular} !important`,
-        color: `${rgba(white.main, 0.8)} !important`
+        color: `${rgba(white.main, 0.8)} !important`,
       },
 
-      '&.Mui-completed': {
+      "&.Mui-completed": {
         fontWeight: `${fontWeightRegular} !important`,
-        color: `${rgba(white.main, 0.8)} !important`
-      }
-    }
-  }
+        color: `${rgba(white.main, 0.8)} !important`,
+      },
+    },
+  },
 }

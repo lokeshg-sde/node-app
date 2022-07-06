@@ -1,6 +1,6 @@
-import colors from "assets/theme/base/colors";
+import colors from "assets/theme/base/colors"
 
-const { transparent } = colors;
+const { transparent } = colors
 
 const iconButton = {
   styleOverrides: {
@@ -10,6 +10,6 @@ const iconButton = {
       },
     },
   },
-};
+}
 
-export default iconButton;
+export default iconButton

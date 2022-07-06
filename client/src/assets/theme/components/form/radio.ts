@@ -1,5 +1,5 @@
-import { colors, borders } from '../../base'
-import { pxToRem, linearGradient } from '../../functions'
+import { colors, borders } from "../../base"
+import { pxToRem, linearGradient } from "../../functions"
 
 const { borderWidth, borderColor } = borders
 const { transparent, info } = colors
@@ -7,71 +7,71 @@ const { transparent, info } = colors
 const radio = {
   styleOverrides: {
     root: {
-      '& .MuiSvgIcon-root': {
+      "& .MuiSvgIcon-root": {
         width: pxToRem(20),
         height: pxToRem(20),
         color: transparent.main,
         border: `${borderWidth[1]} solid ${borderColor}`,
-        borderRadius: '50%'
+        borderRadius: "50%",
       },
 
-      '&:after': {
-        transition: 'opacity 250ms ease-in-out',
+      "&:after": {
+        transition: "opacity 250ms ease-in-out",
         content: `""`,
-        position: 'absolute',
+        position: "absolute",
         width: pxToRem(14),
         height: pxToRem(14),
-        borderRadius: '50%',
+        borderRadius: "50%",
         backgroundImage: linearGradient(info.main, info.main),
         opacity: 0,
         left: 0,
         right: 0,
         top: 0,
         bottom: 0,
-        margin: 'auto'
+        margin: "auto",
       },
 
-      '&:hover': {
-        backgroundColor: transparent.main
+      "&:hover": {
+        backgroundColor: transparent.main,
       },
 
-      '&.Mui-focusVisible': {
-        border: `${borderWidth[2]} solid ${info.main} !important`
-      }
+      "&.Mui-focusVisible": {
+        border: `${borderWidth[2]} solid ${info.main} !important`,
+      },
     },
 
     colorPrimary: {
       color: borderColor,
 
-      '&.Mui-checked': {
+      "&.Mui-checked": {
         color: info.main,
 
-        '& .MuiSvgIcon-root': {
-          borderColor: info.main
+        "& .MuiSvgIcon-root": {
+          borderColor: info.main,
         },
 
-        '&:after': {
-          opacity: 1
-        }
-      }
+        "&:after": {
+          opacity: 1,
+        },
+      },
     },
 
     colorSecondary: {
       color: borderColor,
 
-      '&.Mui-checked': {
+      "&.Mui-checked": {
         color: info.main,
 
-        '& .MuiSvgIcon-root': {
-          borderColor: info.main
+        "& .MuiSvgIcon-root": {
+          borderColor: info.main,
         },
 
-        '&:after': {
-          opacity: 1
-        }
-      }
-    }
-  }
+        "&:after": {
+          opacity: 1,
+        },
+      },
+    },
+  },
 }
 
 export default radio

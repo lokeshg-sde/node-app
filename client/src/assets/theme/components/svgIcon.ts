@@ -1,4 +1,4 @@
-import pxToRem from "assets/theme/functions/pxToRem";
+import pxToRem from "assets/theme/functions/pxToRem"
 
 const svgIcon = {
   defaultProps: {
@@ -18,6 +18,6 @@ const svgIcon = {
       fontSize: `${pxToRem(36)} !important`,
     },
   },
-};
+}
 
-export default svgIcon;
+export default svgIcon

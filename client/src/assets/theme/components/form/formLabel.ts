@@ -1,13 +1,13 @@
-import { colors } from '../../base'
+import { colors } from "../../base"
 
 const { text } = colors
 
 const formLabel = {
   styleOverrides: {
     root: {
-      color: text.main
-    }
-  }
+      color: text.main,
+    },
+  },
 }
 
 export default formLabel

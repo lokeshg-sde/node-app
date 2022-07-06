@@ -1,10 +1,10 @@
-import borders from "assets/theme/base/borders";
-import colors from "assets/theme/base/colors";
+import borders from "assets/theme/base/borders"
+import colors from "assets/theme/base/colors"
 
-import pxToRem from "assets/theme/functions/pxToRem";
+import pxToRem from "assets/theme/functions/pxToRem"
 
-const { borderRadius } = borders;
-const { light } = colors;
+const { borderRadius } = borders
+const { light } = colors
 
 const linearProgress = {
   styleOverrides: {
@@ -31,6 +31,6 @@ const linearProgress = {
       transition: "width 0.6s ease !important",
     },
   },
-};
+}
 
-export default linearProgress;
+export default linearProgress

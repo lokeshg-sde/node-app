@@ -1,4 +1,4 @@
-import pxToRem from "assets/theme/functions/pxToRem";
+import pxToRem from "assets/theme/functions/pxToRem"
 
 const icon = {
   defaultProps: {
@@ -19,6 +19,6 @@ const icon = {
       fontSize: `${pxToRem(36)} !important`,
     },
   },
-};
+}
 
-export default icon;
+export default icon

@@ -1,11 +1,11 @@
-import root from './root'
-import contained from './contained'
-import outlined from './outlined'
-import buttonText from './text'
+import root from "./root"
+import contained from "./contained"
+import outlined from "./outlined"
+import buttonText from "./text"
 
 const button = {
   defaultProps: {
-    disableRipple: false
+    disableRipple: false,
   },
   styleOverrides: {
     root: { ...root },
@@ -23,8 +23,8 @@ const button = {
     textSizeSmall: { ...buttonText.small },
     textSizeLarge: { ...buttonText.large },
     textPrimary: { ...buttonText.primary },
-    textSecondary: { ...buttonText.secondary }
-  }
+    textSecondary: { ...buttonText.secondary },
+  },
 }
 
 export { button, root, contained, outlined, buttonText }

@@ -1,8 +1,8 @@
-import colors from "assets/theme/base/colors";
+import colors from "assets/theme/base/colors"
 
-import rgba from "assets/theme/functions/rgba";
+import rgba from "assets/theme/functions/rgba"
 
-const { info, white, gradients } = colors;
+const { info, white, gradients } = colors
 
 const flatpickr = {
   ".flatpickr-day:hover, .flatpickr-day:focus, .flatpickr-day.nextMonthDay:hover, .flatpickr-day.nextMonthDay:focus":
@@ -33,6 +33,6 @@ const flatpickr = {
       color: `${info.main} !important`,
       fill: `${info.main} !important`,
     },
-};
+}
 
-export default flatpickr;
+export default flatpickr

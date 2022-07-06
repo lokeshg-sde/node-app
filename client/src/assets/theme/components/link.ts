@@ -3,6 +3,6 @@ const link = {
     underline: "none",
     color: "inherit",
   },
-};
+}
 
-export default link;
+export default link

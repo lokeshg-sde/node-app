@@ -2,6 +2,6 @@ const buttonBase = {
   defaultProps: {
     disableRipple: false,
   },
-};
+}
 
-export default buttonBase;
+export default buttonBase

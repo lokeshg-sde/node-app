@@ -1,5 +1,5 @@
-import { colors, typography, borders } from '../../base'
-import { pxToRem } from '../../functions'
+import { colors, typography, borders } from "../../base"
+import { pxToRem } from "../../functions"
 
 const { inputBorderColor, info, grey, transparent } = colors
 const { borderRadius } = borders
@@ -12,37 +12,37 @@ const inputOutlined = {
       fontSize: size.sm,
       borderRadius: borderRadius.md,
 
-      '&:hover .MuiOutlinedInput-notchedOutline': {
-        borderColor: inputBorderColor
+      "&:hover .MuiOutlinedInput-notchedOutline": {
+        borderColor: inputBorderColor,
       },
 
-      '&.Mui-focused': {
-        '& .MuiOutlinedInput-notchedOutline': {
-          borderColor: info.main
-        }
-      }
+      "&.Mui-focused": {
+        "& .MuiOutlinedInput-notchedOutline": {
+          borderColor: info.main,
+        },
+      },
     },
 
     notchedOutline: {
-      borderColor: inputBorderColor
+      borderColor: inputBorderColor,
     },
 
     input: {
       color: grey[700],
       padding: pxToRem(12),
-      backgroundColor: transparent.main
+      backgroundColor: transparent.main,
     },
 
     inputSizeSmall: {
       fontSize: size.xs,
-      padding: pxToRem(10)
+      padding: pxToRem(10),
     },
 
     multiline: {
       color: grey[700],
-      padding: 0
-    }
-  }
+      padding: 0,
+    },
+  },
 }
 
 export default inputOutlined

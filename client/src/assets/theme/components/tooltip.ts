@@ -1,14 +1,14 @@
-import Fade from "@mui/material/Fade";
+import Fade from "@mui/material/Fade"
 
-import colors from "assets/theme/base/colors";
-import typography from "assets/theme/base/typography";
-import borders from "assets/theme/base/borders";
+import colors from "assets/theme/base/colors"
+import typography from "assets/theme/base/typography"
+import borders from "assets/theme/base/borders"
 
-import pxToRem from "assets/theme/functions/pxToRem";
+import pxToRem from "assets/theme/functions/pxToRem"
 
-const { black, light } = colors;
-const { size, fontWeightRegular } = typography;
-const { borderRadius } = borders;
+const { black, light } = colors
+const { size, fontWeightRegular } = typography
+const { borderRadius } = borders
 
 const tooltip = {
   defaultProps: {
@@ -33,6 +33,6 @@ const tooltip = {
       color: black.main,
     },
   },
-};
+}
 
-export default tooltip;
+export default tooltip

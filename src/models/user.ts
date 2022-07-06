@@ -16,21 +16,21 @@ const userSchema = new Schema(
     email: {
       type: String,
       unique: true,
-      required: true
+      required: true,
     },
     password: {
       type: String,
-      required: true
+      required: true,
     },
     role: {
       type: String,
       // required: true,
       enum: {
         values: UserRoles,
-        message: '{VALUE} is not supported'
+        message: '{VALUE} is not supported',
       },
-      default: 'guest'
-    }
+      default: 'guest',
+    },
   },
   { timestamps: true }
 )
@@ -38,7 +38,7 @@ const userSchema = new Schema(
 // eslint-disable-next-line func-names
 userSchema.statics.findByLogin = async function (login) {
   let user = await this.findOne({
-    username: login
+    username: login,
   })
 
   if (!user) {

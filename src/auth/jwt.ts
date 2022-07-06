@@ -53,7 +53,7 @@ export function authenticateToken(
         } else {
           throw new HttpError(401, 'Permission Denied, Please login with different credentials', {
             username,
-            role
+            role,
           })
         }
       } else {

@@ -19,6 +19,7 @@ type Props = {
     | "light"
     | "dark"
     | "none"
+    
 }
 
 const MDBox = forwardRef(

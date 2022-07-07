@@ -5,7 +5,7 @@ const { size, fontWeightRegular } = typography
 const { borderRadius } = borders
 const { dark } = colors
 
-const tab = {
+export const tab = {
   styleOverrides: {
     root: {
       display: "flex",
@@ -41,5 +41,3 @@ const tab = {
     },
   },
 }
-
-export default tab

@@ -3,13 +3,13 @@ import ReactDOM from "react-dom"
 import "./index.css"
 import App from "./App"
 
-import { ThemeContext, defaultValue } from "./context/theme"
+import ConfigProvider from "./controllers/ConfigController"
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeContext.Provider value={defaultValue}>
+    <ConfigProvider>
       <App />
-    </ThemeContext.Provider>
+    </ConfigProvider>
   </React.StrictMode>,
   document.getElementById("root")
 )

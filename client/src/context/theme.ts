@@ -1,6 +1,6 @@
 import React, { createContext, useContext } from "react"
 
-const initialState = {
+export const initialState = {
   miniSidenav: false,
   transparentSidenav: false,
   whiteSidenav: false,
@@ -8,14 +8,13 @@ const initialState = {
   transparentNavbar: true,
   fixedNavbar: true,
   openConfigurator: false,
-  direction: "ltr",
   layout: "dashboard",
   darkMode: false,
 }
 
 export const defaultValue = [initialState, () => {}]
 
-export const ThemeContext: React.Context<typeof defaultValue> = createContext(defaultValue)
+export const ThemeContext: React.Context<typeof initialState> = createContext(initialState)
 
 // ThemeContext.displayName = "ThemeContext"
 

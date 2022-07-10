@@ -4,13 +4,13 @@ const DepartmentSchema = new Schema(
   {
     title: {
       type: String,
-      required: true
+      required: true,
     },
 
     value: {
       type: Number,
-      required: true
-    }
+      required: true,
+    },
   },
   { timestamps: true }
 )

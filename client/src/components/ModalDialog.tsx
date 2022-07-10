@@ -1,6 +1,6 @@
-import React, { useRef } from 'react'
-import Dialog from '@material-ui/core/Dialog'
-import Form from './SignUpForm'
+import React, { useRef } from "react"
+import Dialog from "@material-ui/core/Dialog"
+import Form from "./SignUpForm"
 
 const ModalDialog = ({ open, handleClose }: any) => {
   const ref = useRef()

@@ -4,13 +4,13 @@ const ProductSchema = new Schema(
   {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     type: String,
     name: {
-      type: String
+      type: String,
     },
-    category: String
+    category: String,
   },
   { timestamps: true }
 )

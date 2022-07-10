@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 
 import { Card, Grid, Link as MuiLink, Switch } from "@mui/material"
 import {
@@ -106,7 +106,7 @@ function Basic() {
               Don&apos;t have an account? {/* @ts-expect-error auto-src fix these on forwarding */}
               <StyledTypography
                 // @ts-expect-error auto-src fix these on forwarding
-                component={Link}
+                component={MuiLink}
                 to="/authentication/sign-up"
                 variant="button"
                 color="info"

@@ -1,6 +1,7 @@
 import React, { useMemo, useReducer } from "react"
-import { ThemeProvider, StylesProvider } from "@material-ui/styles"
+import { ThemeProvider, StyledEngineProvider as StylesProvider } from "@mui/material/styles"
 import { ThemeProvider as StyledThemeProvider } from "styled-components"
+import { QueryClientProvider, QueryClient } from "react-query"
 import type { Reducer } from "react"
 
 import { ThemeContext, initialState, reducer } from "../context/theme"
@@ -18,6 +19,18 @@ export default function ConfigController({ children }: Props) {
     initialState
   )
 
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: false,
+        refetchOnReconnect: true,
+        retry: true,
+        // eslint-disable-next-line no-magic-numbers
+        staleTime: 5 * 60000,
+      },
+    },
+  })
+
   const dispatch = useMemo(() => {
     // @ts-expect-error
     return (action: Action) => dispatcher(action)
@@ -28,10 +41,11 @@ export default function ConfigController({ children }: Props) {
 
   return (
     <ThemeContext.Provider value={context}>
-      {/* @ts-expect-error */}
       <StylesProvider injectFirst>
         <ThemeProvider theme={theme}>
-          <StyledThemeProvider theme={theme}> {children} </StyledThemeProvider>{" "}
+          <StyledThemeProvider theme={theme}>
+            <QueryClientProvider client={queryClient}> {children} </QueryClientProvider>{" "}
+          </StyledThemeProvider>
         </ThemeProvider>
       </StylesProvider>
     </ThemeContext.Provider>

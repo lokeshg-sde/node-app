@@ -1,6 +1,5 @@
 import Box from "@mui/material/Box"
 import { styled, ThemeOptions } from "@mui/material/styles"
-import { withTheme } from '@material-ui/core'
 import type { BoxProps } from "@mui/material"
 
 type Props = {
@@ -22,7 +21,7 @@ type Props = {
     | "none"
 }
 
-export default styled(withTheme(Box) as any)<Props & BoxProps>(
+export default styled(Box)<Props & BoxProps>(
   ({
     variant,
     bgColor,
@@ -33,7 +32,6 @@ export default styled(withTheme(Box) as any)<Props & BoxProps>(
     coloredShadow,
     theme,
   }: Props & { theme: any }) => {
-    // const theme = useTheme()
     // @ts-expect-error auto-src fix these on forwarding
     const { palette, functions, borders, boxShadows } = theme as ThemeOptions
 

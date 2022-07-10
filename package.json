@@ -12,7 +12,7 @@
     "eslint:fix": "eslint src/**/*.ts --fix",
     "prettier:fix": "prettier --config .prettierrc src/**/*.ts --write",
     "start": "nodemon index.ts",
-    "start:server": "nodemon index.ts",
+    "start:server": "nodemon --ignore client index.ts",
     "postinstall": "cd client && yarn install",
     "prestart": "cd client && yarn build",
     "webpack-dev-server": "cd client && yarn start"

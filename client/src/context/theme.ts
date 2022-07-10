@@ -50,7 +50,7 @@ export function reducer(
     case "LAYOUT": {
       return { ...state, layout: action.value }
     }
-    case "DARKMODE": {
+    case "DARK_MODE": {
       return { ...state, darkMode: action.value }
     }
     default: {

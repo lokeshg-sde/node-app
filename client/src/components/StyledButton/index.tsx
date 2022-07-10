@@ -23,8 +23,10 @@ type Props = {
 const StyledButton = forwardRef(
   ({ color, variant, size, circular, iconOnly, children, ...rest }: Props, ref) => {
     return (
+      // @ts-expect-error auto-src fix these on forwarding
       <StyledButtonRoot
         {...rest}
+        // @ts-expect-error auto-src fix these on forwarding
         ref={ref}
         color="primary"
         variant={variant === "gradient" ? "contained" : variant}

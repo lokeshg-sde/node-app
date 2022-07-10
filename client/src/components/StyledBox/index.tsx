@@ -1,3 +1,4 @@
+import React from "react"
 import { forwardRef } from "react"
 
 import MDBoxRoot from "./Box"
@@ -19,7 +20,6 @@ type Props = {
     | "light"
     | "dark"
     | "none"
-    
 }
 
 const MDBox = forwardRef(
@@ -30,17 +30,25 @@ const MDBox = forwardRef(
     <MDBoxRoot
       {...rest}
       ref={ref}
-      ownerState={{
-        variant,
-        bgColor,
-        color,
-        opacity,
-        borderRadius,
-        shadow,
-        coloredShadow,
-      }}
+      variant={variant}
+      bgColor={bgColor}
+      color={color}
+      opacity={opacity}
+      borderRadius={borderRadius}
+      shadow={shadow}
+      coloredShadow={coloredShadow}
     />
   )
 )
+
+MDBox.defaultProps = {
+  variant: "contained",
+  bgColor: "transparent",
+  color: "dark",
+  opacity: 1,
+  borderRadius: "none",
+  shadow: "none",
+  coloredShadow: "none",
+}
 
 export default MDBox

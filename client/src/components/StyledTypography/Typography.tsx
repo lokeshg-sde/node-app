@@ -1,11 +1,14 @@
 import Typography from "@mui/material/Typography"
 import { styled } from "@mui/material/styles"
 
+// @ts-expect-error auto-src fix these on forwarding
 export default styled(Typography)(({ theme, ownerState }) => {
+  // @ts-expect-error auto-src fix these on forwarding
   const { palette, typography, functions } = theme
   const { color, textTransform, verticalAlign, fontWeight, opacity, textGradient, darkMode } =
     ownerState
 
+  // @ts-expect-error auto-src fix these on forwarding
   const { gradients, transparent, white } = palette
   const { fontWeightLight, fontWeightRegular, fontWeightMedium, fontWeightBold } = typography
   const { linearGradient } = functions
@@ -29,8 +32,10 @@ export default styled(Typography)(({ theme, ownerState }) => {
     zIndex: 1,
   })
 
+  // @ts-expect-error auto-src fix these on forwarding
   let colorValue = color === "inherit" || !palette[color] ? "inherit" : palette[color].main
 
+  // @ts-expect-error auto-src fix these on forwarding
   if (darkMode && (color === "inherit" || !palette[color])) {
     colorValue = "inherit"
   } else if (darkMode && color === "dark") colorValue = white.main
@@ -41,6 +46,7 @@ export default styled(Typography)(({ theme, ownerState }) => {
     verticalAlign,
     textDecoration: "none",
     color: colorValue,
+    // @ts-expect-error auto-src fix these on forwarding
     fontWeight: fontWeights[fontWeight] && fontWeights[fontWeight],
     ...(textGradient && gradientStyles()),
   }

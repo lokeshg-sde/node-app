@@ -9,6 +9,7 @@ type Props = {
 }
 
 const Input = forwardRef(({ error, success, disabled, ...rest }: Props, ref) => (
+  // @ts-expect-error auto-src fix these on forwarding
   <InputRoot {...rest} ref={ref} ownerState={{ error, success, disabled }} />
 ))
 

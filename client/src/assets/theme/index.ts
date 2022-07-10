@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material/styles"
+import type { PaletteOptions, Components } from "@mui/material/styles"
 
 import { colors, globals, breakpoints, typography, boxShadows, borders } from "./base"
 import { boxShadow, hexToRgb, linearGradient, pxToRem, rgba } from "./functions"
@@ -43,9 +44,10 @@ import {
   dialogActions,
 } from "./components/dialog"
 
-export default createTheme({
+export const lightTheme = createTheme({
   breakpoints: { ...breakpoints },
-  palette: { ...colors },
+  palette: { ...(colors as PaletteOptions) },
+  // @ts-expect-error on Typography styles
   typography: { ...typography },
   boxShadows: { ...boxShadows },
   borders: { ...borders },
@@ -56,7 +58,6 @@ export default createTheme({
     pxToRem,
     rgba,
   },
-
   components: {
     MuiCssBaseline: {
       styleOverrides: {
@@ -113,5 +114,5 @@ export default createTheme({
     MuiDialogContent: { ...dialogContent },
     MuiDialogContentText: { ...dialogContentText },
     MuiDialogActions: { ...dialogActions },
-  },
+  } as Components,
 })

@@ -17,8 +17,10 @@ const StyledTypography = forwardRef(
     ref
   ) => {
     return (
+      // @ts-expect-error auto-src fix these on forwarding
       <TypoGraphy
         {...rest}
+        // @ts-expect-error auto-src fix these on forwarding
         ref={ref}
         ownerState={{
           color,

@@ -1,10 +1,13 @@
 import TextField from "@mui/material/TextField"
 import { styled } from "@mui/material/styles"
 
+// @ts-expect-error auto-src fix these on forwarding
 export default styled(TextField)(({ theme, ownerState }) => {
+  // @ts-expect-error auto-src fix these on forwarding
   const { palette, functions } = theme
   const { error, success, disabled } = ownerState
 
+  // @ts-expect-error auto-src fix these on forwarding
   const { grey, transparent, error: colorError, success: colorSuccess } = palette
   const { pxToRem } = functions
 

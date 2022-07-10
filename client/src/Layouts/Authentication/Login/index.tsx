@@ -16,7 +16,9 @@ function Basic() {
   const handleSetRememberMe = () => setRememberMe(!rememberMe)
 
   return (
+    // @ts-expect-error auto-src fix these on forwarding
     <Card>
+      {/* @ts-expect-error auto-src fix these on forwarding */}
       <StyledBox
         variant="gradient"
         bgColor="info"
@@ -28,38 +30,59 @@ function Basic() {
         mb={1}
         textAlign="center"
       >
+        {/* @ts-expect-error auto-src fix these on forwarding */}
         <StyledTypography variant="h4" fontWeight="medium" color="white" mt={1}>
           Sign in
         </StyledTypography>
+        {/* @ts-expect-error auto-src fix these on forwarding */}
         <Grid container spacing={3} justifyContent="center" sx={{ mt: 1, mb: 2 }}>
+          {/* @ts-expect-error auto-src fix these on forwarding */}
           <Grid item xs={2}>
+            {/* @ts-expect-error auto-src fix these on forwarding */}
             <StyledTypography component={MuiLink} href="#" variant="body1" color="white">
+              {/* @ts-expect-error auto-src fix these on forwarding */}
               <FacebookIcon color="inherit" />
             </StyledTypography>
           </Grid>
+          {/* @ts-expect-error auto-src fix these on forwarding */}
           <Grid item xs={2}>
+            {/* @ts-expect-error auto-src fix these on forwarding */}
             <StyledTypography component={MuiLink} href="#" variant="body1" color="white">
+              {/* @ts-expect-error auto-src fix these on forwarding */}
               <GitHubIcon color="inherit" />
             </StyledTypography>
           </Grid>
+          {/* @ts-expect-error auto-src fix these on forwarding */}
           <Grid item xs={2}>
+            {/* @ts-expect-error auto-src fix these on forwarding */}
             <StyledTypography component={MuiLink} href="#" variant="body1" color="white">
+              {/* @ts-expect-error auto-src fix these on forwarding */}
               <GoogleIcon color="inherit" />
             </StyledTypography>
           </Grid>
         </Grid>
       </StyledBox>
+      {/* @ts-expect-error auto-src fix these on forwarding */}
       <StyledBox pt={4} pb={3} px={3}>
+        {/* @ts-expect-error auto-src fix these on forwarding */}
         <StyledBox component="form" role="form">
+          {/* @ts-expect-error auto-src fix these on forwarding */}
           <StyledBox mb={2}>
+            {/* @ts-expect-error auto-src fix these on forwarding */}
             <StyledInput type="email" label="Email" fullWidth />
           </StyledBox>
+          {/* @ts-expect-error auto-src fix these on forwarding */}
           <StyledBox mb={2}>
+            {/* @ts-expect-error auto-src fix these on forwarding */}
             <StyledInput type="password" label="Password" fullWidth />
           </StyledBox>
+          {/* @ts-expect-error auto-src fix these on forwarding */}
           <StyledBox display="flex" alignItems="center" ml={-1}>
+            {/* @ts-expect-error auto-src fix these on forwarding */}
             <Switch checked={rememberMe} onChange={handleSetRememberMe} />
+            {/* @ts-expect-error auto-src fix these on forwarding */}
             <StyledTypography
+              // @ts-expect-error auto-src fix these on forwarding
               variant="button"
               fontWeight="regular"
               color="text"
@@ -69,15 +92,20 @@ function Basic() {
               &nbsp;&nbsp;Remember me
             </StyledTypography>
           </StyledBox>
+          {/* @ts-expect-error auto-src fix these on forwarding */}
           <StyledBox mt={4} mb={1}>
+            {/* @ts-expect-error auto-src fix these on forwarding */}
             <StyledButton variant="gradient" color="info" fullWidth>
               sign in
             </StyledButton>
           </StyledBox>
+          {/* @ts-expect-error auto-src fix these on forwarding */}
           <StyledBox mt={3} mb={1} textAlign="center">
+            {/* @ts-expect-error auto-src fix these on forwarding */}
             <StyledTypography variant="button" color="text">
-              Don&apos;t have an account?{" "}
+              Don&apos;t have an account? {/* @ts-expect-error auto-src fix these on forwarding */}
               <StyledTypography
+                // @ts-expect-error auto-src fix these on forwarding
                 component={Link}
                 to="/authentication/sign-up"
                 variant="button"

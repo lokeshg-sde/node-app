@@ -1,10 +1,7 @@
 import Fade from "@mui/material/Fade"
 
-import colors from "assets/theme/base/colors"
-import typography from "assets/theme/base/typography"
-import borders from "assets/theme/base/borders"
-
-import pxToRem from "assets/theme/functions/pxToRem"
+import { colors, typography, borders } from "../base"
+import { pxToRem } from "../functions"
 
 const { black, light } = colors
 const { size, fontWeightRegular } = typography

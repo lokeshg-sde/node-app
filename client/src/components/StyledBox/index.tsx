@@ -1,12 +1,13 @@
 import React from "react"
 import { forwardRef } from "react"
+import type { BoxProps } from "@mui/material"
+import BoxRoot from "./Box"
 
-import MDBoxRoot from "./Box"
-
-type Props = {
+type Props = Partial<{
   variant: "contained" | "gradient"
   bgColor: string
   color: string
+  children?: JSX.Element | JSX.Element[]
   opacity: number
   borderRadius: string
   shadow: string
@@ -20,35 +21,37 @@ type Props = {
     | "light"
     | "dark"
     | "none"
-}
+}>
 
-const MDBox = forwardRef(
+const StyledBox = forwardRef(
   (
-    { variant, bgColor, color, opacity, borderRadius, shadow, coloredShadow, ...rest }: Props,
+    {
+      variant,
+      bgColor,
+      color,
+      opacity,
+      borderRadius,
+      shadow,
+      coloredShadow,
+      children,
+      ...rest
+    }: Props & BoxProps,
     ref
   ) => (
-    <MDBoxRoot
+    <BoxRoot
       {...rest}
       ref={ref}
-      variant={variant}
-      bgColor={bgColor}
-      color={color}
-      opacity={opacity}
-      borderRadius={borderRadius}
-      shadow={shadow}
-      coloredShadow={coloredShadow}
-    />
+      variant={variant || "contained"}
+      bgColor={bgColor || "transparent"}
+      color={color || "dark"}
+      opacity={opacity || 1}
+      borderRadius={borderRadius || "none"}
+      shadow={shadow || "none"}
+      coloredShadow={coloredShadow || "none"}
+    >
+      {children}
+    </BoxRoot>
   )
 )
 
-MDBox.defaultProps = {
-  variant: "contained",
-  bgColor: "transparent",
-  color: "dark",
-  opacity: 1,
-  borderRadius: "none",
-  shadow: "none",
-  coloredShadow: "none",
-}
-
-export default MDBox
+export default StyledBox

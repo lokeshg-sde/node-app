@@ -4,3 +4,4 @@ import StyledInput from "./StyledInput"
 import StyledTypography from "./StyledTypography"
 
 export { StyledBox, StyledButton, StyledInput, StyledTypography }
+export * from "./Layouts"

@@ -1,10 +1,21 @@
-export const MINI_SIDENAV = "MINI_SIDENAV"
-export const TRANSPARENT_SIDENAV = "TRANSPARENT_SIDENAV"
-export const WHITE_SIDENAV = "WHITE_SIDENAV"
-export const SIDENAV_COLOR = "SIDENAV_COLOR"
-export const TRANSPARENT_NAVBAR = "TRANSPARENT_NAVBAR"
-export const FIXED_NAVBAR = "FIXED_NAVBAR"
-export const OPEN_CONFIGURATOR = "OPEN_CONFIGURATOR"
-export const DIRECTION = "DIRECTION"
-export const LAYOUT = "LAYOUT"
-export const DARK_MODE = "DARK_MODE"
+export enum ACTION_TYPES {
+  MINI_SIDENAV = "MINI_SIDENAV",
+  TRANSPARENT_SIDENAV = "TRANSPARENT_SIDENAV",
+  WHITE_SIDENAV = "WHITE_SIDENAV",
+  SIDENAV_COLOR = "SIDENAV_COLOR",
+  TRANSPARENT_NAVBAR = "TRANSPARENT_NAVBAR",
+  FIXED_NAVBAR = "FIXED_NAVBAR",
+  OPEN_CONFIGURATOR = "OPEN_CONFIGURATOR",
+  DARK_MODE = "DARK_MODE",
+}
+
+export const INITIAL_STATE = {
+  miniSidenav: false,
+  transparentSidenav: false,
+  whiteSidenav: false,
+  sidenavColor: "info" as "info" | "error",
+  transparentNavbar: true,
+  fixedNavbar: true,
+  openConfigurator: false,
+  darkMode: false,
+}

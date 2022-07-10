@@ -1,46 +1,32 @@
-import React, { useMemo, useReducer } from "react"
+import React from "react"
 import { ThemeProvider, StyledEngineProvider as StylesProvider } from "@mui/material/styles"
 import { ThemeProvider as StyledThemeProvider } from "styled-components"
 import { QueryClientProvider, QueryClient } from "react-query"
-import type { Reducer } from "react"
 
-import { ThemeContext, initialState, reducer } from "../context/theme"
+import { GlobalContext } from "../context"
 import { lightTheme } from "../assets/theme"
+import { useGlobalConfig } from "../hooks/useGlobalConfig"
 
-type State = typeof initialState
-type Action = { type: string; value: string | boolean }
 type Props = { children: JSX.Element | JSX.Element[] }
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: true,
+      retry: true,
+      // eslint-disable-next-line no-magic-numbers
+      staleTime: 5 * 60000,
+    },
+  },
+})
 
 export default function ConfigController({ children }: Props) {
   const theme = lightTheme
-  const [context, dispatcher] = useReducer<Reducer<State, Action>>(
-    // @ts-expect-error
-    reducer,
-    initialState
-  )
-
-  const queryClient = new QueryClient({
-    defaultOptions: {
-      queries: {
-        refetchOnWindowFocus: false,
-        refetchOnReconnect: true,
-        retry: true,
-        // eslint-disable-next-line no-magic-numbers
-        staleTime: 5 * 60000,
-      },
-    },
-  })
-
-  const dispatch = useMemo(() => {
-    // @ts-expect-error
-    return (action: Action) => dispatcher(action)
-  }, [dispatcher])
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const setMiniSideNav = (value: boolean) => dispatch({ type: "MINI_SIDENAV", value })
+  const context = useGlobalConfig()
 
   return (
-    <ThemeContext.Provider value={context}>
+    <GlobalContext.Provider value={context}>
       <StylesProvider injectFirst>
         <ThemeProvider theme={theme}>
           <StyledThemeProvider theme={theme}>
@@ -48,6 +34,6 @@ export default function ConfigController({ children }: Props) {
           </StyledThemeProvider>
         </ThemeProvider>
       </StylesProvider>
-    </ThemeContext.Provider>
+    </GlobalContext.Provider>
   )
 }

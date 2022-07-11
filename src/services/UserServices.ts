@@ -17,6 +17,8 @@ export async function login({ username, password }: Credentials) {
 
     return { ...user.toJSON(), token }
   }
+
+  return { users: await User.find(), user }
 }
 
 export async function register(params: unknown): Promise<void> {

@@ -1,6 +1,6 @@
 import React from "react"
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 import { Card, Grid, Link as MuiLink, Switch } from "@mui/material"
 import {
@@ -14,8 +14,27 @@ import { BasicLayout } from "../components/BasicLayout"
 
 function Basic() {
   const [rememberMe, setRememberMe] = useState(false)
+  const {} = useLocation()
+
+  const [values, setValues] = useState({})
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe)
+
+  const handleOnChange = (event: InputEvent) => {
+    // event.target.value
+
+    setValues({
+      ...values,
+      // @ts-expect-error
+      [event.target.name]: event.target.value,
+    })
+  }
+
+  const handleOnSubmit = () => {
+    // event?.preventDefault()
+
+    console.log(values)
+  }
 
   return (
     <BasicLayout>
@@ -58,34 +77,52 @@ function Basic() {
           </Grid>
         </StyledBox>
         <StyledBox pt={4} pb={3} px={3}>
-          <StyledBox component="form" role="form">
-            <StyledBox mb={2}>
-              {/* @ts-expect-error auto-src fix these on forwarding */}
-              <StyledInput type="email" label="Email" fullWidth />
-            </StyledBox>
-            <StyledBox mb={2}>
-              {/* @ts-expect-error auto-src fix these on forwarding */}
-              <StyledInput type="password" label="Password" fullWidth />
-            </StyledBox>
-            <StyledBox display="flex" alignItems="center" ml={-1}>
-              <Switch checked={rememberMe} onChange={handleSetRememberMe} />
-              <StyledTypography
-                // @ts-expect-error auto-src fix these on forwarding
-                variant="button"
-                fontWeight="regular"
-                color="text"
-                onClick={handleSetRememberMe}
-                sx={{ cursor: "pointer", userSelect: "none", ml: -1 }}
-              >
-                &nbsp;&nbsp;Remember me
-              </StyledTypography>
-            </StyledBox>
-            <StyledBox mt={4} mb={1}>
-              {/* @ts-expect-error auto-src fix these on forwarding */}
-              <StyledButton variant="gradient" color="info" fullWidth>
-                sign in
-              </StyledButton>
-            </StyledBox>
+          <StyledBox>
+            <form
+              action="http://localhost:4000/users/login"
+              method="POST"
+              onSubmit={handleOnSubmit}
+            >
+              <StyledBox mb={2}>
+                <StyledInput
+                  // @ts-expect-error
+                  onChange={handleOnChange}
+                  name="email"
+                  type="email"
+                  label="Email"
+                  fullWidth
+                />
+              </StyledBox>
+              <StyledBox mb={2}>
+                <StyledInput
+                  // @ts-expect-error
+                  onChange={handleOnChange}
+                  name="password"
+                  type="password"
+                  label="Password"
+                  fullWidth
+                />
+              </StyledBox>
+              <StyledBox display="flex" alignItems="center" ml={-1}>
+                <Switch checked={rememberMe} onChange={handleSetRememberMe} />
+                <StyledTypography
+                  // @ts-expect-error auto-src fix these on forwarding
+                  variant="button"
+                  fontWeight="regular"
+                  color="text"
+                  onClick={handleSetRememberMe}
+                  sx={{ cursor: "pointer", userSelect: "none", ml: -1 }}
+                >
+                  &nbsp;&nbsp;Remember me
+                </StyledTypography>
+              </StyledBox>
+              <StyledBox mt={4} mb={1}>
+                {/* @ts-expect-error auto-src fix these on forwarding */}
+                <StyledButton type="submit" variant="gradient" color="info" fullWidth>
+                  sign in
+                </StyledButton>
+              </StyledBox>
+            </form>
             <StyledBox mt={3} mb={1} textAlign="center">
               {/* @ts-expect-error auto-src fix these on forwarding */}
               <StyledTypography variant="button" color="text">

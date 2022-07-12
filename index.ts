@@ -5,6 +5,7 @@ import path from 'path'
 import { PORT_NUMBER, DATABASE_URL, URL_CONFIG } from './src/config'
 import { authenticateToken } from './src/auth/jwt'
 import excludePublicUrlOnAuthenticate from './src/auth/authentocation'
+import middlewareWrapper from './src/auth/cors'
 
 import routes from './src/routes'
 
@@ -20,6 +21,7 @@ app.use(express.static(path.join(...buildDir)))
 app.use(express.static(path.join(...buildPublicDir)))
 app.use(express.static(path.join(...publicDir)))
 
+app.use(middlewareWrapper())
 app.use(excludePublicUrlOnAuthenticate(URL_CONFIG, authenticateToken))
 app.get('/home', (req, res) => {
   res.sendFile(path.join(...buildDir, 'index.html'))

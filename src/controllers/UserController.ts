@@ -25,8 +25,6 @@ router.post('/register', (req: Request, res: Response, next: NextFunction) => {
 router.post('/login', (req: Request, res: Response, next: NextFunction) => {
   const { username, password } = req.body
 
-  console.log(req)
-
   login({ username, password })
     .then((user) => {
       if (user) {

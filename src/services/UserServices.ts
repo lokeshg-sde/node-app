@@ -12,13 +12,15 @@ type Credentials = {
 export async function login({ username, password }: Credentials) {
   const user = await User.findOne({ username })
 
-  if (user && bcrypt.compareSync(password, user.password)) {
-    const token = generateAccessToken({ username, role: user.role, id: user._id })
+  if (user) {
+    if (bcrypt.compareSync(password, user.password)) {
+      const token = generateAccessToken({ username, role: user.role, id: user._id })
 
-    return { ...user.toJSON(), token }
+      return { ...user.toJSON(), token }
+    }
+
+    return { message: 'Password Mismatch' }
   }
-
-  return { users: await User.find(), user }
 }
 
 export async function register(params: unknown): Promise<void> {

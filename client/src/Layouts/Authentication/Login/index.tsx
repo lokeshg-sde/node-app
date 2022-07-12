@@ -9,6 +9,7 @@ import {
   Google as GoogleIcon,
 } from "@mui/icons-material"
 
+import { getApiConfig } from "../../../utils/getApiConfig"
 import { StyledBox, StyledTypography, StyledInput, StyledButton } from "../../../components"
 import { BasicLayout } from "../components/BasicLayout"
 
@@ -17,6 +18,7 @@ function Basic() {
   const {} = useLocation()
 
   const [values, setValues] = useState({})
+  const source = getApiConfig()
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe)
 
@@ -30,10 +32,23 @@ function Basic() {
     })
   }
 
-  const handleOnSubmit = () => {
-    // event?.preventDefault()
+  const handleOnSubmit = async () => {
+    const url = `${source}/users/login`
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": window.origin,
+        mode: "no-cors",
+      },
+      body: JSON.stringify(values),
+    }
 
-    console.log(values)
+    const response = await fetch(url, options)
+    const result = await response.json()
+
+    alert(JSON.stringify(result))
+    console.log(result)
   }
 
   return (
@@ -53,7 +68,7 @@ function Basic() {
         >
           {/* @ts-expect-error auto-src fix these on forwarding */}
           <StyledTypography variant="h4" fontWeight="medium" color="white" mt={1}>
-            Sign in
+            Welcome
           </StyledTypography>
           <Grid container spacing={3} justifyContent="center" sx={{ mt: 1, mb: 2 }}>
             <Grid item xs={2}>
@@ -78,11 +93,8 @@ function Basic() {
         </StyledBox>
         <StyledBox pt={4} pb={3} px={3}>
           <StyledBox>
-            <form
-              action="http://localhost:4000/users/login"
-              method="POST"
-              onSubmit={handleOnSubmit}
-            >
+            {/* onSubmit={handleOnSubmit} */}
+            <form>
               <StyledBox mb={2}>
                 <StyledInput
                   // @ts-expect-error
@@ -118,7 +130,7 @@ function Basic() {
               </StyledBox>
               <StyledBox mt={4} mb={1}>
                 {/* @ts-expect-error auto-src fix these on forwarding */}
-                <StyledButton type="submit" variant="gradient" color="info" fullWidth>
+                <StyledButton variant="gradient" color="info" onClick={handleOnSubmit} fullWidth>
                   sign in
                 </StyledButton>
               </StyledBox>

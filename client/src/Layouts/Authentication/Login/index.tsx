@@ -1,6 +1,6 @@
 import React from "react"
 import { useState } from "react"
-import { Link, useLocation } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 import { Card, Grid, Link as MuiLink, Switch } from "@mui/material"
 import {
@@ -15,7 +15,6 @@ import { BasicLayout } from "../components/BasicLayout"
 
 function Basic() {
   const [rememberMe, setRememberMe] = useState(false)
-  const {} = useLocation()
 
   const [values, setValues] = useState({})
   const source = getApiConfig()

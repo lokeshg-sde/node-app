@@ -2,12 +2,12 @@ import express from 'express'
 import mongoose from 'mongoose'
 import path from 'path'
 
-import { PORT_NUMBER, DATABASE_URL, URL_CONFIG } from './server/config'
-import { authenticateToken } from './server/auth/jwt'
-import excludePublicUrlOnAuthenticate from './server/auth/authentocation'
-import middlewareWrapper from './server/auth/cors'
+import { PORT_NUMBER, DATABASE_URL, URL_CONFIG } from './config'
+import { authenticateToken } from './auth/jwt'
+import excludePublicUrlOnAuthenticate from './auth/authentication'
+import middlewareWrapper from './auth/cors'
 
-import routes from './server/routes'
+import routes from './routes'
 
 const app = express()
 

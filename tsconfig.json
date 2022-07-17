@@ -2,6 +2,9 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "baseUrl": "server",
+    "paths": {
+      "*": ["server/*"]
+    },
     "declaration": false,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,

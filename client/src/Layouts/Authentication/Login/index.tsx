@@ -139,7 +139,7 @@ function Basic() {
                 <StyledTypography
                   // @ts-expect-error auto-src fix these on forwarding
                   component={Link}
-                  to="/sign-up"
+                  to="users/register"
                   variant="button"
                   color="info"
                   fontWeight="medium"

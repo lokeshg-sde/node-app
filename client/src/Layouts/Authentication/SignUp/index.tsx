@@ -77,7 +77,7 @@ export function SignUp() {
                 <StyledTypography
                   // @ts-expect-error
                   component={Link}
-                  to="/sign-in"
+                  to="users/login"
                   variant="button"
                   color="info"
                   fontWeight="medium"

@@ -1,5 +1,5 @@
-import { colors, typography, borders, boxShadows } from "../../base"
-import { pxToRem } from "../../functions"
+import { colors, typography, borders, boxShadows } from '../../base'
+import { pxToRem } from '../../functions'
 
 const { borderRadius, borderWidth, borderColor } = borders
 const { xxl } = boxShadows

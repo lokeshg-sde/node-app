@@ -1,9 +1,9 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import { Card, Checkbox } from "@mui/material"
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { Card, Checkbox } from '@mui/material'
 
-import { StyledBox, StyledTypography, StyledInput, StyledButton } from "../../../components"
-import { BasicLayout } from "../components/BasicLayout"
+import { StyledBox, StyledTypography, StyledInput, StyledButton } from '../../../components'
+import { BasicLayout } from '../components/BasicLayout'
 
 export function SignUp() {
   return (
@@ -19,8 +19,7 @@ export function SignUp() {
           mt={-3}
           p={3}
           mb={1}
-          textAlign="center"
-        >
+          textAlign="center">
           {/* @ts-expect-error */}
           <StyledTypography variant="h4" fontWeight="medium" color="white" mt={1}>
             Join us today
@@ -51,8 +50,7 @@ export function SignUp() {
                 variant="button"
                 fontWeight="regular"
                 color="text"
-                sx={{ cursor: "pointer", userSelect: "none", ml: -1 }}
-              >
+                sx={{ cursor: 'pointer', userSelect: 'none', ml: -1 }}>
                 &nbsp;&nbsp;I agree the&nbsp;
               </StyledTypography>
               <StyledTypography
@@ -62,8 +60,7 @@ export function SignUp() {
                 variant="button"
                 fontWeight="bold"
                 color="info"
-                textGradient
-              >
+                textGradient>
                 Terms and Conditions
               </StyledTypography>
             </StyledBox>
@@ -76,16 +73,15 @@ export function SignUp() {
             <StyledBox mt={3} mb={1} textAlign="center">
               {/* @ts-expect-error */}
               <StyledTypography variant="button" color="text">
-                Already have an account?{" "}
+                Already have an account?{' '}
                 <StyledTypography
                   // @ts-expect-error
                   component={Link}
-                  to="/authentication/sign-in"
+                  to="/sign-in"
                   variant="button"
                   color="info"
                   fontWeight="medium"
-                  textGradient
-                >
+                  textGradient>
                   Sign In
                 </StyledTypography>
               </StyledTypography>

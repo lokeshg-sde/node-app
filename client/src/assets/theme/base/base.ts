@@ -1,6 +1,6 @@
-import { colors } from "./colors"
+import { colors } from './colors'
 
-import { pxToRem, boxShadow } from "../functions"
+import { pxToRem, boxShadow } from '../functions'
 
 const { grey, black, white, tabs, coloredShadows, info, dark } = colors
 
@@ -79,7 +79,7 @@ export const boxShadows = {
     0.04
   )}`,
   xxl: boxShadow([0, 20], [27, 0], black.main, 0.05),
-  inset: boxShadow([0, 1], [2, 0], black.main, 0.075, "inset"),
+  inset: boxShadow([0, 1], [2, 0], black.main, 0.075, 'inset'),
   colored: {
     primary: `${boxShadow([0, 4], [20, 0], black.main, 0.14)}, ${boxShadow(
       [0, 7],
@@ -131,7 +131,7 @@ export const boxShadows = {
     )}`,
   },
 
-  navbarBoxShadow: `${boxShadow([0, 0], [1, 1], white.main, 0.9, "inset")}, ${boxShadow(
+  navbarBoxShadow: `${boxShadow([0, 0], [1, 1], white.main, 0.9, 'inset')}, ${boxShadow(
     [0, 20],
     [27, 0],
     black.main,
@@ -158,20 +158,20 @@ export const breakpoints = {
 
 export const globals = {
   html: {
-    scrollBehavior: "smooth",
+    scrollBehavior: 'smooth',
   },
-  "*, *::before, *::after": {
+  '*, *::before, *::after': {
     margin: 0,
     padding: 0,
   },
-  "a, a:link, a:visited": {
-    textDecoration: "none !important",
+  'a, a:link, a:visited': {
+    textDecoration: 'none !important',
   },
-  "a.link, .link, a.link:link, .link:link, a.link:visited, .link:visited": {
+  'a.link, .link, a.link:link, .link:link, a.link:visited, .link:visited': {
     color: `${dark.main} !important`,
-    transition: "color 150ms ease-in !important",
+    transition: 'color 150ms ease-in !important',
   },
-  "a.link:hover, .link:hover, a.link:focus, .link:focus": {
+  'a.link:hover, .link:hover, a.link:focus, .link:focus': {
     color: `${info.main} !important`,
   },
 }
@@ -253,7 +253,7 @@ export const typography = {
     fontSize: baseProperties.fontSizeSM,
     fontWeight: baseProperties.fontWeightLight,
     lineHeight: 1.5,
-    textTransform: "uppercase",
+    textTransform: 'uppercase',
   },
 
   caption: {
@@ -304,8 +304,8 @@ export const typography = {
     md: baseProperties.fontSizeMD,
     lg: baseProperties.fontSizeLG,
     xl: baseProperties.fontSizeXL,
-    "2xl": baseProperties.fontSize2XL,
-    "3xl": baseProperties.fontSize3XL,
+    '2xl': baseProperties.fontSize2XL,
+    '3xl': baseProperties.fontSize3XL,
   },
 
   lineHeight: {

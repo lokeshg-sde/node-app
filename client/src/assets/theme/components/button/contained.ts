@@ -1,6 +1,6 @@
-import { colors, typography } from "../../base"
+import { colors, typography } from '../../base'
 
-import { pxToRem } from "../../functions"
+import { pxToRem } from '../../functions'
 
 const { white, text, info, secondary } = colors
 const { size } = typography
@@ -12,15 +12,15 @@ const contained = {
     color: text.main,
     padding: `${pxToRem(10)} ${pxToRem(24)}`,
 
-    "&:hover": {
+    '&:hover': {
       backgroundColor: white.main,
     },
 
-    "&:active, &:active:focus, &:active:hover": {
+    '&:active, &:active:focus, &:active:hover': {
       opacity: 0.85,
     },
 
-    "& .material-icon, .material-icons-round, svg": {
+    '& .material-icon, .material-icons-round, svg': {
       fontSize: `${pxToRem(16)} !important`,
     },
   },
@@ -30,7 +30,7 @@ const contained = {
     padding: `${pxToRem(6)} ${pxToRem(16)}`,
     fontSize: size.xs,
 
-    "& .material-icon, .material-icons-round, svg": {
+    '& .material-icon, .material-icons-round, svg': {
       fontSize: `${pxToRem(12)} !important`,
     },
   },
@@ -40,7 +40,7 @@ const contained = {
     padding: `${pxToRem(12)} ${pxToRem(28)}`,
     fontSize: size.sm,
 
-    "& .material-icon, .material-icons-round, svg": {
+    '& .material-icon, .material-icons-round, svg': {
       fontSize: `${pxToRem(22)} !important`,
     },
   },
@@ -48,11 +48,11 @@ const contained = {
   primary: {
     backgroundColor: info.main,
 
-    "&:hover": {
+    '&:hover': {
       backgroundColor: info.main,
     },
 
-    "&:focus:not(:hover)": {
+    '&:focus:not(:hover)': {
       backgroundColor: info.focus,
     },
   },
@@ -60,11 +60,11 @@ const contained = {
   secondary: {
     backgroundColor: secondary.main,
 
-    "&:hover": {
+    '&:hover': {
       backgroundColor: secondary.main,
     },
 
-    "&:focus:not(:hover)": {
+    '&:focus:not(:hover)': {
       backgroundColor: secondary.focus,
     },
   },

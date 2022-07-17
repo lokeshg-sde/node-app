@@ -1,5 +1,5 @@
-import { colors, borders, boxShadows } from "../../base"
-import { pxToRem, linearGradient } from "../../functions"
+import { colors, borders, boxShadows } from '../../base'
+import { pxToRem, linearGradient } from '../../functions'
 
 const { white, gradients, grey, transparent } = colors
 const { borderWidth } = borders
@@ -14,33 +14,33 @@ const switchButton = {
     switchBase: {
       color: gradients.dark.main,
 
-      "&:hover": {
+      '&:hover': {
         backgroundColor: transparent.main,
       },
 
-      "&.Mui-checked": {
+      '&.Mui-checked': {
         color: gradients.dark.main,
 
-        "&:hover": {
+        '&:hover': {
           backgroundColor: transparent.main,
         },
 
-        "& .MuiSwitch-thumb": {
+        '& .MuiSwitch-thumb': {
           borderColor: `${gradients.dark.main} !important`,
         },
 
-        "& + .MuiSwitch-track": {
+        '& + .MuiSwitch-track': {
           backgroundColor: `${gradients.dark.main} !important`,
           borderColor: `${gradients.dark.main} !important`,
           opacity: 1,
         },
       },
 
-      "&.Mui-disabled + .MuiSwitch-track": {
-        opacity: "0.3 !important",
+      '&.Mui-disabled + .MuiSwitch-track': {
+        opacity: '0.3 !important',
       },
 
-      "&.Mui-focusVisible .MuiSwitch-thumb": {
+      '&.Mui-focusVisible .MuiSwitch-thumb': {
         backgroundImage: linearGradient(gradients.info.main, gradients.info.state),
       },
     },

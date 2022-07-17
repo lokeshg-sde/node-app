@@ -1,9 +1,9 @@
-import { useReducer } from "react"
-import type { Reducer } from "react"
+import { useReducer } from 'react'
+import type { Reducer } from 'react'
 
-import { INITIAL_STATE, ACTION_TYPES } from "../constants"
-import { MaterialUIThemeReducer } from "../context"
-import type { GlobalConfigState, Action } from "../types"
+import { INITIAL_STATE, ACTION_TYPES } from '../constants'
+import { MaterialUIThemeReducer } from '../context'
+import type { GlobalConfigState, Action } from '../types'
 
 export function useGlobalConfig() {
   const [state, dispatch] = useReducer<Reducer<GlobalConfigState, Action>>(
@@ -29,10 +29,10 @@ export function useGlobalConfig() {
       type: ACTION_TYPES.TRANSPARENT_NAVBAR,
       payload: { transparentNavbar: !state.transparentNavbar },
     })
-  const setSideNavColor = (value: "info" | "error") =>
+  const setSideNavColor = (value: 'info' | 'error') =>
     dispatch({
       type: ACTION_TYPES.SIDENAV_COLOR,
-      payload: { sidenavColor: value || "info" },
+      payload: { sidenavColor: value || 'info' },
     })
   const openOrCloseConfigurator = () =>
     dispatch({

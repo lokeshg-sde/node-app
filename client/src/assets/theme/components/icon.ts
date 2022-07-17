@@ -1,14 +1,14 @@
-import { pxToRem } from "../functions"
+import { pxToRem } from '../functions'
 
 const icon = {
   defaultProps: {
-    baseClassName: "material-icons-round",
-    fontSize: "inherit",
+    baseClassName: 'material-icons-round',
+    fontSize: 'inherit',
   },
 
   styleOverrides: {
     fontSizeInherit: {
-      fontSize: "inherit !important",
+      fontSize: 'inherit !important',
     },
 
     fontSizeSmall: {

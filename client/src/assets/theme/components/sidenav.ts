@@ -1,5 +1,5 @@
-import { colors, borders } from "../base"
-import { pxToRem } from "../functions"
+import { colors, borders } from '../base'
+import { pxToRem } from '../functions'
 
 const { white } = colors
 const { borderRadius } = borders
@@ -8,8 +8,8 @@ const sidenav = {
   styleOverrides: {
     root: {
       width: pxToRem(250),
-      whiteSpace: "nowrap",
-      border: "none",
+      whiteSpace: 'nowrap',
+      border: 'none',
     },
 
     paper: {
@@ -18,11 +18,11 @@ const sidenav = {
       height: `calc(100vh - ${pxToRem(32)})`,
       margin: pxToRem(16),
       borderRadius: borderRadius.xl,
-      border: "none",
+      border: 'none',
     },
 
     paperAnchorDockedLeft: {
-      borderRight: "none",
+      borderRight: 'none',
     },
   },
 }

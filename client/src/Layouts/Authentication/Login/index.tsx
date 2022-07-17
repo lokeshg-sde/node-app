@@ -1,17 +1,17 @@
-import React from "react"
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import React from 'react'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-import { Card, Grid, Link as MuiLink, Switch } from "@mui/material"
+import { Card, Grid, Link as MuiLink, Switch } from '@mui/material'
 import {
   Facebook as FacebookIcon,
   GitHub as GitHubIcon,
   Google as GoogleIcon,
-} from "@mui/icons-material"
+} from '@mui/icons-material'
 
-import { getApiConfig } from "../../../utils/getApiConfig"
-import { StyledBox, StyledTypography, StyledInput, StyledButton } from "../../../components"
-import { BasicLayout } from "../components/BasicLayout"
+import { getApiConfig } from '../../../utils/getApiConfig'
+import { StyledBox, StyledTypography, StyledInput, StyledButton } from '../../../components'
+import { BasicLayout } from '../components/BasicLayout'
 
 function Basic() {
   const [rememberMe, setRememberMe] = useState(false)
@@ -34,11 +34,11 @@ function Basic() {
   const handleOnSubmit = async () => {
     const url = `${source}/users/login`
     const options = {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": window.origin,
-        mode: "no-cors",
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': window.origin,
+        mode: 'no-cors',
       },
       body: JSON.stringify(values),
     }
@@ -63,8 +63,7 @@ function Basic() {
           mt={-3}
           p={2}
           mb={1}
-          textAlign="center"
-        >
+          textAlign="center">
           {/* @ts-expect-error auto-src fix these on forwarding */}
           <StyledTypography variant="h4" fontWeight="medium" color="white" mt={1}>
             Welcome
@@ -122,8 +121,7 @@ function Basic() {
                   fontWeight="regular"
                   color="text"
                   onClick={handleSetRememberMe}
-                  sx={{ cursor: "pointer", userSelect: "none", ml: -1 }}
-                >
+                  sx={{ cursor: 'pointer', userSelect: 'none', ml: -1 }}>
                   &nbsp;&nbsp;Remember me
                 </StyledTypography>
               </StyledBox>
@@ -137,16 +135,15 @@ function Basic() {
             <StyledBox mt={3} mb={1} textAlign="center">
               {/* @ts-expect-error auto-src fix these on forwarding */}
               <StyledTypography variant="button" color="text">
-                Don&apos;t have an account?{" "}
+                Don&apos;t have an account?{' '}
                 <StyledTypography
                   // @ts-expect-error auto-src fix these on forwarding
                   component={Link}
-                  to="/authentication/sign-up"
+                  to="/sign-up"
                   variant="button"
                   color="info"
                   fontWeight="medium"
-                  textGradient
-                >
+                  textGradient>
                   Sign up
                 </StyledTypography>
               </StyledTypography>

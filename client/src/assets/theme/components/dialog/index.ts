@@ -1,1 +1,1 @@
-export * from "./dailog"
+export * from './dailog'

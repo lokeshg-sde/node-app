@@ -1,9 +1,9 @@
-import React from "react"
-import Grid from "@mui/material/Grid"
-import { JsxElement } from "typescript"
+import React from 'react'
+import Grid from '@mui/material/Grid'
+import { JsxElement } from 'typescript'
 
-import { StyledBox, PageLayout } from "../../../components"
-import bgImage from "../../../assets/images/login-cover-page.png"
+import { StyledBox, PageLayout } from '../../../components'
+import bgImage from '../../../assets/images/login-cover-page.png'
 
 type Props = {
   image?: string
@@ -23,9 +23,9 @@ export const BasicLayout = ({ image, children }: Props): JSX.Element => {
               rgba(gradients.dark.main, 0.6),
               rgba(gradients.dark.state, 0.6)
             )}, url(${image || bgImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
         }}
       />
       <StyledBox px={1} width="100%" height="100vh" mx="auto">

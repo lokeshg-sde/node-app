@@ -1,6 +1,6 @@
-import { pxToRem } from "../functions"
+import { pxToRem } from '../functions'
 
-import { colors, boxShadows, borders } from "../base"
+import { colors, boxShadows, borders } from '../base'
 
 const { transparent } = colors
 const { lg } = boxShadows

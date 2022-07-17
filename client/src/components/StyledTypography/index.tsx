@@ -1,6 +1,6 @@
-import { forwardRef } from "react"
+import { forwardRef } from 'react'
 
-import TypoGraphy from "./Typography"
+import TypoGraphy from './Typography'
 
 const StyledTypography = forwardRef(
   (
@@ -30,8 +30,7 @@ const StyledTypography = forwardRef(
           opacity,
           textGradient,
           darkMode: false,
-        }}
-      >
+        }}>
         {children}
       </TypoGraphy>
     )
@@ -40,29 +39,29 @@ const StyledTypography = forwardRef(
 
 type Props = {
   color:
-    | "inherit"
-    | "primary"
-    | "secondary"
-    | "info"
-    | "success"
-    | "warning"
-    | "error"
-    | "light"
-    | "dark"
-    | "text"
-    | "white"
-  fontWeight: false | "light" | "regular" | "medium" | "bold"
-  textTransform: "none"
+    | 'inherit'
+    | 'primary'
+    | 'secondary'
+    | 'info'
+    | 'success'
+    | 'warning'
+    | 'error'
+    | 'light'
+    | 'dark'
+    | 'text'
+    | 'white'
+  fontWeight: false | 'light' | 'regular' | 'medium' | 'bold'
+  textTransform: 'none'
   verticalAlign:
-    | "unset"
-    | "baseline"
-    | "sub"
-    | "super"
-    | "text-top"
-    | "text-bottom"
-    | "middle"
-    | "top"
-    | "bottom"
+    | 'unset'
+    | 'baseline'
+    | 'sub'
+    | 'super'
+    | 'text-top'
+    | 'text-bottom'
+    | 'middle'
+    | 'top'
+    | 'bottom'
   textGradient: boolean
   children?: any
   opacity: number

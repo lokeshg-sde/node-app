@@ -1,4 +1,4 @@
-import { colors, typography } from "../base"
+import { colors, typography } from '../base'
 
 const { grey } = colors
 const { size } = typography

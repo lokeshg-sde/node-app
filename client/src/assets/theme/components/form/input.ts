@@ -1,4 +1,4 @@
-import { colors, typography, borders } from "../../base"
+import { colors, typography, borders } from '../../base'
 
 const { info, inputBorderColor, dark } = colors
 const { size } = typography
@@ -10,15 +10,15 @@ const input = {
       fontSize: size.sm,
       color: dark.main,
 
-      "&:hover:not(.Mui-disabled):before": {
+      '&:hover:not(.Mui-disabled):before': {
         borderBottom: `${borderWidth[1]} solid ${inputBorderColor}`,
       },
 
-      "&:before": {
+      '&:before': {
         borderColor: inputBorderColor,
       },
 
-      "&:after": {
+      '&:after': {
         borderColor: info.main,
       },
     },

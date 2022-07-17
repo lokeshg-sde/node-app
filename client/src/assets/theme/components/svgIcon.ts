@@ -1,13 +1,13 @@
-import { pxToRem } from "../functions"
+import { pxToRem } from '../functions'
 
 const svgIcon = {
   defaultProps: {
-    fontSize: "inherit",
+    fontSize: 'inherit',
   },
 
   styleOverrides: {
     fontSizeInherit: {
-      fontSize: "inherit !important",
+      fontSize: 'inherit !important',
     },
 
     fontSizeSmall: {

@@ -1,5 +1,5 @@
-import { colors, typography, borders, boxShadows } from "../../base"
-import { pxToRem } from "../../functions"
+import { colors, typography, borders, boxShadows } from '../../base'
+import { pxToRem } from '../../functions'
 
 const { lg } = boxShadows
 const { size } = typography
@@ -13,13 +13,13 @@ const autocomplete = {
       padding: pxToRem(8),
       fontSize: size.sm,
       color: text.main,
-      textAlign: "left",
+      textAlign: 'left',
       backgroundColor: `${white.main} !important`,
       borderRadius: borderRadius.md,
     },
 
     paper: {
-      boxShadow: "none",
+      boxShadow: 'none',
       backgroundColor: transparent.main,
     },
 
@@ -28,9 +28,9 @@ const autocomplete = {
       borderRadius: borderRadius.md,
       fontSize: size.sm,
       color: text.main,
-      transition: "background-color 300ms ease, color 300ms ease",
+      transition: 'background-color 300ms ease, color 300ms ease',
 
-      "&:hover, &:focus, &.Mui-selected, &.Mui-selected:hover, &.Mui-selected:focus": {
+      '&:hover, &:focus, &.Mui-selected, &.Mui-selected:hover, &.Mui-selected:focus': {
         backgroundColor: light.main,
         color: dark.main,
       },
@@ -56,19 +56,19 @@ const autocomplete = {
     },
 
     tag: {
-      display: "flex",
-      alignItems: "center",
-      height: "auto",
+      display: 'flex',
+      alignItems: 'center',
+      height: 'auto',
       padding: pxToRem(4),
       backgroundColor: gradients.dark.state,
       color: white.main,
 
-      "& .MuiChip-label": {
+      '& .MuiChip-label': {
         lineHeight: 1.2,
         padding: `0 ${pxToRem(10)} 0 ${pxToRem(4)}`,
       },
 
-      "& .MuiSvgIcon-root, & .MuiSvgIcon-root:hover, & .MuiSvgIcon-root:focus": {
+      '& .MuiSvgIcon-root, & .MuiSvgIcon-root:hover, & .MuiSvgIcon-root:focus': {
         color: white.main,
         marginRight: 0,
       },

@@ -1,5 +1,5 @@
-import { colors } from "../base/colors"
-import { rgba, pxToRem } from "../functions"
+import { colors } from '../base/colors'
+import { rgba, pxToRem } from '../functions'
 
 const { dark, transparent, white } = colors
 
@@ -13,7 +13,7 @@ const divider = {
       )}, ${rgba(dark.main, 0)}) !important`,
       height: pxToRem(1),
       margin: `${pxToRem(16)} 0`,
-      borderBottom: "none",
+      borderBottom: 'none',
       opacity: 0.25,
     },
 
@@ -24,9 +24,9 @@ const divider = {
         0.4
       )}, ${rgba(dark.main, 0)}) !important`,
       width: pxToRem(1),
-      height: "100%",
+      height: '100%',
       margin: `0 ${pxToRem(16)}`,
-      borderRight: "none",
+      borderRight: 'none',
     },
 
     light: {
@@ -36,7 +36,7 @@ const divider = {
         0
       )}) !important`,
 
-      "&.MuiDivider-vertical": {
+      '&.MuiDivider-vertical': {
         backgroundImage: `linear-gradient(to bottom, ${rgba(white.main, 0)}, ${white.main}, ${rgba(
           white.main,
           0

@@ -1,5 +1,5 @@
-import { ACTION_TYPES } from "../constants"
-import type { GlobalConfigState, Action } from "../types"
+import { ACTION_TYPES } from '../constants'
+import type { GlobalConfigState, Action } from '../types'
 
 export function MaterialUIThemeReducer(
   state: GlobalConfigState,

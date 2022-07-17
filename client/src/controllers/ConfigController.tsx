@@ -1,11 +1,11 @@
-import React from "react"
-import { ThemeProvider, StyledEngineProvider as StylesProvider } from "@mui/material/styles"
-import { ThemeProvider as StyledThemeProvider } from "styled-components"
-import { QueryClientProvider, QueryClient } from "react-query"
+import React from 'react'
+import { ThemeProvider, StyledEngineProvider as StylesProvider } from '@mui/material/styles'
+import { ThemeProvider as StyledThemeProvider } from 'styled-components'
+import { QueryClientProvider, QueryClient } from 'react-query'
 
-import { GlobalContext } from "../context"
-import { lightTheme } from "../assets/theme"
-import { useGlobalConfig } from "../hooks/useGlobalConfig"
+import { GlobalContext } from '../context'
+import { lightTheme } from '../assets/theme'
+import { useGlobalConfig } from '../hooks/useGlobalConfig'
 
 type Props = { children: JSX.Element | JSX.Element[] }
 
@@ -30,7 +30,7 @@ export default function ConfigController({ children }: Props) {
       <StylesProvider injectFirst>
         <ThemeProvider theme={theme}>
           <StyledThemeProvider theme={theme}>
-            <QueryClientProvider client={queryClient}> {children} </QueryClientProvider>{" "}
+            <QueryClientProvider client={queryClient}> {children} </QueryClientProvider>{' '}
           </StyledThemeProvider>
         </ThemeProvider>
       </StylesProvider>

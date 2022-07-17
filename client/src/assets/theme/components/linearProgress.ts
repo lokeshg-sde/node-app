@@ -1,5 +1,5 @@
-import { borders, colors } from "../base"
-import { pxToRem } from "../functions"
+import { borders, colors } from '../base'
+import { pxToRem } from '../functions'
 
 const { borderRadius } = borders
 const { light } = colors
@@ -9,8 +9,8 @@ const linearProgress = {
     root: {
       height: pxToRem(6),
       borderRadius: borderRadius.md,
-      overflow: "visible",
-      position: "relative",
+      overflow: 'visible',
+      position: 'relative',
     },
 
     colorPrimary: {
@@ -24,9 +24,9 @@ const linearProgress = {
     bar: {
       height: pxToRem(6),
       borderRadius: borderRadius.sm,
-      position: "absolute",
+      position: 'absolute',
       transform: `translate(0, 0) !important`,
-      transition: "width 0.6s ease !important",
+      transition: 'width 0.6s ease !important',
     },
   },
 }

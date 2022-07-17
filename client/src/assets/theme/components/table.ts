@@ -1,5 +1,5 @@
-import { colors, borders, boxShadows } from "../base"
-import { pxToRem } from "../functions"
+import { colors, borders, boxShadows } from '../base'
+import { pxToRem } from '../functions'
 
 const { borderWidth, borderRadius } = borders
 const { light, white } = colors
@@ -27,7 +27,7 @@ export const tableContainer = {
 export const tableHead = {
   styleOverrides: {
     root: {
-      display: "block",
+      display: 'block',
       padding: `${pxToRem(16)} ${pxToRem(16)} 0  ${pxToRem(16)}`,
       borderRadius: `${borderRadius.xl} ${borderRadius.xl} 0 0`,
     },

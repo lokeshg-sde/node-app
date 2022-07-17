@@ -1,11 +1,11 @@
-import { colors } from "../base"
+import { colors } from '../base'
 
 const { transparent } = colors
 
 const iconButton = {
   styleOverrides: {
     root: {
-      "&:hover": {
+      '&:hover': {
         backgroundColor: transparent.main,
       },
     },

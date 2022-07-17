@@ -1,7 +1,7 @@
-import Fade from "@mui/material/Fade"
+import Fade from '@mui/material/Fade'
 
-import { colors, typography, borders } from "../base"
-import { pxToRem } from "../functions"
+import { colors, typography, borders } from '../base'
+import { pxToRem } from '../functions'
 
 const { black, light } = colors
 const { size, fontWeightRegular } = typography
@@ -20,7 +20,7 @@ const tooltip = {
       color: light.main,
       fontSize: size.sm,
       fontWeight: fontWeightRegular,
-      textAlign: "center",
+      textAlign: 'center',
       borderRadius: borderRadius.md,
       opacity: 0.7,
       padding: `${pxToRem(5)} ${pxToRem(8)} ${pxToRem(4)}`,

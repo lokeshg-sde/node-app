@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./src",
+    "baseUrl": "server",
+    "paths": {
+      "*": ["server/*"]
+    },
     "declaration": false,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
@@ -17,6 +20,6 @@
     "target": "es5",
     "typeRoots": ["node_modules/@types", "custom-types"]
   },
-  "exclude": ["node_modules", "build", "index.ts"],
+  "exclude": ["node_modules", "build", "client"],
   "compileOnSave": false
 }

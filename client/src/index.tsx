@@ -1,9 +1,9 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import { BrowserRouter } from "react-router-dom"
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
 
-import App from "./App"
-import ConfigProvider from "./controllers/ConfigController"
+import App from './App'
+import ConfigProvider from './controllers/ConfigController'
 
 ReactDOM.render(
   <BrowserRouter>
@@ -11,5 +11,5 @@ ReactDOM.render(
       <App />
     </ConfigProvider>
   </BrowserRouter>,
-  document.getElementById("root")
+  document.getElementById('root')
 )

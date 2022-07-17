@@ -1,21 +1,21 @@
-import React, { useState } from "react"
-import { makeStyles } from "@material-ui/core"
-import TextField from "@material-ui/core/TextField"
-import Button from "@material-ui/core/Button"
+import React, { useState } from 'react'
+import { makeStyles } from '@material-ui/core'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: theme.spacing(2),
 
-    "& .MuiTextField-root": {
+    '& .MuiTextField-root': {
       margin: theme.spacing(1),
-      width: "300px",
+      width: '300px',
     },
-    "& .MuiButtonBase-root": {
+    '& .MuiButtonBase-root': {
       margin: theme.spacing(2),
     },
   },
@@ -28,10 +28,10 @@ type Props = {
 const Form = ({ handleClose }: Props) => {
   const classes = useStyles()
   // create state variables for each input
-  const [firstName, setFirstName] = useState("")
-  const [lastName, setLastName] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault()

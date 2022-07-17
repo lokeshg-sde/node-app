@@ -1,9 +1,9 @@
-import React from "react"
+import React from 'react'
 
-import { StyledBox } from ".."
+import { StyledBox } from '..'
 
 type Props = {
-  background?: "white" | "light" | "default"
+  background?: 'white' | 'light' | 'default'
   children?: JSX.Element | JSX.Element[]
 }
 
@@ -13,8 +13,7 @@ export const PageLayout = ({ background, children }: Props) => (
     height="100%"
     minHeight="100vh"
     bgColor={background}
-    sx={{ overflowX: "hidden" }}
-  >
+    sx={{ overflowX: 'hidden' }}>
     {children}
   </StyledBox>
 )

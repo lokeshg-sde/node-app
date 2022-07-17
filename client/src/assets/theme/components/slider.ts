@@ -1,5 +1,5 @@
-import { borders, boxShadows, colors } from "../base"
-import { pxToRem, boxShadow } from "../functions"
+import { borders, boxShadows, colors } from '../base'
+import { pxToRem, boxShadow } from '../functions'
 
 const { grey, white, black, info } = colors
 const { borderRadius, borderWidth } = borders
@@ -8,13 +8,13 @@ const { sliderBoxShadow } = boxShadows
 const slider = {
   styleOverrides: {
     root: {
-      width: "100%",
+      width: '100%',
 
-      "& .MuiSlider-active, & .Mui-focusVisible": {
-        boxShadow: "none !important",
+      '& .MuiSlider-active, & .Mui-focusVisible': {
+        boxShadow: 'none !important',
       },
 
-      "& .MuiSlider-valueLabel": {
+      '& .MuiSlider-valueLabel': {
         color: black.main,
       },
     },
@@ -29,8 +29,8 @@ const slider = {
     track: {
       background: info.main,
       height: pxToRem(2),
-      position: "relative",
-      border: "none",
+      position: 'relative',
+      border: 'none',
       borderRadius: borderRadius.lg,
       zIndex: 1,
     },
@@ -42,17 +42,17 @@ const slider = {
       zIndex: 10,
       boxShadow: sliderBoxShadow.thumb,
       border: `${borderWidth[1]} solid ${info.main}`,
-      transition: "all 200ms linear",
+      transition: 'all 200ms linear',
 
-      "&:hover": {
-        boxShadow: "none",
+      '&:hover': {
+        boxShadow: 'none',
       },
 
-      "&:active": {
-        transform: "translate(-50%, -50%) scale(1.4)",
+      '&:active': {
+        transform: 'translate(-50%, -50%) scale(1.4)',
       },
 
-      "&.Mui-active": { boxShadow: boxShadow([0, 0], [0, 14], info.main, 0.16) },
+      '&.Mui-active': { boxShadow: boxShadow([0, 0], [0, 14], info.main, 0.16) },
     },
   },
 }

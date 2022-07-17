@@ -1,6 +1,6 @@
-import { forwardRef } from "react"
+import { forwardRef } from 'react'
 
-import InputRoot from "./Input"
+import InputRoot from './Input'
 
 type Props = {
   error: boolean

@@ -1,7 +1,7 @@
-import { createContext } from "react"
+import { createContext } from 'react'
 
-import { INITIAL_STATE } from "../constants"
-import type { GlobalContextType } from "../types"
+import { INITIAL_STATE } from '../constants'
+import type { GlobalContextType } from '../types'
 
 const emptyFunction = (): void => {}
 
@@ -14,5 +14,5 @@ export const GlobalContext = createContext<GlobalContextType>({
   enableOrDisableTransSideNav: emptyFunction,
   enableOrDisableWhiteSideNav: emptyFunction,
   openOrCloseConfigurator: emptyFunction,
-  setSideNavColor: (value: "info" | "error") => {},
+  setSideNavColor: (value: 'info' | 'error') => {},
 })

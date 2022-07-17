@@ -1,10 +1,10 @@
-import React from "react"
-import { forwardRef } from "react"
-import type { BoxProps } from "@mui/material"
-import BoxRoot from "./Box"
+import React from 'react'
+import { forwardRef } from 'react'
+import type { BoxProps } from '@mui/material'
+import BoxRoot from './Box'
 
 type Props = Partial<{
-  variant: "contained" | "gradient"
+  variant: 'contained' | 'gradient'
   bgColor: string
   color: string
   children?: JSX.Element | JSX.Element[]
@@ -12,15 +12,15 @@ type Props = Partial<{
   borderRadius: string
   shadow: string
   coloredShadow:
-    | "primary"
-    | "secondary"
-    | "info"
-    | "success"
-    | "warning"
-    | "error"
-    | "light"
-    | "dark"
-    | "none"
+    | 'primary'
+    | 'secondary'
+    | 'info'
+    | 'success'
+    | 'warning'
+    | 'error'
+    | 'light'
+    | 'dark'
+    | 'none'
 }>
 
 const StyledBox = forwardRef(
@@ -41,14 +41,13 @@ const StyledBox = forwardRef(
     <BoxRoot
       {...rest}
       ref={ref}
-      variant={variant || "contained"}
-      bgColor={bgColor || "transparent"}
-      color={color || "dark"}
+      variant={variant || 'contained'}
+      bgColor={bgColor || 'transparent'}
+      color={color || 'dark'}
       opacity={opacity || 1}
-      borderRadius={borderRadius || "none"}
-      shadow={shadow || "none"}
-      coloredShadow={coloredShadow || "none"}
-    >
+      borderRadius={borderRadius || 'none'}
+      shadow={shadow || 'none'}
+      coloredShadow={coloredShadow || 'none'}>
       {children}
     </BoxRoot>
   )

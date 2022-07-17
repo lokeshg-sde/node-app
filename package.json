@@ -8,9 +8,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint": "eslint src/**/*.ts --ext .ts",
-    "eslint:fix": "eslint src/**/*.ts --fix",
-    "prettier:fix": "prettier --config .prettierrc src/**/*.ts --write",
+    "eslint": "eslint server/**/*.ts --ext .ts",
+    "eslint:fix": "eslint server/**/*.ts --fix",
+    "prettier:fix": "prettier --config .prettierrc server/**/*.ts --write",
     "start": "nodemon server/index.ts",
     "start:server": "nodemon --ignore client server/index.ts",
     "postinstall": "cd client && yarn install",

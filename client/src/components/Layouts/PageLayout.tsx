@@ -9,11 +9,11 @@ type Props = {
 
 export const PageLayout = ({ background, children }: Props) => (
   <StyledBox
-    width="100vw"
+    bgColor={background}
     height="100%"
     minHeight="100vh"
-    bgColor={background}
-    sx={{ overflowX: 'hidden' }}>
+    sx={{ overflowX: 'hidden' }}
+    width="100vw">
     {children}
   </StyledBox>
 )

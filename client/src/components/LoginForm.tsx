@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/anchor-has-content */
-import React, { ReactChild, ReactFragment, ReactPortal, useState, useRef } from 'react'
+import type { ReactChild, ReactFragment, ReactPortal} from 'react';
+import React, { useState, useRef } from 'react'
 import { Facebook, Twitter } from '@material-ui/icons'
 import LOGO from './Logo'
 
@@ -52,14 +53,14 @@ const Form = (props: any) => {
       method="post"
       onSubmit={handleFormSubmit}>
       <FormInput
-        name="username"
         description="Username"
+        name="username"
         placeholder="Enter your username"
         type="text"
       />
       <FormInput
-        name="password"
         description="Password"
+        name="password"
         placeholder="Enter your password"
         type="password"
       />
@@ -71,7 +72,7 @@ const Form = (props: any) => {
 const FormButton = (props: {
   title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined
 }) => (
-  <div id="button" className="row">
+  <div className="row" id="button">
     <button type="submit">{props.title}</button>
   </div>
 )
@@ -84,7 +85,7 @@ const FormInput = (props: {
 }) => (
   <div className="row">
     <label>{props.description}</label>
-    <input name={props.name} type={props.type} placeholder={props.placeholder} />
+    <input name={props.name} placeholder={props.placeholder} type={props.type} />
   </div>
 )
 

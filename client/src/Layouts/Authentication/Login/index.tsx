@@ -1,5 +1,5 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
+
 import { Link } from 'react-router-dom'
 
 import { Card, Grid, Link as MuiLink, Switch } from '@mui/material'
@@ -55,95 +55,95 @@ function Basic() {
       {/* @ts-expect-error auto-src fix these on forwarding */}
       <Card>
         <StyledBox
-          variant="gradient"
           bgColor="info"
           borderRadius="lg"
           coloredShadow="info"
-          mx={2}
-          mt={-3}
-          p={2}
           mb={1}
-          textAlign="center">
+          mt={-3}
+          mx={2}
+          p={2}
+          textAlign="center"
+          variant="gradient">
           {/* @ts-expect-error auto-src fix these on forwarding */}
-          <StyledTypography variant="h4" fontWeight="medium" color="white" mt={1}>
+          <StyledTypography color="white" fontWeight="medium" mt={1} variant="h4">
             Welcome
           </StyledTypography>
-          <Grid container spacing={3} justifyContent="center" sx={{ mt: 1, mb: 2 }}>
+          <Grid container justifyContent="center" spacing={3} sx={{ mt: 1, mb: 2 }}>
             <Grid item xs={2}>
               {/* @ts-expect-error auto-src fix these on forwarding */}
-              <StyledTypography component={MuiLink} href="#" variant="body1" color="white">
+              <StyledTypography color="white" component={MuiLink} href="#" variant="body1">
                 <FacebookIcon color="inherit" />
               </StyledTypography>
             </Grid>
             <Grid item xs={2}>
               {/* @ts-expect-error auto-src fix these on forwarding */}
-              <StyledTypography component={MuiLink} href="#" variant="body1" color="white">
+              <StyledTypography color="white" component={MuiLink} href="#" variant="body1">
                 <GitHubIcon color="inherit" />
               </StyledTypography>
             </Grid>
             <Grid item xs={2}>
               {/* @ts-expect-error auto-src fix these on forwarding */}
-              <StyledTypography component={MuiLink} href="#" variant="body1" color="white">
+              <StyledTypography color="white" component={MuiLink} href="#" variant="body1">
                 <GoogleIcon color="inherit" />
               </StyledTypography>
             </Grid>
           </Grid>
         </StyledBox>
-        <StyledBox pt={4} pb={3} px={3}>
+        <StyledBox pb={3} pt={4} px={3}>
           <StyledBox>
             {/* onSubmit={handleOnSubmit} */}
             <form>
               <StyledBox mb={2}>
                 <StyledInput
                   // @ts-expect-error
-                  onChange={handleOnChange}
-                  name="email"
-                  type="email"
-                  label="Email"
                   fullWidth
+                  label="Email"
+                  name="email"
+                  onChange={handleOnChange}
+                  type="email"
                 />
               </StyledBox>
               <StyledBox mb={2}>
                 <StyledInput
                   // @ts-expect-error
-                  onChange={handleOnChange}
-                  name="password"
-                  type="password"
-                  label="Password"
                   fullWidth
+                  label="Password"
+                  name="password"
+                  onChange={handleOnChange}
+                  type="password"
                 />
               </StyledBox>
-              <StyledBox display="flex" alignItems="center" ml={-1}>
+              <StyledBox alignItems="center" display="flex" ml={-1}>
                 <Switch checked={rememberMe} onChange={handleSetRememberMe} />
                 <StyledTypography
                   // @ts-expect-error auto-src fix these on forwarding
-                  variant="button"
-                  fontWeight="regular"
                   color="text"
+                  fontWeight="regular"
                   onClick={handleSetRememberMe}
-                  sx={{ cursor: 'pointer', userSelect: 'none', ml: -1 }}>
+                  sx={{ cursor: 'pointer', userSelect: 'none', ml: -1 }}
+                  variant="button">
                   &nbsp;&nbsp;Remember me
                 </StyledTypography>
               </StyledBox>
-              <StyledBox mt={4} mb={1}>
+              <StyledBox mb={1} mt={4}>
                 {/* @ts-expect-error auto-src fix these on forwarding */}
-                <StyledButton variant="gradient" color="info" onClick={handleOnSubmit} fullWidth>
+                <StyledButton color="info" fullWidth onClick={handleOnSubmit} variant="gradient">
                   sign in
                 </StyledButton>
               </StyledBox>
             </form>
-            <StyledBox mt={3} mb={1} textAlign="center">
+            <StyledBox mb={1} mt={3} textAlign="center">
               {/* @ts-expect-error auto-src fix these on forwarding */}
-              <StyledTypography variant="button" color="text">
+              <StyledTypography color="text" variant="button">
                 Don&apos;t have an account?{' '}
                 <StyledTypography
                   // @ts-expect-error auto-src fix these on forwarding
-                  component={Link}
-                  to="users/register"
-                  variant="button"
                   color="info"
+                  component={Link}
                   fontWeight="medium"
-                  textGradient>
+                  textGradient
+                  to="users/register"
+                  variant="button">
                   Sign up
                 </StyledTypography>
               </StyledTypography>

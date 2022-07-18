@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box'
-import { styled, ThemeOptions } from '@mui/material/styles'
+import type { ThemeOptions } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import type { BoxProps } from '@mui/material'
 
 type Props = {

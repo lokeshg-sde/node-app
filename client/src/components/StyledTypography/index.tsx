@@ -15,8 +15,7 @@ const StyledTypography = forwardRef(
       ...rest
     }: Props,
     ref
-  ) => {
-    return (
+  ) => (
       // @ts-expect-error auto-src fix these on forwarding
       <TypoGraphy
         {...rest}
@@ -34,7 +33,6 @@ const StyledTypography = forwardRef(
         {children}
       </TypoGraphy>
     )
-  }
 )
 
 type Props = {

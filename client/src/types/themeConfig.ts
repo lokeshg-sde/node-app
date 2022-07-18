@@ -1,4 +1,4 @@
-import { INITIAL_STATE, ACTION_TYPES } from '../constants'
+import type { INITIAL_STATE, ACTION_TYPES } from '../constants'
 
 export type GlobalConfigState = typeof INITIAL_STATE
 export type Action = { type: ACTION_TYPES; payload: Partial<GlobalConfigState> }

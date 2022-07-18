@@ -1,5 +1,5 @@
-import React from 'react'
-import { forwardRef } from 'react'
+import React, { forwardRef } from 'react'
+
 import type { BoxProps } from '@mui/material'
 import BoxRoot from './Box'
 
@@ -41,13 +41,13 @@ const StyledBox = forwardRef(
     <BoxRoot
       {...rest}
       ref={ref}
-      variant={variant || 'contained'}
       bgColor={bgColor || 'transparent'}
-      color={color || 'dark'}
-      opacity={opacity || 1}
       borderRadius={borderRadius || 'none'}
+      color={color || 'dark'}
+      coloredShadow={coloredShadow || 'none'}
+      opacity={opacity || 1}
       shadow={shadow || 'none'}
-      coloredShadow={coloredShadow || 'none'}>
+      variant={variant || 'contained'}>
       {children}
     </BoxRoot>
   )

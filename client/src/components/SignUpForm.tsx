@@ -43,39 +43,39 @@ const Form = ({ handleClose }: Props) => {
     <form className={classes.root} onSubmit={handleSubmit}>
       <TextField
         label="First Name"
-        variant="filled"
+        onChange={(e) => setFirstName(e.target.value)}
         required
         value={firstName}
-        onChange={(e) => setFirstName(e.target.value)}
+        variant="filled"
       />
       <TextField
         label="Last Name"
-        variant="filled"
+        onChange={(e) => setLastName(e.target.value)}
         required
         value={lastName}
-        onChange={(e) => setLastName(e.target.value)}
+        variant="filled"
       />
       <TextField
         label="Email"
-        variant="filled"
-        type="email"
-        required
-        value={email}
         onChange={(e) => setEmail(e.target.value)}
+        required
+        type="email"
+        value={email}
+        variant="filled"
       />
       <TextField
         label="Password"
-        variant="filled"
-        type="password"
-        required
-        value={password}
         onChange={(e) => setPassword(e.target.value)}
+        required
+        type="password"
+        value={password}
+        variant="filled"
       />
       <div>
-        <Button variant="contained" onClick={handleClose}>
+        <Button onClick={handleClose} variant="contained">
           Cancel
         </Button>
-        <Button type="submit" variant="contained" color="primary">
+        <Button color="primary" type="submit" variant="contained">
           Signup
         </Button>
       </div>

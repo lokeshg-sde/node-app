@@ -9,6 +9,7 @@
   "plugins": [
     "progress",
     "react",
+    "jasmine",
     "eslint-comments",
     "lodash",
     "react-hooks",
@@ -17,6 +18,7 @@
   "extends": [
     "airbnb",
     "prettier",
+    "plugin:jasmine/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:eslint-comments/recommended",
@@ -106,7 +108,7 @@
     "import/no-duplicates": 2,
     "import/no-named-as-default": 2,
 
-    // Typescript will error if we have an import cycle, eslint doesn"t need to do the same work.
+    // Typescript will error if we have an import cycle, eslint doesn't need to do the same work.
     "import/no-cycle": 0,
     "import/prefer-default-export": 0,
 

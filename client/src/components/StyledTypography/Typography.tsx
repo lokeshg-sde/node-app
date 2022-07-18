@@ -38,7 +38,9 @@ export default styled(Typography)(({ theme, ownerState }) => {
   // @ts-expect-error auto-src fix these on forwarding
   if (darkMode && (color === 'inherit' || !palette[color])) {
     colorValue = 'inherit'
-  } else if (darkMode && color === 'dark') {colorValue = white.main}
+  } else if (darkMode && color === 'dark') {
+    colorValue = white.main
+  }
 
   return {
     opacity,

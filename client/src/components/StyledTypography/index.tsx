@@ -16,23 +16,23 @@ const StyledTypography = forwardRef(
     }: Props,
     ref
   ) => (
+    // @ts-expect-error auto-src fix these on forwarding
+    <TypoGraphy
+      {...rest}
       // @ts-expect-error auto-src fix these on forwarding
-      <TypoGraphy
-        {...rest}
-        // @ts-expect-error auto-src fix these on forwarding
-        ref={ref}
-        ownerState={{
-          color,
-          textTransform,
-          verticalAlign,
-          fontWeight,
-          opacity,
-          textGradient,
-          darkMode: false,
-        }}>
-        {children}
-      </TypoGraphy>
-    )
+      ref={ref}
+      ownerState={{
+        color,
+        textTransform,
+        verticalAlign,
+        fontWeight,
+        opacity,
+        textGradient,
+        darkMode: false,
+      }}>
+      {children}
+    </TypoGraphy>
+  )
 )
 
 type Props = {

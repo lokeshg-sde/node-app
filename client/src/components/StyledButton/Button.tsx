@@ -57,6 +57,7 @@ export default styled(Button)(({ theme, ownerState }) => {
       colorValue = text.main
       // @ts-expect-error auto-src fix these on forwarding
     } else if (darkMode && (color === 'white' || color === 'light' || !palette[color])) {
+      // eslint-disable-next-line prefer-destructuring
       colorValue = grey[600]
     }
 

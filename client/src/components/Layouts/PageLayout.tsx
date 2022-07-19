@@ -7,7 +7,7 @@ type Props = {
   children?: JSX.Element | JSX.Element[]
 }
 
-export const PageLayout = ({ background, children }: Props) => (
+export const PageLayout = ({ background, children }: Props): JSX.Element => (
   <StyledBox
     bgColor={background}
     height="100%"

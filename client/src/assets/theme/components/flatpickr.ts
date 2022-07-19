@@ -20,6 +20,7 @@ const flatpickr = {
     },
   },
 
+  // eslint-disable-next-line max-len
   '.flatpickr-day.selected, .flatpickr-day.selected:hover, .flatpickr-day.nextMonthDay.selected, .flatpickr-day.nextMonthDay.selected:hover, .flatpickr-day.nextMonthDay.selected:focus':
     {
       background: `${gradients.info.state} !important`,

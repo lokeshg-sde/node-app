@@ -63,7 +63,7 @@
     "max-len": [2, 120, 4],
     "default-case": 2,
     "array-bracket-spacing": 1,
-    "no-duplicate-imports": [1, { "includeExports":false }],
+    "no-duplicate-imports": 0,
     "no-magic-numbers": [
       0,
       { "ignoreArrayIndexes": true, "ignore": [-1, 0, 0.5, 1, 2, 100, 450, 560, 1024, 1360] }
@@ -154,6 +154,7 @@
     "react/jsx-no-duplicate-props": [2, { "ignoreCase": false }],
     "jsx-a11y/control-has-associated-label": 0,
     "jsx-a11y/label-has-associated-control": [2, { "assert": "either" }],
+    "jsx-a11y/label-has-for": 0,
     "jsx-a11y/no-static-element-interactions": 0,
     "jsx-a11y/no-redundant-roles": 0,
     "jsx-a11y/no-autofocus": 0,

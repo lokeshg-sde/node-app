@@ -25,7 +25,7 @@ type Props = {
   handleClose: () => void
 }
 
-const Form = ({ handleClose }: Props) => {
+const Form = ({ handleClose }: Props): JSX.Element => {
   const classes = useStyles()
   // create state variables for each input
   const [firstName, setFirstName] = useState('')

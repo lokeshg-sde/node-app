@@ -4,3 +4,4 @@ build
 .env
 .env.test
 .d.ts
+src/react-app-env.d.ts

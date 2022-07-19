@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-
 import { Link } from 'react-router-dom'
-
 import { Card, Grid, Link as MuiLink, Switch } from '@mui/material'
 import {
   Facebook as FacebookIcon,
@@ -13,7 +11,7 @@ import { getApiConfig } from '../../../utils/getApiConfig'
 import { StyledBox, StyledTypography, StyledInput, StyledButton } from '../../../components'
 import { BasicLayout } from '../components/BasicLayout'
 
-function Basic() {
+function Basic(): JSX.Element {
   const [rememberMe, setRememberMe] = useState(false)
 
   const [values, setValues] = useState({})
@@ -26,7 +24,7 @@ function Basic() {
 
     setValues({
       ...values,
-      // @ts-expect-error
+      // @ts-expect-error FIXME
       [event.target.name]: event.target.value,
     })
   }
@@ -46,6 +44,7 @@ function Basic() {
     const response = await fetch(url, options)
     const result = await response.json()
 
+    // eslint-disable-next-line no-alert
     alert(JSON.stringify(result))
     console.log(result)
   }
@@ -95,7 +94,7 @@ function Basic() {
             <form>
               <StyledBox mb={2}>
                 <StyledInput
-                  // @ts-expect-error
+                  // @ts-expect-error FIXME
                   fullWidth
                   label="Email"
                   name="email"
@@ -105,7 +104,7 @@ function Basic() {
               </StyledBox>
               <StyledBox mb={2}>
                 <StyledInput
-                  // @ts-expect-error
+                  // @ts-expect-error FIXME
                   fullWidth
                   label="Password"
                   name="password"
@@ -116,9 +115,9 @@ function Basic() {
               <StyledBox alignItems="center" display="flex" ml={-1}>
                 <Switch checked={rememberMe} onChange={handleSetRememberMe} />
                 <StyledTypography
-                  // @ts-expect-error auto-src fix these on forwarding
                   color="text"
                   fontWeight="regular"
+                  // @ts-expect-error auto-src fix these on forwarding
                   onClick={handleSetRememberMe}
                   sx={{ cursor: 'pointer', userSelect: 'none', ml: -1 }}
                   variant="button">
@@ -137,8 +136,8 @@ function Basic() {
               <StyledTypography color="text" variant="button">
                 Don&apos;t have an account?{' '}
                 <StyledTypography
-                  // @ts-expect-error auto-src fix these on forwarding
                   color="info"
+                  // @ts-expect-error auto-src fix these on forwarding
                   component={Link}
                   fontWeight="medium"
                   textGradient

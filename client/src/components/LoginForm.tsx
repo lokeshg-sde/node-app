@@ -8,18 +8,6 @@ import LOGO from './Logo'
 
 import './login.css'
 
-export default class LoginForm extends React.Component {
-  render() {
-    return (
-      <div id="loginform">
-        <FormHeader title="Login" />
-        <Form />
-        <OtherMethods />
-      </div>
-    )
-  }
-}
-
 const FormHeader = (props: {
   title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined
 }) => (
@@ -28,7 +16,27 @@ const FormHeader = (props: {
   </h2>
 )
 
-const Form = (props: any) => {
+const FormButton = (props: {
+  title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined
+}) => (
+  <div className="row" id="button">
+    <button type="submit">{props.title}</button>
+  </div>
+)
+
+const FormInput = (props: {
+  description: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined
+  type: string | undefined
+  placeholder: string | undefined
+  name: string
+}) => (
+  <div className="row">
+    <label>{props.description}</label>
+    <input name={props.name} placeholder={props.placeholder} type={props.type} />
+  </div>
+)
+
+const Form = () => {
   // const [emailFieldValue, setEmailFieldValue] = useState(getDefaultUserName())
   // const [passwordFieldValue, setPasswordFieldValue] = useState('')
   const [isSubmitted, setSubmitted] = useState(false)
@@ -69,29 +77,11 @@ const Form = (props: any) => {
   )
 }
 
-const FormButton = (props: {
-  title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined
-}) => (
-  <div className="row" id="button">
-    <button type="submit">{props.title}</button>
-  </div>
-)
-
-const FormInput = (props: {
-  description: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined
-  type: string | undefined
-  placeholder: string | undefined
-  name: string
-}) => (
-  <div className="row">
-    <label>{props.description}</label>
-    <input name={props.name} placeholder={props.placeholder} type={props.type} />
-  </div>
-)
-
-const OtherMethods = (props: any) => (
+const OtherMethods = (): JSX.Element => (
   <div id="alternativeLogin">
-    <label>Or sign in with:</label>
+    <label className="none" htmlFor="name" id="name">
+      Or sign in with:
+    </label>
     <div id="iconGroup">
       <a href="#">
         <Facebook htmlColor="darkblue" />
@@ -103,3 +93,13 @@ const OtherMethods = (props: any) => (
     </div>
   </div>
 )
+
+export default function LoginForm(): JSX.Element {
+  return (
+    <div id="loginform">
+      <FormHeader title="Login" />
+      <Form />
+      <OtherMethods />
+    </div>
+  )
+}

@@ -3,9 +3,9 @@ import type { Reducer } from 'react'
 
 import { INITIAL_STATE, ACTION_TYPES } from '../constants'
 import { MaterialUIThemeReducer } from '../context'
-import type { GlobalConfigState, Action } from '../types'
+import type { GlobalConfigState, Action, GlobalContextType } from '../types'
 
-export function useGlobalConfig() {
+export function useGlobalConfig(): GlobalContextType {
   const [state, dispatch] = useReducer<Reducer<GlobalConfigState, Action>>(
     MaterialUIThemeReducer,
     INITIAL_STATE

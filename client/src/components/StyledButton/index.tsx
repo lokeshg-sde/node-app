@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import React, { forwardRef } from 'react'
 
 import StyledButtonRoot from './Button'
 
@@ -17,12 +17,12 @@ type Props = {
     | 'dark'
   circular: boolean
   iconOnly: boolean
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   children?: any
 }
 
 const StyledButton = forwardRef(
   ({ color, variant, size, circular, iconOnly, children, ...rest }: Props, ref) => (
-    // @ts-expect-error auto-src fix these on forwarding
     <StyledButtonRoot
       {...rest}
       // @ts-expect-error auto-src fix these on forwarding

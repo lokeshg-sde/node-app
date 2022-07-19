@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import React, { forwardRef } from 'react'
 
 import TypoGraphy from './Typography'
 
@@ -16,7 +16,6 @@ const StyledTypography = forwardRef(
     }: Props,
     ref
   ) => (
-    // @ts-expect-error auto-src fix these on forwarding
     <TypoGraphy
       {...rest}
       // @ts-expect-error auto-src fix these on forwarding
@@ -61,6 +60,7 @@ type Props = {
     | 'top'
     | 'bottom'
   textGradient: boolean
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   children?: any
   opacity: number
 }

@@ -16,6 +16,7 @@ export const BasicLayout = ({ image, children }: Props): JSX.Element => (
       minHeight="100vh"
       position="absolute"
       sx={{
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }: any) =>
           `${linearGradient(
             rgba(gradients.dark.main, 0.6),

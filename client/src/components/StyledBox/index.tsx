@@ -47,7 +47,8 @@ const StyledBox = forwardRef(
       coloredShadow={coloredShadow || 'none'}
       opacity={opacity || 1}
       shadow={shadow || 'none'}
-      variant={variant || 'contained'}>
+      variant={variant || 'contained'}
+    >
       {children}
     </BoxRoot>
   )

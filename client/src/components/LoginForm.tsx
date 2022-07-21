@@ -59,7 +59,8 @@ const Form = () => {
       action="http://localhost:3000/users/login"
       autoComplete="off"
       method="post"
-      onSubmit={handleFormSubmit}>
+      onSubmit={handleFormSubmit}
+    >
       <FormInput
         description="Username"
         name="username"

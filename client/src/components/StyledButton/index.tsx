@@ -30,7 +30,8 @@ const StyledButton = forwardRef(
       color="primary"
       ownerState={{ color, variant, size, circular, iconOnly, darkMode: false }}
       size={size}
-      variant={variant === 'gradient' ? 'contained' : variant}>
+      variant={variant === 'gradient' ? 'contained' : variant}
+    >
       {children}
     </StyledButtonRoot>
   )

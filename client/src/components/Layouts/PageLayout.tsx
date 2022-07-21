@@ -13,7 +13,8 @@ export const PageLayout = ({ background, children }: Props): JSX.Element => (
     height="100%"
     minHeight="100vh"
     sx={{ overflowX: 'hidden' }}
-    width="100vw">
+    width="100vw"
+  >
     {children}
   </StyledBox>
 )

@@ -19,7 +19,8 @@ export function SignUp(): JSX.Element {
           mx={2}
           p={3}
           textAlign="center"
-          variant="gradient">
+          variant="gradient"
+        >
           {/* @ts-expect-error FIXME */}
           <StyledTypography color="white" fontWeight="medium" mt={1} variant="h4">
             Join us today
@@ -50,7 +51,8 @@ export function SignUp(): JSX.Element {
                 fontWeight="regular"
                 //   @ts-expect-error FIXME
                 sx={{ cursor: 'pointer', userSelect: 'none', ml: -1 }}
-                variant="button">
+                variant="button"
+              >
                 &nbsp;&nbsp;I agree the&nbsp;
               </StyledTypography>
               <StyledTypography
@@ -60,7 +62,8 @@ export function SignUp(): JSX.Element {
                 fontWeight="bold"
                 href="#"
                 textGradient
-                variant="button">
+                variant="button"
+              >
                 Terms and Conditions
               </StyledTypography>
             </StyledBox>
@@ -81,7 +84,8 @@ export function SignUp(): JSX.Element {
                   fontWeight="medium"
                   textGradient
                   to="users/login"
-                  variant="button">
+                  variant="button"
+                >
                   Sign In
                 </StyledTypography>
               </StyledTypography>

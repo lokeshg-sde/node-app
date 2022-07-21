@@ -62,7 +62,8 @@ function Basic(): JSX.Element {
           mx={2}
           p={2}
           textAlign="center"
-          variant="gradient">
+          variant="gradient"
+        >
           {/* @ts-expect-error auto-src fix these on forwarding */}
           <StyledTypography color="white" fontWeight="medium" mt={1} variant="h4">
             Welcome
@@ -120,7 +121,8 @@ function Basic(): JSX.Element {
                   // @ts-expect-error auto-src fix these on forwarding
                   onClick={handleSetRememberMe}
                   sx={{ cursor: 'pointer', userSelect: 'none', ml: -1 }}
-                  variant="button">
+                  variant="button"
+                >
                   &nbsp;&nbsp;Remember me
                 </StyledTypography>
               </StyledBox>
@@ -142,7 +144,8 @@ function Basic(): JSX.Element {
                   fontWeight="medium"
                   textGradient
                   to="users/register"
-                  variant="button">
+                  variant="button"
+                >
                   Sign up
                 </StyledTypography>
               </StyledTypography>

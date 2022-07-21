@@ -28,7 +28,8 @@ const StyledTypography = forwardRef(
         opacity,
         textGradient,
         darkMode: false,
-      }}>
+      }}
+    >
       {children}
     </TypoGraphy>
   )

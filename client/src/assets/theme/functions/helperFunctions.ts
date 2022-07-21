@@ -13,7 +13,7 @@ export function rgba(color: string, opacity: number): string {
   return `rgba(${hexToRgb(color)}, ${opacity})`
 }
 
-// FIX Me and remove eslint 
+// FIX Me and remove eslint
 export function boxShadow(
   offset: number[] = [],
   radius: number[] = [],

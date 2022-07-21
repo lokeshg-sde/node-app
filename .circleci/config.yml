@@ -18,7 +18,7 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          name: 'Build Server And Web App Package' To Serve from Express Server
+          name: Build Server And Web App Package To Serve from Express Server
           command: yarn prestart
 
   js-linters:

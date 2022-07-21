@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box'
-import { styled, ThemeOptions } from '@mui/material/styles'
+import type { ThemeOptions } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 import type { BoxProps } from '@mui/material'
 
 type Props = {
@@ -31,7 +32,8 @@ export default styled(Box)<Props & BoxProps>(
     shadow,
     coloredShadow,
     theme,
-  }: Props & { theme: any }) => {
+  }: // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  Props & { theme: any }) => {
     // @ts-expect-error auto-src fix these on forwarding
     const { palette, functions, borders, boxShadows } = theme as ThemeOptions
 

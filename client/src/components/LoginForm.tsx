@@ -1,23 +1,12 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/anchor-has-content */
-import React, { ReactChild, ReactFragment, ReactPortal, useState, useRef } from 'react'
+import type { ReactChild, ReactFragment, ReactPortal } from 'react'
+import React, { useState, useRef } from 'react'
 import { Facebook, Twitter } from '@material-ui/icons'
 import LOGO from './Logo'
 
 import './login.css'
-
-export default class LoginForm extends React.Component {
-  render() {
-    return (
-      <div id="loginform">
-        <FormHeader title="Login" />
-        <Form />
-        <OtherMethods />
-      </div>
-    )
-  }
-}
 
 const FormHeader = (props: {
   title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined
@@ -27,7 +16,27 @@ const FormHeader = (props: {
   </h2>
 )
 
-const Form = (props: any) => {
+const FormButton = (props: {
+  title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined
+}) => (
+  <div className="row" id="button">
+    <button type="submit">{props.title}</button>
+  </div>
+)
+
+const FormInput = (props: {
+  description: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined
+  type: string | undefined
+  placeholder: string | undefined
+  name: string
+}) => (
+  <div className="row">
+    <label>{props.description}</label>
+    <input name={props.name} placeholder={props.placeholder} type={props.type} />
+  </div>
+)
+
+const Form = () => {
   // const [emailFieldValue, setEmailFieldValue] = useState(getDefaultUserName())
   // const [passwordFieldValue, setPasswordFieldValue] = useState('')
   const [isSubmitted, setSubmitted] = useState(false)
@@ -47,19 +56,20 @@ const Form = (props: any) => {
   return (
     <form
       ref={formRef}
-      action={'http://localhost:3000/users/login'}
+      action="http://localhost:3000/users/login"
       autoComplete="off"
       method="post"
-      onSubmit={handleFormSubmit}>
+      onSubmit={handleFormSubmit}
+    >
       <FormInput
-        name="username"
         description="Username"
+        name="username"
         placeholder="Enter your username"
         type="text"
       />
       <FormInput
-        name="password"
         description="Password"
+        name="password"
         placeholder="Enter your password"
         type="password"
       />
@@ -68,29 +78,11 @@ const Form = (props: any) => {
   )
 }
 
-const FormButton = (props: {
-  title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined
-}) => (
-  <div id="button" className="row">
-    <button type="submit">{props.title}</button>
-  </div>
-)
-
-const FormInput = (props: {
-  description: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined
-  type: string | undefined
-  placeholder: string | undefined
-  name: string
-}) => (
-  <div className="row">
-    <label>{props.description}</label>
-    <input name={props.name} type={props.type} placeholder={props.placeholder} />
-  </div>
-)
-
-const OtherMethods = (props: any) => (
+const OtherMethods = (): JSX.Element => (
   <div id="alternativeLogin">
-    <label>Or sign in with:</label>
+    <label className="none" htmlFor="name" id="name">
+      Or sign in with:
+    </label>
     <div id="iconGroup">
       <a href="#">
         <Facebook htmlColor="darkblue" />
@@ -102,3 +94,13 @@ const OtherMethods = (props: any) => (
     </div>
   </div>
 )
+
+export default function LoginForm(): JSX.Element {
+  return (
+    <div id="loginform">
+      <FormHeader title="Login" />
+      <Form />
+      <OtherMethods />
+    </div>
+  )
+}

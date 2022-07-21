@@ -18,8 +18,8 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          name: 'Build Server And Web App Package'
-          command: cd client && yarn build
+          name: Build Server And Web App Package To Serve from Express Server
+          command: yarn prestart
 
   js-linters:
     docker:
@@ -29,12 +29,13 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          name: Run Prettier
+          name: Run Prettier On ExpressJS Code Base
           command: yarn prettier:fix
       - run:
-          name: Run Eslint
+          name: Run Eslint  On ExpressJS Code Base
           command: yarn eslint
-  test-web-app:
+
+  react-tests:
     docker:
       - image: cimg/node:14.17.6
     steps:
@@ -42,14 +43,41 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          name: JS Tests
+          name: Run Tests On React Code Base
           command: cd client && yarn test
+
+  react-linters:
+    docker:
+      - image: cimg/node:14.17.6
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Run Prettier On React Code Base
+          command: yarn prettier:fix:react
+      - run:
+          name: Run Eslint On React Code Base
+          command: yarn eslint:react
+
+  js-tests:
+    docker:
+      - image: cimg/node:14.17.6
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: NodeJS Tests
+          command: yarn test
 
 workflows:
   # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
   express-js-app:
     jobs:
-      - build
       # For running simple node tests, you could optionally use the node/test job from the orb to replicate and replace the job above in fewer lines.
       - js-linters
-      - test-web-app
+      - js-tests
+      - react-linters
+      - react-tests
+      - build

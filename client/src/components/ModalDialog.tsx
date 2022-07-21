@@ -2,12 +2,19 @@ import React, { useRef } from 'react'
 import Dialog from '@material-ui/core/Dialog'
 import Form from './SignUpForm'
 
-const ModalDialog = ({ open, handleClose }: any) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ModalDialog = ({
+  open,
+  handleClose,
+}: {
+  open: boolean
+  handleClose: () => void
+}): JSX.Element => {
   const ref = useRef()
 
   return (
     // props received from App.js
-    <Dialog ref={ref} open={open} onClose={handleClose}>
+    <Dialog ref={ref} onClose={handleClose} open={open}>
       <Form handleClose={handleClose} />
     </Dialog>
   )

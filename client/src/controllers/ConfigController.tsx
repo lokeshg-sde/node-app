@@ -21,7 +21,7 @@ const queryClient = new QueryClient({
   },
 })
 
-export default function ConfigController({ children }: Props) {
+export default function ConfigController({ children }: Props): JSX.Element {
   const theme = lightTheme
   const context = useGlobalConfig()
 

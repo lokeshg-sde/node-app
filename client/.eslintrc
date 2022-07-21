@@ -1,14 +1,32 @@
 {
   "env": {
-    "es6": true,
     "browser": true,
     "es2021": true
   },
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "prettier"],
-  "extends": ["airbnb-base", "prettier"],
+  "plugins": [
+    "progress",
+    "react",
+    "jasmine",
+    "eslint-comments",
+    "lodash",
+    "react-hooks",
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "airbnb",
+    "plugin:jasmine/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:eslint-comments/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
   "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
@@ -17,7 +35,7 @@
       "node": {
         "extensions": [".ts", ".tsx"]
       },
-      "modules": ["./src", "./node_modules"]
+      "modules": ["./src/*", "./node_modules"]
     }
   },
   "rules": {
@@ -43,13 +61,13 @@
     "no-console": 0,
     "camelcase": 1,
     "curly": [2, "all"],
-    "id-length": [2, { "exceptions": ["i", "j", "x", "y", "z", "_", "a", "b", "t"] }],
+    "id-length": [2, { "exceptions": ["i", "j", "x", "y", "z", "_", "a", "b", "t", "e"] }],
     "max-len": [2, 120, 4],
     "default-case": 2,
     "array-bracket-spacing": 1,
-    "no-duplicate-imports": 1,
+    "no-duplicate-imports": 0,
     "no-magic-numbers": [
-      2,
+      0,
       { "ignoreArrayIndexes": true, "ignore": [-1, 0, 0.5, 1, 2, 100, 450, 560, 1024, 1360] }
     ],
     "spaced-comment": [2, "always", { "exceptions": ["::"] }],
@@ -83,7 +101,11 @@
     "no-nested-ternary": 2,
 
     // Import
-    "import/extensions": [2, "always", { "ts": "never" }],
+    "import/extensions": [
+      2,
+      "always",
+      { "ts": "never", "tsx": "never", "js": "never", "jsx": "never" }
+    ],
     "import/no-unresolved": 2,
     "import/no-duplicates": 2,
     "import/no-named-as-default": 2,
@@ -97,6 +119,7 @@
     // ReactJS
     "react/destructuring-assignment": 0,
     "react/forbid-prop-types": 0,
+    "react/function-component-definition": 0,
     "react/jsx-props-no-spreading": 0,
     "react/no-unused-prop-types": 0,
     "react/no-danger": 0,
@@ -134,9 +157,11 @@
     "react/jsx-no-duplicate-props": [2, { "ignoreCase": false }],
     "jsx-a11y/control-has-associated-label": 0,
     "jsx-a11y/label-has-associated-control": [2, { "assert": "either" }],
+    "jsx-a11y/label-has-for": 0,
     "jsx-a11y/no-static-element-interactions": 0,
     "jsx-a11y/no-redundant-roles": 0,
     "jsx-a11y/no-autofocus": 0,
+    "jsx-a11y/href-no-hash": 0,
     "jsx-a11y/alt-text": 0,
     "jsx-a11y/anchor-is-valid": [
       "error",

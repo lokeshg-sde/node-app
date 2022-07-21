@@ -1,6 +1,6 @@
 import React from 'react'
 import Grid from '@mui/material/Grid'
-import { JsxElement } from 'typescript'
+import type { JsxElement } from 'typescript'
 
 import { StyledBox, PageLayout } from '../../../components'
 import bgImage from '../../../assets/images/login-cover-page.png'
@@ -10,31 +10,30 @@ type Props = {
   children?: JsxElement | JsxElement[]
 }
 
-export const BasicLayout = ({ image, children }: Props): JSX.Element => {
-  return (
-    <PageLayout>
-      <StyledBox
-        position="absolute"
-        width="100%"
-        minHeight="100vh"
-        sx={{
-          backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }: any) =>
-            `${linearGradient(
-              rgba(gradients.dark.main, 0.6),
-              rgba(gradients.dark.state, 0.6)
-            )}, url(${image || bgImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      />
-      <StyledBox px={1} width="100%" height="100vh" mx="auto">
-        <Grid container spacing={1} justifyContent="center" alignItems="center" height="100%">
-          <Grid item xs={11} sm={9} md={5} lg={4} xl={3}>
-            {children}
-          </Grid>
+export const BasicLayout = ({ image, children }: Props): JSX.Element => (
+  <PageLayout>
+    <StyledBox
+      minHeight="100vh"
+      position="absolute"
+      sx={{
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }: any) =>
+          `${linearGradient(
+            rgba(gradients.dark.main, 0.6),
+            rgba(gradients.dark.state, 0.6)
+          )}, url(${image || bgImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+      width="100%"
+    />
+    <StyledBox height="100vh" mx="auto" px={1} width="100%">
+      <Grid alignItems="center" container height="100%" justifyContent="center" spacing={1}>
+        <Grid item lg={4} md={5} sm={9} xl={3} xs={11}>
+          {children}
         </Grid>
-      </StyledBox>
-    </PageLayout>
-  )
-}
+      </Grid>
+    </StyledBox>
+  </PageLayout>
+)

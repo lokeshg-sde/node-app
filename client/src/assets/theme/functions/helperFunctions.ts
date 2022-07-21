@@ -1,6 +1,7 @@
+/* eslint-disable default-param-last */
 import chroma from 'chroma-js'
 
-export function hexToRgb(color: string) {
+export function hexToRgb(color: string): string {
   return chroma(color).rgb().join(', ')
 }
 
@@ -8,10 +9,11 @@ export function pxToRem(number: number, baseNumber = 16): string {
   return `${number / baseNumber}rem`
 }
 
-export function rgba(color: string, opacity: number) {
+export function rgba(color: string, opacity: number): string {
   return `rgba(${hexToRgb(color)}, ${opacity})`
 }
 
+// FIX Me and remove eslint
 export function boxShadow(
   offset: number[] = [],
   radius: number[] = [],
@@ -28,6 +30,7 @@ export function boxShadow(
   )}`
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-explicit-any
 export function gradientChartLine(chart: any, color: string, opacity = 0.2) {
   const ctx = chart.getContext('2d')
   const gradientStroke = ctx.createLinearGradient(0, 230, 0, 50)

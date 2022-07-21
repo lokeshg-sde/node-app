@@ -1,7 +1,7 @@
 node_modules
-
+build
 # dotenv environment variables file
 .env
 .env.test
-.vscode
 .d.ts
+src/react-app-env.d.ts

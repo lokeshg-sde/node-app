@@ -1,6 +1,5 @@
 {
   "env": {
-    "es6": true,
     "browser": true,
     "es2021": true
   },
@@ -17,14 +16,17 @@
   ],
   "extends": [
     "airbnb",
-    "prettier",
     "plugin:jasmine/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:eslint-comments/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
   ],
   "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
@@ -117,6 +119,7 @@
     // ReactJS
     "react/destructuring-assignment": 0,
     "react/forbid-prop-types": 0,
+    "react/function-component-definition": 0,
     "react/jsx-props-no-spreading": 0,
     "react/no-unused-prop-types": 0,
     "react/no-danger": 0,

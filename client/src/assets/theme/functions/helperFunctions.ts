@@ -1,3 +1,4 @@
+/* eslint-disable default-param-last */
 import chroma from 'chroma-js'
 
 export function hexToRgb(color: string): string {
@@ -12,6 +13,7 @@ export function rgba(color: string, opacity: number): string {
   return `rgba(${hexToRgb(color)}, ${opacity})`
 }
 
+// FIX Me and remove eslint 
 export function boxShadow(
   offset: number[] = [],
   radius: number[] = [],

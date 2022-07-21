@@ -7,13 +7,13 @@
     "node": ">=12.22.0 <15"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\"",
     "eslint": "eslint server/**/*.ts --ext .ts",
     "eslint:fix": "eslint server/**/*.ts --fix",
     "prettier:fix": "prettier --config .prettierrc server/**/*.ts --write",
-    "eslint:react": "eslint client/src/**/*.{ts,tsx} --ext .{ts,tsx}",
-    "eslint:fix:react": "eslint client/src/**/*.{ts,tsx} --fix",
-    "prettier:fix:react": "prettier --config .prettierrc client/src/**/*.{ts,tsx} --write",
+    "eslint:react": "cd client && yarn eslint",
+    "eslint:fix:react": "cd client && yarn eslint:fix",
+    "prettier:fix:react": "cd client && yarn prettier:fix",
     "start": "nodemon server/index.ts",
     "start:server": "nodemon --ignore client server/index.ts",
     "postinstall": "cd client && yarn install",

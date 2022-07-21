@@ -18,8 +18,8 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          name: 'Build Server And Web App Package'
-          command: cd client && yarn build
+          name: 'Build Server And Web App Package' To Serve from Express Server
+          command: yarn prestart
 
   js-linters:
     docker:
@@ -29,10 +29,10 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          name: Run Prettier
+          name: Run Prettier On ExpressJS Code Base
           command: yarn prettier:fix
       - run:
-          name: Run Eslint
+          name: Run Eslint  On ExpressJS Code Base
           command: yarn eslint
 
   react-tests:
@@ -43,7 +43,7 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          name: Test React Code
+          name: Run Tests On React Code Base
           command: cd client && yarn test
 
   react-linters:
@@ -54,11 +54,11 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          name: Run Prettier
-          command: cd client && yarn prettier:fix
+          name: Run Prettier On React Code Base
+          command: yarn prettier:fix:react
       - run:
-          name: Run Eslint
-          command: cd client && yarn eslint
+          name: Run Eslint On React Code Base
+          command: yarn eslint:react
 
   js-tests:
     docker:
@@ -68,8 +68,8 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          name: JS Tests
-          command: cd client && yarn test
+          name: NodeJS Tests
+          command: yarn test
 
 workflows:
   # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows

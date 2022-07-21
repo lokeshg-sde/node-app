@@ -4,4 +4,4 @@ build
 .env
 .env.test
 .vscode
-index.ts
+*.d.ts

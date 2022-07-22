@@ -6,6 +6,7 @@ import { SignUp } from './Layouts/Authentication/SignUp'
 
 const App = (): JSX.Element => (
   <Routes>
+    <Route key="login" element={<LoginForm />} path="/" />
     <Route key="login" element={<LoginForm />} path="users/login" />
     <Route key="register" element={<SignUp />} path="users/register" />
   </Routes>

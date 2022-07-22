@@ -24,18 +24,20 @@ function matchCurrentUrl(
 const authenticateUser =
   (paths: Paths, middleware: MiddlewareCallBackFunction): MiddlewareCallBackFunction =>
   (req: Request, res: Response, next: NextFunction) => {
-    const { isMatched, userRoles } = matchCurrentUrl(paths, req.path, req.method)
+    const { path } = req
+    const { isMatched, userRoles } = matchCurrentUrl(paths, path, req.method)
 
+    console.log(path)
     if (isMatched) {
-      middleware(req, res, next, userRoles)
+      return middleware(req, res, next, userRoles)
     }
 
-    if (URL_EXCLUDED.includes(req.path)) {
+    if (URL_EXCLUDED.includes(path)) {
       return next()
     }
 
     // eslint-disable-next-line no-magic-numbers
-    res.status(500).send({ message: 'Route Mismatch' })
+    return res.status(500).send({ message: 'Route Mismatch' })
   }
 
 export const cars: ('🚗' | '🚙' | '🚕')[] = ['🚗', '🚙', '🚕']

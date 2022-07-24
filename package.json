@@ -17,7 +17,7 @@
     "start": "nodemon server/index.ts",
     "start:server": "nodemon --ignore client server/index.ts",
     "postinstall": "cd client && yarn install",
-    "prestart": "cd client && yarn build",
+    "build": "cd client && yarn build",
     "webpack-dev-server": "cd client && yarn start"
   },
   "repository": {
@@ -25,9 +25,10 @@
     "url": "git+https://github.com/lokeshg-fsd/rest-api-emn.git"
   },
   "keywords": [
-    "nodejs",
-    "mongodb",
-    "express"
+    "NodeJS",
+    "MongoDB",
+    "ExpressJS",
+    "ReactJS"
   ],
   "author": "Lokesh G @lokeshg-fsd",
   "license": "MIT",

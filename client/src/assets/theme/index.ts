@@ -2,7 +2,7 @@ import { createTheme } from '@mui/material/styles'
 import type { PaletteOptions, Components } from '@mui/material/styles'
 
 import { colors, globals, breakpoints, typography, boxShadows, borders } from './base'
-import { boxShadow, hexToRgb, linearGradient, pxToRem, rgba } from './functions'
+import { functions } from './functions'
 import sidenav from './components/sidenav'
 import { list, listItem, listItemText } from './components/list'
 import { card, cardContent, cardMedia } from './components/card'
@@ -45,19 +45,13 @@ import {
 } from './components/dialog'
 
 export const lightTheme = createTheme({
-  breakpoints: { ...breakpoints },
+  breakpoints,
   palette: { ...(colors as PaletteOptions) },
   // @ts-expect-error on Typography styles
-  typography: { ...typography },
-  boxShadows: { ...boxShadows },
-  borders: { ...borders },
-  functions: {
-    boxShadow,
-    hexToRgb,
-    linearGradient,
-    pxToRem,
-    rgba,
-  },
+  typography,
+  boxShadows,
+  borders,
+  functions,
   components: {
     MuiCssBaseline: {
       styleOverrides: {
@@ -65,12 +59,12 @@ export const lightTheme = createTheme({
         ...container,
       },
     },
-    MuiDrawer: { ...sidenav },
-    MuiList: { ...list },
-    MuiListItem: { ...listItem },
-    MuiListItemText: { ...listItemText },
-    MuiCard: { ...card },
-    MuiCardMedia: { ...cardMedia },
+    MuiDrawer: sidenav,
+    MuiList: list,
+    MuiListItem: listItem,
+    MuiListItemText: listItemText,
+    MuiCard: card,
+    MuiCardMedia: cardMedia,
     MuiCardContent: { ...cardContent },
     MuiButton: { ...button },
     MuiIconButton: { ...iconButton },

@@ -1,7 +1,8 @@
 import React from 'react'
 
+import { Container } from '../../components/ProfileCard/Container'
 // import { Footer } from './Footer'
-import { PortfolioCard } from './card'
+// import { PortfolioCard } from './card'
 
 export const Portfolio = (): JSX.Element => {
   const text = 'My Portfolio'
@@ -10,7 +11,7 @@ export const Portfolio = (): JSX.Element => {
     <>
       <div style={{ width: '100vw', height: '100vh', backgroundColor: 'white' }}>
         {text}
-        <PortfolioCard />
+        <Container />
       </div>
       {/* <Footer /> */}
     </>

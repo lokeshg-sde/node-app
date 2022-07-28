@@ -1,14 +1,14 @@
 import styled from '@emotion/styled'
 
 export const WaveContainer = styled.div`
-overflow: hidden;
-position: relative;
-display: flex;
-flex-direction: column;
-align-items: center;
-height: 25vh;
-padding-top: 5vh;
-background: #3c31dd;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 25vh;
+  padding-top: 5vh;
+  background: #3c31dd;
 `
 
 export const Waves = styled.div`

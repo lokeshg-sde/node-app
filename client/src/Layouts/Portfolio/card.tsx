@@ -6,5 +6,5 @@ export const PortfolioCard = styled(Card)`
   height: 50vh;
   background: white;
   border-radius: 2px;
-  box-shadow: 10%
+  box-shadow: 10%;
 `

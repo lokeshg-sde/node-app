@@ -12,19 +12,20 @@ const app = express()
 
 const buildDir = [__dirname, '../client', 'build']
 const buildPublicDir = [__dirname, '../client', 'public']
+const publicDir = [__dirname, '/public']
 
 // middleware for authenticating token submitted with requests
 app.use(express.json())
 app.use(express.static(path.join(...buildDir)))
 app.use(express.static(path.join(...buildPublicDir)))
-
+app.use(express.static(path.join(...publicDir)))
 app.use(middlewareWrapper())
 app.use(excludePublicUrlOnAuthenticate(URL_CONFIG, authenticateToken))
 app.get('/home', (req, res) => {
   res.sendFile(path.join(...buildDir, 'index.html'))
 })
 app.get('*', (req, res) => {
-  res.sendFile(path.join(...buildDir, 'index.html'))
+  res.sendFile(path.join(...publicDir, 'portfolio.html'))
 })
 app.use('/', routes)
 app.get('/', (req, res) => {

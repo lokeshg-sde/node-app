@@ -55,7 +55,7 @@ export default css`
   .hero-wrapper {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     padding-bottom: 7rem;
     background: #212121;

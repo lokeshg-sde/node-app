@@ -6,8 +6,9 @@ export default (): JSX.Element => (
   <img
     src={logo}
     style={{
-      width: '2.5rem',
-      height: '2.5rem',
+      width: '3.5rem',
+      height: '3.5rem',
+      transform: 'rotate(15deg)',
     }}
   />
 )

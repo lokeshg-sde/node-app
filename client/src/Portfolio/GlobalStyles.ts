@@ -59,7 +59,7 @@ const GlobalStyles = css`
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: #000000;
+    background-color: #212121 !important;
   }
   h1,
   h2,

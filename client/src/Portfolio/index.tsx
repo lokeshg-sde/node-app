@@ -12,7 +12,9 @@ const PortfolioPage = (): JSX.Element => (
     <Global styles={GlobalStyles} />
     <Global styles={HeaderSectionStyles} />
     <HeaderSection />
-    <ProjectsSection />
+    <main>
+      <ProjectsSection />
+    </main>
     <Footer />
   </>
 )

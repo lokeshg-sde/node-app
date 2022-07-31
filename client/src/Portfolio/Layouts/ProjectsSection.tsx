@@ -19,7 +19,7 @@ const Portfolio = (): JSX.Element => (
               Coinbase and Gift cards.Users can also recharge their mobile numbers from the app
               directly.`}
         image="https://i.pinimg.com/564x/65/66/ac/6566acdf9b62a091872d8ebdd6e1f463.jpg"
-        link="https://www.behance.net/gallery/104144345/Crypto-App"
+        link="#home"
         title="Radio Mobile App"
       />
       <ProjectCard
@@ -27,7 +27,7 @@ const Portfolio = (): JSX.Element => (
               Coinbase and Gift cards.Users can also recharge their mobile numbers from the app
               directly.`}
         image="https://i.pinimg.com/564x/65/66/ac/6566acdf9b62a091872d8ebdd6e1f463.jpg"
-        link="https://www.behance.net/gallery/104144345/Crypto-App"
+        link="#home"
         title="Radio Mobile App"
       />
       <ProjectCard
@@ -35,7 +35,7 @@ const Portfolio = (): JSX.Element => (
               Coinbase and Gift cards.Users can also recharge their mobile numbers from the app
               directly.`}
         image="https://i.pinimg.com/564x/65/66/ac/6566acdf9b62a091872d8ebdd6e1f463.jpg"
-        link="https://www.behance.net/gallery/104144345/Crypto-App"
+        link="#home"
         title="Radio Mobile App"
       />
       <ProjectCard
@@ -43,7 +43,7 @@ const Portfolio = (): JSX.Element => (
             Coinbase and Gift cards.Users can also recharge their mobile numbers from the app
             directly.`}
         image="https://i.pinimg.com/564x/65/66/ac/6566acdf9b62a091872d8ebdd6e1f463.jpg"
-        link="https://www.behance.net/gallery/104144345/Crypto-App"
+        link="#home"
         title="Radio Mobile App"
       />
     </ProjectsContainer>

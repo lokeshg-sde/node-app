@@ -1,51 +1,13 @@
 import React from 'react'
 
-import Logo from '../../Components/brand'
-import image from './cdoing.png'
+import image from './Mediamodifier-Design-Template-removebg-preview.png'
+
+import NavBar from './NavBar'
 
 export default function HeaderSection(): JSX.Element {
   return (
     <header className="header-section" id="home">
-      <nav
-        className="navbar navbar-expand-md px-0 main-nav sticky nav-index"
-        data-sticky-class="stuck"
-        data-sticky-wrap
-      >
-        <div className="container px-4">
-          <a className="navbar-brand" href="#home">
-            <Logo />
-          </a>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ml-md-auto">
-              <li className="nav-item">
-                <a className="nav-link" href="#home">
-                  Home <span className="sr-only">(current)</span>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#about">
-                  About
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#services">
-                  Services
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#portfolio">
-                  Portfolio
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#contact">
-                  Contact Me
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <NavBar />
       <div className="container">
         <div className="hero-wrapper">
           <div className="hero-text-wrapper">
@@ -68,10 +30,7 @@ export default function HeaderSection(): JSX.Element {
             </a>
           </div>
           <div className="hero-image-wrapper">
-            <img
-              src={image}
-              title="hero image"
-            />
+            <img src={image} title="hero image" />
           </div>
         </div>
       </div>

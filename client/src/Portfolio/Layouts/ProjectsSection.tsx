@@ -41,7 +41,6 @@ const TitleDiv = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
-  transform: translate3d(0, 100px, 0);
 `
 const Span = styled.span`
   font-family: SF Pro Display, sans-serif;
@@ -55,10 +54,10 @@ const Span = styled.span`
 
 const SectionHeader = ({ name, title }: { name: string; title: string }) => (
   <Header>
-    <Title>{title}</Title>
     <TitleDiv>
       <Span>{name}</Span> <Line />
     </TitleDiv>
+    <Title>{title}</Title>
   </Header>
 )
 

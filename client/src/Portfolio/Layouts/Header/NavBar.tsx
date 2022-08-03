@@ -25,7 +25,7 @@ export default (): JSX.Element => (
         <ul className="navbar-nav ml-md-auto">
           <MenuItem href="#home" label="Home" />
           <MenuItem href="#about" label="About" />
-          <MenuItem href="#services" label="Services" />
+          <MenuItem href="#portfolio" label="Services" />
           <MenuItem href="#contact" label="Contact Me" />
         </ul>
       </div>

@@ -56,3 +56,5 @@ export const colors = {
   inputBorderColor: '#d2d6da',
   tabs: { indicator: { boxShadow: '#ddd' } },
 }
+
+export type DefaultColors = typeof colors

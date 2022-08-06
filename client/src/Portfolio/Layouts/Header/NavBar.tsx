@@ -22,7 +22,7 @@ export default (): JSX.Element => (
         <Logo />
       </a>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav ml-md-auto">
+        <ul>
           <MenuItem href="#home" label="Home" />
           <MenuItem href="#about" label="About" />
           <MenuItem href="#portfolio" label="Services" />

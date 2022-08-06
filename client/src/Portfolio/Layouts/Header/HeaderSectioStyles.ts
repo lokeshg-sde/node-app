@@ -10,12 +10,7 @@ export default css`
       margin-bottom: 5rem;
     }
   }
-  .container,
-  .container-fluid,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container-xl {
+  .container {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
@@ -23,32 +18,22 @@ export default css`
     margin-left: auto;
   }
   @media (min-width: 576px) {
-    .container,
-    .container-sm {
+    .container {
       max-width: 540px;
     }
   }
   @media (min-width: 768px) {
-    .container,
-    .container-md,
-    .container-sm {
+    .container {
       max-width: 720px;
     }
   }
   @media (min-width: 992px) {
-    .container,
-    .container-lg,
-    .container-md,
-    .container-sm {
+    .container {
       max-width: 960px;
     }
   }
   @media (min-width: 1200px) {
-    .container,
-    .container-lg,
-    .container-md,
-    .container-sm,
-    .container-xl {
+    .container {
       max-width: 1140px;
     }
   }
@@ -68,38 +53,21 @@ export default css`
     }
   }
   .hero-wrapper .hero-text-wrapper {
-    width: 40rem;
+    width: 34rem;
     max-width: 100%;
     overflow: hidden;
-  }
-  @media (max-width: 500px) {
-    .hero-wrapper .hero-text-wrapper {
-      max-width: 24.7rem;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
   }
   .hero-wrapper .hero-text-wrapper p:first-of-type {
     text-transform: uppercase;
     font-family: SF Pro Display, sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 1.6rem;
-    line-height: 1.9rem;
+    font-size: 1rem;
+    line-height: 1rem;
     color: #fff;
     margin-bottom: 1.6rem;
     display: flex;
     align-items: center;
-  }
-  @media (max-width: 500px) {
-    .hero-wrapper .hero-text-wrapper p:first-of-type {
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-      display: inline-block;
-      font-size: 1.3rem;
-    }
   }
   .hero-wrapper .hero-text-wrapper p:first-of-type img {
     margin: 0 7px;
@@ -108,17 +76,10 @@ export default css`
     font-family: SF Pro Display, sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 7.2rem;
-    line-height: 8.6rem;
+    font-size: 5.2rem;
+    line-height: 5.6rem;
     color: #fff;
     margin-bottom: 1.6rem;
-  }
-  @media (max-width: 500px) {
-    .hero-wrapper .hero-text-wrapper h1 {
-      font-size: 4.4rem;
-      line-height: 4.8rem;
-      letter-spacing: 0.19rem;
-    }
   }
   .hero-wrapper .hero-text-wrapper h3 {
     font-family: SF Pro Display, sans-serif;
@@ -130,12 +91,6 @@ export default css`
     margin-bottom: 2.5rem;
     text-transform: uppercase;
   }
-  @media (max-width: 500px) {
-    .hero-wrapper .hero-text-wrapper h3 {
-      font-size: 1.6rem;
-      line-height: 1.9rem;
-    }
-  }
   .hero-wrapper .hero-text-wrapper p:last-of-type {
     font-family: SF Pro Display, sans-serif;
     font-style: normal;
@@ -144,12 +99,6 @@ export default css`
     line-height: 1.9rem;
     color: #fff;
     margin-bottom: 3.2rem;
-  }
-  @media (max-width: 500px) {
-    .hero-wrapper .hero-text-wrapper p:last-of-type {
-      font-size: 1.5rem;
-      line-height: 1.8rem;
-    }
   }
   .hero-wrapper .hero-text-wrapper a {
     width: 18.7rem;
@@ -163,13 +112,6 @@ export default css`
     align-items: center;
     color: #303030;
   }
-  @media (max-width: 500px) {
-    .hero-wrapper .hero-text-wrapper a {
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
   .hero-wrapper .hero-text-wrapper a:hover {
     color: #303030;
     text-decoration: none;
@@ -178,9 +120,42 @@ export default css`
     font-family: SF Pro Display, sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 1.6rem;
-    line-height: 1.9rem;
+    font-size: 1.1rem;
+    line-height: 1.2rem;
     text-align: center;
+  }
+  @media (max-width: 500px) {
+    .hero-wrapper .hero-text-wrapper h1 {
+      font-size: 4.4rem;
+      line-height: 4.8rem;
+      letter-spacing: 0.19rem;
+    }
+    .hero-wrapper .hero-text-wrapper p:last-of-type {
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+    }
+    .hero-wrapper .hero-text-wrapper {
+      max-width: 24.7rem;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    .hero-wrapper .hero-text-wrapper a {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-wrapper .hero-text-wrapper h3 {
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+    }
+    .hero-wrapper .hero-text-wrapper p:first-of-type {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      display: inline-block;
+      font-size: 1.3rem;
+    }
   }
   .hero-wrapper .hero-image-wrapper {
     overflow: hidden;
@@ -191,17 +166,12 @@ export default css`
     }
   }
   .hero-wrapper .hero-image-wrapper img {
-    height: 55rem;
-    width: 55rem;
-  }
-  @media (max-width: 1090px) {
-    .hero-wrapper .hero-image-wrapper img {
-      width: 50rem;
-    }
+    height: 34rem;
+    width: 34rem;
   }
   @media (max-width: 930px) {
     .hero-wrapper .hero-image-wrapper img {
-      width: 45rem;
+      width: 36rem;
     }
   }
 `

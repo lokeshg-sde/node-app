@@ -4,8 +4,7 @@ export default styled.nav`
   .navbar {
     padding: 0.5rem 1rem;
   }
-  div > div:first-of-type {
-    margin-left: 30vw;
+  .px-4 {
     display: flex;
   }
   .navbar,

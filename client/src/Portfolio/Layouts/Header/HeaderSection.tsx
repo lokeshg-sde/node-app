@@ -1,6 +1,6 @@
 import React from 'react'
 
-import image from './Mediamodifier-Design-Template-removebg-preview.png'
+import image from './programmer.png'
 
 import NavBar from './NavBar'
 

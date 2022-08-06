@@ -42,8 +42,8 @@ const FooterBase = styled.footer`
       order: 3;
     }
     > div > div:nth-of-type(3) {
-        margin-bottom: 0rem;
-        margin-top: 1rem;
+      margin-bottom: 0rem;
+      margin-top: 1rem;
     }
   }
 `

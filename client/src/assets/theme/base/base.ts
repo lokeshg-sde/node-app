@@ -1,5 +1,4 @@
 import { colors } from './colors'
-
 import { pxToRem, boxShadow } from '../functions'
 
 const { grey, black, white, tabs, coloredShadows, info, dark } = colors
@@ -36,7 +35,6 @@ const baseDisplayProperties = {
 
 export const borders = {
   borderColor: grey[300],
-
   borderWidth: {
     0: 0,
     1: pxToRem(1),
@@ -45,7 +43,6 @@ export const borders = {
     4: pxToRem(4),
     5: pxToRem(5),
   },
-
   borderRadius: {
     xs: pxToRem(1.6),
     sm: pxToRem(2),
@@ -145,16 +142,7 @@ export const boxShadows = {
   },
 }
 
-export const breakpoints = {
-  values: {
-    xs: 0,
-    sm: 576,
-    md: 768,
-    lg: 992,
-    xl: 1200,
-    xxl: 1400,
-  },
-}
+export const breakpoints = { values: { xs: 0, sm: 576, md: 768, lg: 992, xl: 1200, xxl: 1400 } }
 
 export const globals = {
   html: {
@@ -183,71 +171,36 @@ export const typography = {
   fontWeightRegular: baseProperties.fontWeightRegular,
   fontWeightMedium: baseProperties.fontWeightMedium,
   fontWeightBold: baseProperties.fontWeightBold,
-
-  h1: {
-    fontSize: pxToRem(48),
-    lineHeight: 1.25,
-    ...baseHeadingProperties,
-  },
-
-  h2: {
-    fontSize: pxToRem(36),
-    lineHeight: 1.3,
-    ...baseHeadingProperties,
-  },
-
-  h3: {
-    fontSize: pxToRem(30),
-    lineHeight: 1.375,
-    ...baseHeadingProperties,
-  },
-
-  h4: {
-    fontSize: pxToRem(24),
-    lineHeight: 1.375,
-    ...baseHeadingProperties,
-  },
-
-  h5: {
-    fontSize: pxToRem(20),
-    lineHeight: 1.375,
-    ...baseHeadingProperties,
-  },
-
-  h6: {
-    fontSize: pxToRem(16),
-    lineHeight: 1.625,
-    ...baseHeadingProperties,
-  },
-
+  h1: { fontSize: pxToRem(48), lineHeight: 1.25, ...baseHeadingProperties },
+  h2: { fontSize: pxToRem(36), lineHeight: 1.3, ...baseHeadingProperties },
+  h3: { fontSize: pxToRem(30), lineHeight: 1.375, ...baseHeadingProperties },
+  h4: { fontSize: pxToRem(24), lineHeight: 1.375, ...baseHeadingProperties },
+  h5: { fontSize: pxToRem(20), lineHeight: 1.375, ...baseHeadingProperties },
+  h6: { fontSize: pxToRem(16), lineHeight: 1.625, ...baseHeadingProperties },
   subtitle1: {
     fontFamily: baseProperties.fontFamily,
     fontSize: baseProperties.fontSizeXL,
     fontWeight: baseProperties.fontWeightLight,
     lineHeight: 1.625,
   },
-
   subtitle2: {
     fontFamily: baseProperties.fontFamily,
     fontSize: baseProperties.fontSizeMD,
     fontWeight: baseProperties.fontWeightLight,
     lineHeight: 1.6,
   },
-
   body1: {
     fontFamily: baseProperties.fontFamily,
     fontSize: baseProperties.fontSizeXL,
     fontWeight: baseProperties.fontWeightRegular,
     lineHeight: 1.625,
   },
-
   body2: {
     fontFamily: baseProperties.fontFamily,
     fontSize: baseProperties.fontSizeMD,
     fontWeight: baseProperties.fontWeightLight,
     lineHeight: 1.6,
   },
-
   button: {
     fontFamily: baseProperties.fontFamily,
     fontSize: baseProperties.fontSizeSM,
@@ -255,48 +208,19 @@ export const typography = {
     lineHeight: 1.5,
     textTransform: 'uppercase',
   },
-
   caption: {
     fontFamily: baseProperties.fontFamily,
     fontSize: baseProperties.fontSizeXS,
     fontWeight: baseProperties.fontWeightLight,
     lineHeight: 1.25,
   },
-
-  overline: {
-    fontFamily: baseProperties.fontFamily,
-  },
-
-  d1: {
-    fontSize: pxToRem(80),
-    ...baseDisplayProperties,
-  },
-
-  d2: {
-    fontSize: pxToRem(72),
-    ...baseDisplayProperties,
-  },
-
-  d3: {
-    fontSize: pxToRem(64),
-    ...baseDisplayProperties,
-  },
-
-  d4: {
-    fontSize: pxToRem(56),
-    ...baseDisplayProperties,
-  },
-
-  d5: {
-    fontSize: pxToRem(48),
-    ...baseDisplayProperties,
-  },
-
-  d6: {
-    fontSize: pxToRem(40),
-    ...baseDisplayProperties,
-  },
-
+  overline: { fontFamily: baseProperties.fontFamily },
+  d1: { fontSize: pxToRem(80), ...baseDisplayProperties },
+  d2: { fontSize: pxToRem(72), ...baseDisplayProperties },
+  d3: { fontSize: pxToRem(64), ...baseDisplayProperties },
+  d4: { fontSize: pxToRem(56), ...baseDisplayProperties },
+  d5: { fontSize: pxToRem(48), ...baseDisplayProperties },
+  d6: { fontSize: pxToRem(40), ...baseDisplayProperties },
   size: {
     xxs: baseProperties.fontSizeXXS,
     xs: baseProperties.fontSizeXS,
@@ -307,10 +231,15 @@ export const typography = {
     '2xl': baseProperties.fontSize2XL,
     '3xl': baseProperties.fontSize3XL,
   },
-
   lineHeight: {
     sm: 1.25,
     md: 1.5,
     lg: 2,
   },
 }
+
+export type Borders = typeof borders
+export type BoxShadows = typeof boxShadows
+export type GlobalStyles = typeof globals
+export type BreakPoints = typeof breakpoints
+export type TypographyStyle = typeof typography

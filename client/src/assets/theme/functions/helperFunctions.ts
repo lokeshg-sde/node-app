@@ -46,3 +46,14 @@ export function gradientChartLine(chart: any, color: string, opacity = 0.2) {
 export function linearGradient(color: string, colorState: string | number, angle = 195): string {
   return `linear-gradient(${angle}deg, ${color}, ${colorState})`
 }
+
+export const functions = {
+  linearGradient,
+  pxToRem,
+  hexToRgb,
+  gradientChartLine,
+  boxShadow,
+  rgba,
+}
+
+export type ThemeFunctions = typeof functions

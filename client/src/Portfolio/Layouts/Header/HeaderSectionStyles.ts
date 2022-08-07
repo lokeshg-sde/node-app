@@ -3,12 +3,7 @@ import { css } from '@emotion/react'
 export default css`
   .header-section {
     min-height: unset;
-    margin-bottom: 13.3rem;
-  }
-  @media (max-width: 50rem) {
-    .header-section {
-      margin-bottom: 5rem;
-    }
+    margin-bottom: 5rem;
   }
   .container {
     width: 100%;
@@ -45,7 +40,7 @@ export default css`
     padding-bottom: 7rem;
     background: #212121;
     position: relative;
-    margin-top: 10%;
+    margin-top: 10rem;
   }
   @media (max-width: 600px) {
     .hero-wrapper {
@@ -110,6 +105,7 @@ export default css`
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
     color: #303030;
   }
   .hero-wrapper .hero-text-wrapper a:hover {

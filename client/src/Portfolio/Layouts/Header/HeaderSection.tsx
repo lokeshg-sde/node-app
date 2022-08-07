@@ -16,14 +16,15 @@ export default function HeaderSection(): JSX.Element {
             </p>
             <h1>Lokesh G</h1>
             <h3>
-              Software Designer + Developer
+              Full Stack Developer
               <img
                 src="https://www.kemiadeleke.com/media/typer.svg"
                 style={{ marginLeft: '.2rem' }}
               />
             </h3>
             <p className="info">
-              I’m a professional UI/UX designer with front end development skills based in Lagos.
+              I have Expertise in developing the Web based application. And I have Experiences in ReactJS,
+               Ruby On Rails Framework and NodeJS apps with ExpressJS, MongoDB. with Other Tech Skills..  
             </p>
             <a href="#contact">
               <span>Hire Me</span>

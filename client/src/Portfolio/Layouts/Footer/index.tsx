@@ -2,6 +2,7 @@ import React from 'react'
 
 import Logo from '../../Components/brand'
 import FooterBase from './FooterStyles'
+import { GitIcon, LinkedInIcon } from './icons'
 
 export default function Footer(): JSX.Element {
   return (
@@ -14,26 +15,11 @@ export default function Footer(): JSX.Element {
           <p>&copy; Copyright 2022. All right reserved</p>
         </div>
         <div>
-          <a href="#home" rel="noreferrer" target="_blank">
-            <img
-              alt="link to twitter account"
-              src="https://www.kemiadeleke.com/media/twitter.svg"
-            />
+          <a href="https://github.com/lokeshg-fsd" rel="noreferrer" target="_blank">
+            <GitIcon />
           </a>
-          <a href="#home" rel="noreferrer" target="_blank">
-            <img
-              alt="link to linkedin account"
-              src="https://www.kemiadeleke.com/media/linkedin.svg"
-            />
-          </a>
-          <a href="#home" rel="noreferrer" target="_blank">
-            <img
-              alt="link to behance account"
-              src="https://www.kemiadeleke.com/media/behance.svg"
-            />
-          </a>
-          <a href="#home" rel="noreferrer" target="_blank">
-            <img alt="link to whatsapp" src="https://www.kemiadeleke.com/media/whatsapp.svg" />
+          <a href="https://in.linkedin.com/in/lokesh-g-93a302174" rel="noreferrer" target="_blank">
+            <LinkedInIcon />
           </a>
         </div>
       </div>

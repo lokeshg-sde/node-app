@@ -12,11 +12,7 @@ const MenuItem = ({ label, href }: { label: string; href: string }) => (
 )
 
 export default (): JSX.Element => (
-  <NavBarStyled
-    className="navbar navbar-expand-md px-0 main-nav sticky nav-index"
-    data-sticky-class="stuck"
-    data-sticky-wrap
-  >
+  <NavBarStyled className="navbar navbar-expand-md px-0 main-nav sticky nav-index">
     <div className="nav-container px-4">
       <a className="navbar-brand" href="#home">
         <Logo />

@@ -27,7 +27,7 @@ const FooterBase = styled.footer`
     color: #fff;
   }
   > div > div:nth-of-type(3) {
-    width: 15.054rem;
+    gap: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;

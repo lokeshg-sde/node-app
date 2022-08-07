@@ -2,10 +2,11 @@ import React from 'react'
 
 import Section from '../../Components/Section'
 import ProjectsSection from './ProjectsSection'
+import About from './About'
 
 export default (): JSX.Element => (
   <main>
-    <Section name="About Me" sectionId="about" title="About My Profession" />
+    <Section component={<About />} name="Who I am" sectionId="about" title="About My Profession" />
     <Section name="Studies" sectionId="education" title="My Education & Certificates" />
     <Section name="Experiences" sectionId="experience" title="My Work History" />
     <Section

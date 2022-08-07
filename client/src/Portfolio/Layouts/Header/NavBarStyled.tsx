@@ -4,13 +4,14 @@ export default styled.nav`
   position: fixed;
   top: 0;
   z-index: 1000;
-  width: 98%;
+  width: 100%;
   background-color: #262626;
   transition: position 2.6s;
   .navbar {
     padding: 0.5rem 1rem;
   }
   .px-4 {
+    max-width: 1140px;
     display: flex;
     width: 100%;
     padding-right: 15px;

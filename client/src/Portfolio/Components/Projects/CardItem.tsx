@@ -16,7 +16,7 @@ export const ProjectsSection = styled('section')`
 `
 
 export const ProjectsContainer = styled.div`
-  max-width: 100rem;
+  max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
   display: flex;

@@ -91,6 +91,11 @@ const GlobalStyles = css`
     text-align: left;
     caption-side: bottom;
   }
+  #root {
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+  }
 `
 
 export default GlobalStyles

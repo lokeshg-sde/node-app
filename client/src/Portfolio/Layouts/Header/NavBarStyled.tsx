@@ -1,11 +1,20 @@
 import styled from '@emotion/styled'
 
 export default styled.nav`
+  position: fixed;
+  top: 0;
+  z-index: 1020;
+  width: 90%;
   .navbar {
     padding: 0.5rem 1rem;
   }
   .px-4 {
     display: flex;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
   }
   .navbar,
   .navbar .nav-container {
@@ -20,6 +29,7 @@ export default styled.nav`
     padding-top: 0.3125rem;
     padding-bottom: 0.3125rem;
     margin-right: 1rem;
+    padding-left: 15px;
     font-size: 1.25rem;
     line-height: inherit;
     white-space: nowrap;

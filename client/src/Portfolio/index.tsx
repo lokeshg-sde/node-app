@@ -10,7 +10,7 @@ import Footer from './Layouts/Footer'
 import Page from './Layouts/Page'
 
 const PortfolioPage = (): JSX.Element => {
-  usePageConfig({ title: 'Lokesh G Full Stack Developer', logo: '/logo.png' })
+  usePageConfig({ title: 'Lokesh G Full Stack Developer', logo: '/portfolio-logo.png' })
 
   return (
     <>

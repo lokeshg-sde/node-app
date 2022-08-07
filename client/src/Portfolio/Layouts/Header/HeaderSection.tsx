@@ -23,9 +23,8 @@ export default function HeaderSection(): JSX.Element {
               />
             </h3>
             <p className="info">
-              I have Expertise in developing the Web based application. And I have Experiences in
-              ReactJS, Ruby On Rails Framework and NodeJS apps with ExpressJS, MongoDB. with Other
-              Tech Skills..
+              I have Expertise in developing the Web based application. And I have Experiences in ReactJS,
+               Ruby On Rails Framework and NodeJS apps with ExpressJS, MongoDB. with Other Tech Skills..  
             </p>
             <a href="#contact">
               <span>Hire Me</span>

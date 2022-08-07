@@ -105,6 +105,7 @@ export default css`
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
     color: #303030;
   }
   .hero-wrapper .hero-text-wrapper a:hover {

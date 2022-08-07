@@ -3,8 +3,10 @@ import styled from '@emotion/styled'
 export default styled.nav`
   position: fixed;
   top: 0;
-  z-index: 1020;
-  width: 90%;
+  z-index: 1000;
+  width: 98%;
+  background-color: #262626;
+  transition: position 2.6s;
   .navbar {
     padding: 0.5rem 1rem;
   }
@@ -46,6 +48,7 @@ export default styled.nav`
     list-style: none;
   }
   .navbar-nav .nav-link {
+    text-decoration: none;
     padding-right: 0;
     padding-left: 0;
   }
@@ -124,7 +127,25 @@ export default styled.nav`
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 100%;
-    margin-left: 30px;
+    margin-left: auto;
+    margin-right: 0px;
+    gap: 10px;
+  }
+  & a {
+    text-decoration: none;
+    color: #303030;
+    font-weight: 700;
+  }
+  & li {
+    width: 6.7rem;
+    height: 2.8rem;
+    background: #0fb;
+    box-shadow: 0 1.6rem 1.6rem rgba(51, 51, 51, 0.25);
+    border-radius: 3rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #303030;
   }
 `

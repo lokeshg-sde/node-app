@@ -95,6 +95,15 @@ const GlobalStyles = css`
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 0 #c7c7c7;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #c7c7c7;
+    }
   }
 `
 

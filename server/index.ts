@@ -1,7 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import path from 'path'
-import fs from 'fs'
 
 import { PORT_NUMBER, DATABASE_URL, URL_CONFIG } from './config'
 import { authenticateToken } from './auth/jwt'
@@ -19,25 +18,18 @@ const assets = [__dirname, '../assets']
 // middleware for authenticating token submitted with requests
 app.use(express.json())
 app.use(express.static(path.join(...buildDir)))
-app.use(express.static(path.join(...buildPublicDir)))
-app.use(express.static(path.join(...publicDir)))
-app.use(express.static(path.join(...assets)))
+app.use('/build', express.static(path.join(...buildPublicDir)))
+app.use('/public', express.static(path.join(...publicDir)))
+app.use('/assets', express.static(path.join(...assets)))
 app.use(middlewareWrapper())
 app.use(excludePublicUrlOnAuthenticate(URL_CONFIG, authenticateToken))
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(...buildDir, 'index.html'))
 })
-app.get('*', (req, res) => {
-  res.sendFile(path.join(...publicDir, 'portfolio.html'))
-})
-app.get('cv', (req, res) => {
-  const data = fs.readFileSync(path.join(...assets, 'LOKESH-G.pdf'), 'binary')
 
+app.get('/cv', (req, res) => {
   try {
-    res.contentType('application/pdf')
-    res.send(data)
-
-    return
+    res.download(path.resolve(path.join(...assets, '/LOKESH-G.pdf')))
   } catch (err) {
     console.log(err)
   }

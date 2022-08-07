@@ -4,7 +4,6 @@ import { Routes, Route } from 'react-router-dom'
 import LoginForm from './Layouts/Authentication/Login'
 import { SignUp } from './Layouts/Authentication/SignUp'
 import PortfolioPage from './Portfolio'
-// import Portfolio from './Layouts/ProfileSite'
 
 const App = (): JSX.Element => (
   <Routes>

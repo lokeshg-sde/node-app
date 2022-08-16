@@ -3,6 +3,7 @@ import React from 'react'
 import Section from '../../Components/Section'
 import ProjectsSection from './ProjectsSection'
 import About from './About'
+import Contact from './Contact'
 
 export default (): JSX.Element => (
   <main>
@@ -16,6 +17,11 @@ export default (): JSX.Element => (
       title="My Projects Portfolio"
     />
     <Section name="Skills" sectionId="skills" title="My Tech Stack" />
-    <Section name="Contact Me" sectionId="contact" title="Reach Out to Me For Hiring" />
+    <Section
+      component={<Contact />}
+      name="Contact Me"
+      sectionId="contact"
+      title="Reach Out to Me For Hiring"
+    />
   </main>
 )

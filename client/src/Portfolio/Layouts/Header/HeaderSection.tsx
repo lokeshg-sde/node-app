@@ -11,20 +11,13 @@ export default function HeaderSection(): JSX.Element {
       <div className="container">
         <div className="hero-wrapper">
           <div className="hero-text-wrapper">
-            <p className="hi">
-              Hi There <img src="https://www.kemiadeleke.com/media/emoji.svg" /> {`I'm`}
-            </p>
+            <p className="hi">Hi There {`I'm`}</p>
             <h1>Lokesh G</h1>
-            <h3>
-              Full Stack Developer
-              <img
-                src="https://www.kemiadeleke.com/media/typer.svg"
-                style={{ marginLeft: '.2rem' }}
-              />
-            </h3>
+            <h3>Full Stack Developer</h3>
             <p className="info">
-              I have Expertise in developing the Web based application. And I have Experiences in ReactJS,
-               Ruby On Rails Framework and NodeJS apps with ExpressJS, MongoDB. with Other Tech Skills..  
+              I have Expertise in developing the Web based application. And I have Experiences in
+              ReactJS, Ruby On Rails Framework and NodeJS apps with ExpressJS, MongoDB. with Other
+              Tech Skills..
             </p>
             <a href="#contact">
               <span>Hire Me</span>

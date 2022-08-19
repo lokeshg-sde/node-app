@@ -3,9 +3,9 @@ import styled from '@emotion/styled'
 export default styled.nav`
   position: fixed;
   top: 0;
-  z-index: 1000;
+  z-index: 1;
   width: 100%;
-  background-color: #262626;
+  background-color: #25262aba;
   transition: position 2.6s;
   .navbar {
     padding: 0.5rem 1rem;

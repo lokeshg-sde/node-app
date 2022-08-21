@@ -38,7 +38,6 @@ export default css`
     flex-wrap: nowrap;
     align-items: center;
     padding-bottom: 7rem;
-    background: #212121;
     position: relative;
     margin-top: 10rem;
   }

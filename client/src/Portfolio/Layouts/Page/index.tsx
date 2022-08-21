@@ -22,7 +22,7 @@ export default (): JSX.Element => (
       component={<Contact />}
       name="Contact Me"
       sectionId="contact"
-      title="Reach Out to Me For Hiring"
+      title="Get In Touch"
     />
   </main>
 )

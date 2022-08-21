@@ -3,8 +3,7 @@ import { Global } from '@emotion/react'
 
 import { usePageConfig } from '../hooks/useTabConfig'
 
-import GlobalStyles from './GlobalStyles'
-import HeaderSectionStyles from './Layouts/Header/HeaderSectionStyles'
+import { GlobalStyles, HeaderSectionStyles, AnimateOnScrollStyles } from './styles'
 import HeaderSection from './Layouts/Header/HeaderSection'
 import Footer from './Layouts/Footer'
 import Page from './Layouts/Page'
@@ -16,6 +15,7 @@ const PortfolioPage = (): JSX.Element => {
   return (
     <>
       <Global styles={GlobalStyles} />
+      <Global styles={AnimateOnScrollStyles} />
       <Global styles={HeaderSectionStyles} />
       <HeaderSection />
       <Page />

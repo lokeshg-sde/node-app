@@ -19,7 +19,7 @@ export const Card = styled.div`
   height: 20rem;
   border-radius: 0.8rem;
   background: #2b2b2b;
-  padding: ${({ padding }: { padding?: string }) => padding || '1.8rem 1rem 1.2rem'};
+  padding: ${({ padding }: { padding?: string }) => padding || '0.8rem 0.5rem 0.8rem'};
   box-shadow: 1rem 1.6rem 2.6rem rgb(64 124 119 / 95%);
   margin-bottom: 2.4rem;
   cursor: pointer;
@@ -45,9 +45,7 @@ export const Title = styled.h6`
 export const Icon = styled.img`
   width: 2.4rem;
   height: 2.4rem;
-  background: black;
-  border-radius: 50%;
-  margin-bottom: 1.8rem;
+  margin-bottom: 0.8rem;
 `
 
 export const Text = styled.p`
@@ -61,8 +59,9 @@ export const Text = styled.p`
 
 type CardProps = {
   delay: number | string
-  iconColor: string
+  iconColor?: string
   bannerColor: string
+  iconRadius?: string
 }
 
 export const ServiceCard = styled.div`
@@ -108,8 +107,8 @@ export const ServiceCard = styled.div`
     justify-content: center;
     align-items: center;
     margin-bottom: 2.7rem;
-    border-radius: 50%;
-    background: ${({ iconColor }: CardProps) => iconColor};
+    border-radius: ${({ iconRadius }: CardProps) => iconRadius || '0'}%;
+    background: ${({ iconColor }: CardProps) => iconColor || '#2b2b2b'};
   }
   & h5 {
     font-weight: 700;
@@ -132,4 +131,13 @@ export const ServiceCard = styled.div`
     font-style: normal;
     color: #fff;
   }
+`
+
+export const TitleWrapper = styled.div`
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  margin-bottom: 2rem;
+  align-items: center;
+  justify-content: center;
 `

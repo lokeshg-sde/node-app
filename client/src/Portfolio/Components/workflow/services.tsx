@@ -4,9 +4,9 @@ import { ServicesWrapper, ServiceCard } from './styledComponents'
 
 export const Services = (): JSX.Element => (
   <ServicesWrapper>
-    <ServiceCard bannerColor="#e31f71" delay="200" iconColor="black">
+    <ServiceCard bannerColor="#e31f71" delay="200" iconColor="none">
       <div>
-        <img alt="" src="/assets/website.svg" />
+        <img alt="" src="/assets/working-96.png" />
       </div>
       <h5>Website Development</h5>
       <p>
@@ -21,7 +21,7 @@ export const Services = (): JSX.Element => (
         read/write data to WebPage through the server End point.
       </p>
     </ServiceCard>
-    <ServiceCard bannerColor="#00aeff" delay="400" iconColor="black">
+    <ServiceCard bannerColor="#00aeff" delay="400" iconRadius="50">
       <div>
         <img alt="" src="/assets/reactjs.svg" />
       </div>

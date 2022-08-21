@@ -4,4 +4,8 @@ export const STATUS_CODES = {
     code: 401,
     message: 'UnAuthorized User, Please Login to View This Page or End Point',
   },
+  SUCCESS: {
+    code: 200,
+    message: 'Request Completed Successfully. Congratulations!',
+  },
 }

@@ -13,7 +13,8 @@ const Line = styled.span`
   -ms-transition: transform 0.2s ease-out;
   -o-transition: transform 0.2s ease-out;
 `
-const Title = styled.h3`
+
+export const Title = styled.h3`
   font-family: 'SF Pro Display', sans-serif;
   font-style: normal;
   font-weight: 700;

@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 
-const GlobalStyles = css`
+export const GlobalStyles = css`
   :root {
     --blue: #007bff;
     --indigo: #6610f2;
@@ -106,5 +106,3 @@ const GlobalStyles = css`
     }
   }
 `
-
-export default GlobalStyles

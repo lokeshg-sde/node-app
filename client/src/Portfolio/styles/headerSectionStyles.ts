@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 
-export default css`
+export const HeaderSectionStyles = css`
   .header-section {
     min-height: unset;
     margin-bottom: 5rem;
@@ -38,7 +38,6 @@ export default css`
     flex-wrap: nowrap;
     align-items: center;
     padding-bottom: 7rem;
-    background: #212121;
     position: relative;
     margin-top: 10rem;
   }

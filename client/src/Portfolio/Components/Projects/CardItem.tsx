@@ -25,25 +25,22 @@ export const ProjectsContainer = styled.div`
   & > div {
     display: flex;
     flex-direction: column;
-    flex: 1 1 25rem;
+    flex: 1 1 20rem;
     margin-bottom: 2.6rem;
-  }
-  & > div:last-of-type {
-    margin-bottom: 0;
   }
 `
 
 export const ProjectContainer = styled.div`
-  width: 30%;
   margin: 2%;
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
   border-radius: 5px;
   transition: all 1s ease;
-  height: 50rem;
-  flex: 0 1 30rem;
+  height: 40rem;
+  flex: 0 1 20rem;
   background-image: url(${({ image }: { image: string }) => image});
+  background-size: 20rem 40rem;
   font-family: SF Pro Display, sans-serif;
   :hover {
     background-image: none;

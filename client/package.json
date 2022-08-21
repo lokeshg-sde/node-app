@@ -5,6 +5,7 @@
   "engines": {
     "node": ">=12.22.0 <15"
   },
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@emotion/cache": "11.7.1",
     "@emotion/react": "11.7.1",

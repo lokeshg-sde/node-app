@@ -18,11 +18,6 @@ export default (): JSX.Element => (
       title="My Projects Portfolio"
     />
     <Section component={<WorkFlowCards />} name="Skills" sectionId="skills" title="My Tech Stack" />
-    <Section
-      component={<Contact />}
-      name="Contact Me"
-      sectionId="contact"
-      title="Get In Touch"
-    />
+    <Section component={<Contact />} name="Contact Me" sectionId="contact" title="Get In Touch" />
   </main>
 )

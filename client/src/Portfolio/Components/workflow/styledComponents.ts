@@ -1,5 +1,11 @@
 import styled from '@emotion/styled'
 
+export const ServicesWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+`
+
 export const Wrapper = styled.div`
   display: flex;
   max-width: 1140px;
@@ -13,8 +19,8 @@ export const Card = styled.div`
   height: 20rem;
   border-radius: 0.8rem;
   background: #2b2b2b;
-  padding: ${({ padding }: { padding?: string }) => padding || '3.8rem 2rem 2.2rem'};
-  box-shadow: 0 1.6rem 3.6rem rgba(0, 0, 0, 0.2);
+  padding: ${({ padding }: { padding?: string }) => padding || '1.8rem 1rem 1.2rem'};
+  box-shadow: 1rem 1.6rem 2.6rem rgb(64 124 119 / 95%);
   margin-bottom: 2.4rem;
   cursor: pointer;
   :hover {
@@ -39,6 +45,8 @@ export const Title = styled.h6`
 export const Icon = styled.img`
   width: 2.4rem;
   height: 2.4rem;
+  background: black;
+  border-radius: 50%;
   margin-bottom: 1.8rem;
 `
 
@@ -49,4 +57,79 @@ export const Text = styled.p`
   font-size: 1.6rem;
   line-height: 1.9rem;
   color: #fff;
+`
+
+type CardProps = {
+  delay: number | string
+  iconColor: string
+  bannerColor: string
+}
+
+export const ServiceCard = styled.div`
+  background: #2b2b2b;
+  box-shadow: 0 1.6rem 2.4rem rgba(0, 0, 0, 0.25);
+  border-radius: 0.8rem;
+  width: 32rem;
+  height: 40rem;
+  padding: 0.6rem 1.3rem 1.2rem 1.5rem;
+  position: relative;
+  margin-bottom: 2.7rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  :hover {
+    background: #0fb;
+  }
+  :hover h5,
+  :hover p {
+    color: #303030;
+  }
+  & @media (max-width:500px) {
+    padding: 0.6rem 1.3rem 1rem 1.1rem;
+  }
+  :after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2rem;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 0 0.8rem 0.8rem;
+    background: ${({ bannerColor }: CardProps) => bannerColor};
+  }
+  & div img {
+    width: 6rem;
+    height: 6rem;
+  }
+  & div {
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.7rem;
+    border-radius: 50%;
+    background: ${({ iconColor }: CardProps) => iconColor};
+  }
+  & h5 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    margin-bottom: 2rem;
+  }
+  & p {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+  }
+  & p img {
+    width: 2rem;
+    height: 2rem;
+  }
+  & h5,
+  p {
+    font-family: SF Pro Display, sans-serif;
+    font-style: normal;
+    color: #fff;
+  }
 `

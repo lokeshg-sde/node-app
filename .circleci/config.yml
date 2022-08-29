@@ -64,7 +64,6 @@ jobs:
           command: cd client &&  yarn run tsc --noEmit
 
   tests:
-    name: Test App
     docker:
       - image: cimg/node:14.17.6
     steps:
@@ -82,8 +81,13 @@ workflows:
   # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
   express-js-app:
     jobs:
-      - ts-lints
-      - prettier
-      - eslint
-      - tests
-      - build
+      - ts-lints:
+            name: TS Lints
+      - prettier:
+            name: Prettier
+      - eslint:
+            name: ESLint
+      - tests:
+            name: Code Tests
+      - build:
+          name: Build

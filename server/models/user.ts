@@ -1,6 +1,8 @@
 import { Schema, model } from 'mongoose'
 
-export const UserRoles = ['admin', 'user', 'guest']
+import type { UserRole } from '../types'
+
+export const UserRoles: UserRole[] = ['admin', 'user', 'guest-user', 'super-user']
 
 const userSchema = new Schema(
   {
@@ -24,12 +26,11 @@ const userSchema = new Schema(
     },
     role: {
       type: String,
-      // required: true,
       enum: {
         values: UserRoles,
         message: '{VALUE} is not supported',
       },
-      default: 'guest',
+      default: 'guest-user',
     },
   },
   { timestamps: true }

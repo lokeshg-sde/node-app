@@ -3,6 +3,8 @@ import bcrypt from 'bcryptjs'
 import { User } from '../models'
 import { generateAccessToken } from '../auth/jwt'
 
+import type { UserRole } from '../types'
+
 type Credentials = {
   username: string
   password: string
@@ -14,7 +16,11 @@ export async function login({ username, password }: Credentials) {
 
   if (user) {
     if (bcrypt.compareSync(password, user.password)) {
-      const token = generateAccessToken({ username, role: user.role, id: user._id })
+      const token = generateAccessToken({
+        username,
+        role: user.role as UserRole,
+        id: user._id as unknown as string,
+      })
 
       return { ...user.toJSON(), token }
     }
@@ -37,5 +43,5 @@ export async function getById(id: string) {
 
   console.log(`user id ${id}`)
 
-  return user.toJSON()
+  return user?.toJSON()
 }

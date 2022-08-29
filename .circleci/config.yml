@@ -90,4 +90,4 @@ workflows:
       - tests:
             name: Code Tests
       - build:
-          name: Build
+            name: Build

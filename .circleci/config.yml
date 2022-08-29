@@ -95,4 +95,6 @@ workflows:
       - heroku/deploy-via-git:
             name: Deploy
             pre-steps:
-                -  run: yarn install && yarn build
+                -  run:
+                    name: Build Web Script
+                    command: yarn install && yarn build

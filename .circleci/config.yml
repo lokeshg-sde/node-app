@@ -46,8 +46,8 @@ jobs:
           name: Run Prettier On ExpressJS Code Base
           command: yarn prettier:fix
       - run:
-      name: Run Prettier On React Code Base
-      command: yarn prettier:fix:react
+          name: Run Prettier On React Code Base
+          command: yarn prettier:fix:react
 
   ts-lints:
     docker:
@@ -60,8 +60,8 @@ jobs:
           name: Run Prettier On ExpressJS Code Base
           command: yarn run tsc --noEmit
       - run:
-      name: Run Prettier On React Code Base
-      command: cd client &&  yarn run tsc --noEmit
+          name: Run Prettier On React Code Base
+          command: cd client &&  yarn run tsc --noEmit
 
   tests:
     docker:

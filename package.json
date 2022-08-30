@@ -17,9 +17,8 @@
     "start": "nodemon server/index.ts",
     "start:server": "nodemon --ignore client server/index.ts",
     "postinstall": "cd client && yarn install",
-    "build": "cd client && yarn build",
-    "webpack-dev-server": "cd client && yarn start",
-    "build-docker": "docker-compose -f docker-compose.yml build"
+    "build": "gunzip -v -f client/build.zip",
+    "webpack-dev-server": "cd client && yarn start"
   },
   "repository": {
     "type": "git",

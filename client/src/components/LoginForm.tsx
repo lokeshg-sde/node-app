@@ -1,6 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable jsx-a11y/anchor-has-content */
 import type { ReactChild, ReactFragment, ReactPortal } from 'react'
 import React, { useState, useRef } from 'react'
 import { Facebook, Twitter } from '@material-ui/icons'
@@ -55,11 +52,11 @@ const Form = () => {
 
   return (
     <form
-      ref={formRef}
       action="http://localhost:3000/users/login"
       autoComplete="off"
       method="post"
       onSubmit={handleFormSubmit}
+      ref={formRef}
     >
       <FormInput
         description="Username"

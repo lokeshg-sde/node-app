@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  express-app:
+    container_name: express-app
+    image: express-app
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 5000:5000

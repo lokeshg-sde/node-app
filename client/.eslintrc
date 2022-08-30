@@ -15,7 +15,7 @@
     "@typescript-eslint"
   ],
   "extends": [
-    "airbnb",
+    "airbnb-base",
     "plugin:jasmine/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
@@ -153,10 +153,10 @@
       { "eventHandlerPrefix": "handle", "eventHandlerPropPrefix": "on" }
     ],
     "react/jsx-key": 2,
-    "react/jsx-no-bind": 2,
+    "react/jsx-no-bind": 0,
     "react/jsx-no-duplicate-props": [2, { "ignoreCase": false }],
     "jsx-a11y/control-has-associated-label": 0,
-    "jsx-a11y/label-has-associated-control": [2, { "assert": "either" }],
+    "jsx-a11y/label-has-associated-control": [0, { "assert": "either" }],
     "jsx-a11y/label-has-for": 0,
     "jsx-a11y/no-static-element-interactions": 0,
     "jsx-a11y/no-redundant-roles": 0,
@@ -164,7 +164,7 @@
     "jsx-a11y/href-no-hash": 0,
     "jsx-a11y/alt-text": 0,
     "jsx-a11y/anchor-is-valid": [
-      "error",
+      0,
       {
         "components": ["Link"],
         "specialLink": ["to", "hrefLeft", "hrefRight"],

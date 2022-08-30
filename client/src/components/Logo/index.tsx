@@ -1,6 +1,4 @@
-/* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
-// import SvgIcon from '@material-ui/core/SvgIcon'
 import Icon from '@material-ui/core/Icon'
 import useStyles from './styles'
 

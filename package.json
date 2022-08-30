@@ -17,7 +17,6 @@
     "start": "nodemon server/index.ts",
     "start:server": "nodemon --ignore client server/index.ts",
     "postinstall": "cd client && yarn install",
-    "build": "gunzip -v -f client/build.zip",
     "webpack-dev-server": "cd client && yarn start"
   },
   "repository": {

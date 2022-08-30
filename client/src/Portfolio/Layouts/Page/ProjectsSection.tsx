@@ -19,20 +19,18 @@ const projects: ProjectInfo[] = [
     link: `https://github.com/lokeshg-fsd/crud`,
   },
   {
-    description: `A cryptocurrency mobile app which allows users buy and sell bitcoins, Etherum,
-              Coinbase and Gift cards.Users can also recharge their mobile numbers from the app
-              directly.`,
+    description: `Single Page Application built with the combination of ExpressJS and ReactJS,
+     Styled Components To Showcase My Skill sets and work Experience.`,
     image: 'https://i.pinimg.com/564x/65/66/ac/6566acdf9b62a091872d8ebdd6e1f463.jpg',
-    link: '#home',
-    title: 'Radio Mobile App',
+    link: 'https://expressjs-with-reactjs.herokuapp.com/',
+    title: 'Portfolio Page',
   },
   {
-    description: `A cryptocurrency mobile app which allows users buy and sell bitcoins, Etherum,
-              Coinbase and Gift cards.Users can also recharge their mobile numbers from the app
-              directly.`,
+    description: `A MERN Stack web Application which allows users to track the analytics of any task progress.
+    This App is built to track the Traffic of the Web Application and make the Dashboards related to that Web App`,
     image: 'https://i.pinimg.com/564x/65/66/ac/6566acdf9b62a091872d8ebdd6e1f463.jpg',
-    link: '#home',
-    title: 'Radio Mobile App',
+    link: 'https://github.com/lokeshg-fsd/node-app',
+    title: 'MERN Stack App',
   },
   {
     description: `A cryptocurrency mobile app which allows users buy and sell bitcoins, Etherum,

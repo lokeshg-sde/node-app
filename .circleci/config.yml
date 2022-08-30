@@ -94,7 +94,4 @@ workflows:
             name: Build
       - heroku/push-docker-image:
             name: Deploy
-            pre-steps:
-                -  run:
-                    name: Build Web Script
-                    command: docker-compose -f docker-compose.yml build
+

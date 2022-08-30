@@ -18,8 +18,6 @@ const StyledTypography = forwardRef(
   ) => (
     <TypoGraphy
       {...rest}
-      // @ts-expect-error auto-src fix these on forwarding
-      ref={ref}
       ownerState={{
         color,
         textTransform,
@@ -29,6 +27,8 @@ const StyledTypography = forwardRef(
         textGradient,
         darkMode: false,
       }}
+      // @ts-expect-error auto-src fix these on forwarding
+      ref={ref}
     >
       {children}
     </TypoGraphy>

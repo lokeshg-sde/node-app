@@ -14,7 +14,7 @@ const ModalDialog = ({
 
   return (
     // props received from App.js
-    <Dialog ref={ref} onClose={handleClose} open={open}>
+    <Dialog onClose={handleClose} open={open} ref={ref}>
       <Form handleClose={handleClose} />
     </Dialog>
   )

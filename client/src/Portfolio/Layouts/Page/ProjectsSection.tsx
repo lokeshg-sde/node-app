@@ -63,7 +63,7 @@ const projects: ProjectInfo[] = [
 const ProjectsSection = (): JSX.Element => (
   <ProjectsContainer>
     {projects.map(({ title, description, link, image }: ProjectInfo, index: number) => (
-      <ProjectCard key={index} description={description} image={image} link={link} title={title} />
+      <ProjectCard description={description} image={image} key={index} link={link} title={title} />
     ))}
   </ProjectsContainer>
 )

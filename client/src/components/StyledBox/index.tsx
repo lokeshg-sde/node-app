@@ -40,12 +40,12 @@ const StyledBox = forwardRef(
   ) => (
     <BoxRoot
       {...rest}
-      ref={ref}
       bgColor={bgColor || 'transparent'}
       borderRadius={borderRadius || 'none'}
       color={color || 'dark'}
       coloredShadow={coloredShadow || 'none'}
       opacity={opacity || 1}
+      ref={ref}
       shadow={shadow || 'none'}
       variant={variant || 'contained'}
     >

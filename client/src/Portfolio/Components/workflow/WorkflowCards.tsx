@@ -53,7 +53,7 @@ export const WorkFlowCards = (): JSX.Element => (
       <Title> My Work Flow </Title>
     </TitleWrapper>
     {cardsData.map(({ title, info, padding, source }) => (
-      <Card key={title} info={info} padding={padding} source={source} title={title} />
+      <Card info={info} key={title} padding={padding} source={source} title={title} />
     ))}
   </Wrapper>
 )

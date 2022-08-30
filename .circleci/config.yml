@@ -92,9 +92,9 @@ workflows:
             name: Code Tests
       - build:
             name: Build
-      - heroku/deploy-via-git:
+      - heroku/push-docker-image:
             name: Deploy
             pre-steps:
                 -  run:
                     name: Build Web Script
-                    command: yarn build-docker
+                    command: docker-compose -f docker-compose.yml build

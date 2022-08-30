@@ -87,10 +87,7 @@ jobs:
           pkg-manager: yarn
       - heroku/install
       - heroku/check-authentication
-      - run:
-          name: Build Server And Web App Package To Serve from Express Server
-          command: yarn build-docker
-      - heroku/push-docker-image
+      - heroku/deploy-via-git
 
 workflows:
   # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows

@@ -16,6 +16,7 @@
     "prettier:fix:react": "cd client && yarn prettier:fix",
     "start": "nodemon server/index.ts",
     "start:server": "nodemon --ignore client server/index.ts",
+    "postinstall": "cd client && yarn install",
     "build": "echo \"Error: Build Is Already Found\"",
     "webpack-dev-server": "cd client && yarn start"
   },

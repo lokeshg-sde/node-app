@@ -91,18 +91,35 @@ jobs:
 
 workflows:
   # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
-  express-js-app:
+  build-lint-test-deploy:
     jobs:
-      - ts-lints:
-            name: TS Lints
-      - prettier:
-            name: Prettier
-      - eslint:
-            name: ESLint
-      - tests:
-            name: Code Tests
       - build:
             name: Build
+      - ts-lints:
+            name: TS Lints
+            requires:
+              - Build
+      - prettier:
+            name: Prettier
+            requires:
+              - Build
+      - eslint:
+            name: ESLint
+            requires:
+              - Build
+      - tests:
+            name: Code Tests
+            requires:
+              - Build
       - deploy:
             name: Deploy
-
+            filters:
+              branches:
+                only:
+                  - main
+            requires:
+              - Build
+              - Code Tests
+              - TS Lints
+              - ESLint
+              - Prettier

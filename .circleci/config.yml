@@ -95,8 +95,6 @@ workflows:
       - heroku/deploy-via-git:
             name: Deploy
             pre-steps:
-                - node/install-packages:
-                    pkg-manager: yarn
                 -  run:
                     name: Build Web Script
-                    command: yarn build
+                    command: yarn build-docker

@@ -88,11 +88,8 @@ jobs:
       - heroku/install
       - heroku/check-authentication
       - run:
-          name: Login to Heroku Docker image registry
-          command: heroku container:login
-      - run:
           name: Build Server And Web App Package To Serve from Express Server
-          command: yarn build
+          command: yarn build-docker
       - heroku/push-docker-image
 
 workflows:

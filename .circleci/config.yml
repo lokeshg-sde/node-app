@@ -78,6 +78,18 @@ jobs:
           name: Run Tests On React Code Base
           command: cd client && yarn test
 
+  deploy:
+    docker:
+      - image: cimg/node:14.17.6
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Build Server And Web App Package To Serve from Express Server
+          command: yarn build
+      - heroku/deploy-via-git
+
 workflows:
   # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
   express-js-app:
@@ -92,6 +104,6 @@ workflows:
             name: Code Tests
       - build:
             name: Build
-      - heroku/push-docker-image:
+      - deploy:
             name: Deploy
 

@@ -97,7 +97,7 @@ jobs:
         description: Deploy the given branch. The default value is your current branch.
         type: string
       force:
-        default: true
+        default: false
         description: >-
           Whether or not to force the git push (i.e. `git push -f`). Defaults to
           false.
@@ -184,3 +184,14 @@ workflows:
               - Build
       - deploy:
             name: Deploy
+            force: true
+            filters:
+              branches:
+                only:
+                  - main
+            requires:
+              - Build
+              - Code Tests
+              - TS Lints
+              - ESLint
+              - Prettier

@@ -54,9 +54,9 @@ app.use('/public', express.static(path.join(...publicDir)))
 app.use('/assets', express.static(path.join(...assets)))
 app.use(middlewareWrapper())
 app.use(excludePublicUrlOnAuthenticate(URL_CONFIG, authenticateToken))
-app.get(['/', '/portfolio', '/users/login', '/users/register'], (req, res) => {
+app.get(['/', '/portfolio', '/users/login', '/users/register'], (req, res) =>
   res.sendFile(path.join(...buildDir, 'index.html'))
-})
+)
 
 app.get('/cv', (req, res) => {
   try {

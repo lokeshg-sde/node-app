@@ -18,7 +18,9 @@
     "start:server": "nodemon --ignore client server/index.ts",
     "postinstall": "cd client && yarn install",
     "build": "echo \"Error: Build Is Already Found\"",
-    "webpack-dev-server": "cd client && yarn start"
+    "webpack-dev-server": "cd client && yarn start",
+    "pre-build-ci": "ts-node bin/pre-build.ts",
+    "build-ci": "cd client && yarn build"
   },
   "repository": {
     "type": "git",

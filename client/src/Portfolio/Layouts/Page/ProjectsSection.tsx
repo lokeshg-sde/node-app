@@ -29,32 +29,31 @@ const projects: ProjectInfo[] = [
     description: `A MERN Stack web Application which allows users to track the analytics of any task progress.
     This App is built to track the Traffic of the Web Application and make the Dashboards related to that Web App`,
     image: 'https://i.pinimg.com/564x/65/66/ac/6566acdf9b62a091872d8ebdd6e1f463.jpg',
-    link: 'https://github.com/lokeshg-fsd/node-app',
+    link: 'https://expressjs-with-reactjs.herokuapp.com/users/login',
     title: 'MERN Stack App',
   },
   {
-    description: `A cryptocurrency mobile app which allows users buy and sell bitcoins, Etherum,
-              Coinbase and Gift cards.Users can also recharge their mobile numbers from the app
-              directly.`,
+    description: `This is Simple React App with custom WebPacker. This was made to understand the Basics of 
+    WebPack Config, and how it works with React if needs to be Customized.`,
     image: 'https://i.pinimg.com/564x/65/66/ac/6566acdf9b62a091872d8ebdd6e1f463.jpg',
-    link: '#home',
-    title: 'Radio Mobile App',
+    link: 'https://github.com/lokeshg-fsd/react-with-webpack',
+    title: 'Webpack Player',
   },
   {
-    description: `A cryptocurrency mobile app which allows users buy and sell bitcoins, Etherum,
-              Coinbase and Gift cards.Users can also recharge their mobile numbers from the app
-              directly.`,
+    description: `A WorkSpace Tracker is made to make the any Organization/Community WorkPlace & its Employees 
+    manageable easily. And gives an ability to make the Insights/Reporting of How Employees/WorkPlace is Utilizing
+    and What action Needs to be Planned`,
     image: 'https://i.pinimg.com/564x/65/66/ac/6566acdf9b62a091872d8ebdd6e1f463.jpg',
     link: '#home',
-    title: 'Radio Mobile App',
+    title: 'WorkSpace Tracker/Planner',
   },
   {
-    description: `A cryptocurrency mobile app which allows users buy and sell bitcoins, Etherum,
-              Coinbase and Gift cards.Users can also recharge their mobile numbers from the app
-              directly.`,
+    description: `Rails APP with ReactJS in Front End  as part of my learnings,
+    It gives ability to track and order the blood to the patients/needy. It has three modules Hospital,
+     Distributer and Donor.`,
     image: 'https://i.pinimg.com/564x/65/66/ac/6566acdf9b62a091872d8ebdd6e1f463.jpg',
-    link: '#home',
-    title: 'Radio Mobile App',
+    link: 'https://github.com/RubyOnRailsDemo/development',
+    title: 'Blood Bank Portal',
   },
 ]
 

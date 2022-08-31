@@ -129,10 +129,16 @@ jobs:
           name: Build React App Code
           command: yarn build-ci
       - run:
-          name: Commit Build Files to CI/CD Branch
+          name: Add Build Files to CI/CD Branch
+          command: git add .
+      - run:
           command: >
-            git add .
-            git commit -m "Publish Build Files To Heroku Repository"
+            git config --global user.email "you@example.com"
+
+            git config --global user.name "you@example.com"
+      - run:
+          name: Commit Build Files to CI/CD Branch 
+          command: git commit -m "Publish Build Files To Heroku Repository"
       - run:
           command: >
             if << parameters.force >>;then
@@ -150,7 +156,7 @@ jobs:
               exit 1
             fi
           name: Deploy branch or tag to Heroku via git push
-      - run: 
+      - run:
           name: Deployment to Your Heroku Instance completed
           command: echo "Congratulations Build has been Deployed"
 
@@ -178,6 +184,7 @@ workflows:
               - Build
       - deploy:
             name: Deploy
+            force: true
             filters:
               branches:
                 only:

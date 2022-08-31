@@ -7,6 +7,7 @@ orbs:
   # Orbs reduce the amount of configuration required for common tasks.
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/node
   node: circleci/node@4.7
+  heroku: circleci/heroku@1.2.6
 
 jobs:
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
@@ -19,7 +20,7 @@ jobs:
           pkg-manager: yarn
       - run:
           name: Build Server And Web App Package To Serve from Express Server
-          command: yarn build-ci
+          command: yarn build
 
   eslint:
     docker:
@@ -80,79 +81,13 @@ jobs:
   deploy:
     docker:
       - image: cimg/node:14.17.6
-    parameters:
-      api-key:
-        default: HEROKU_API_KEY
-        description: The name of the environment variable containing your Heroku API Key.
-        type: env_var_name
-      app-name:
-        default: $HEROKU_APP_NAME
-        description: >-
-          The name of your Heroku App. For backwards compatibility the literal value
-          `$HEROKU_APP_NAME` is the default, so you can easily use this command by
-          setting an environment variable called HEROKU_APP_NAME
-        type: string
-      branch:
-        default: $CIRCLE_BRANCH
-        description: Deploy the given branch. The default value is your current branch.
-        type: string
-      force:
-        default: false
-        description: >-
-          Whether or not to force the git push (i.e. `git push -f`). Defaults to
-          false.
-        type: boolean
-      maintenance-mode:
-        default: false
-        description: >-
-          Use this to automatically enable maintenance mode before pre-deploy steps
-          and have it disabled after post-deploy steps have been run.
-        type: boolean
-      no_output_timeout:
-        default: 10m
-        description: >-
-          Allows you to specify the no_output_timeout for the `git push` to heroku.
-          Defaults to 10m.
-        type: string
-      tag:
-        default: $CIRCLE_TAG
-        description: Deploy the given tag. The default value is your current tag.
-        type: string
     steps:
       - checkout
       - node/install-packages:
           pkg-manager: yarn
-      - run:
-          name: Remove Git Ignore on React Code
-          command: yarn pre-build-ci
-      - run:
-          name: Build React App Code
-          command: yarn build-ci
-      - run:
-          name: Commit Build Files to CI/CD Branch
-          command: >
-            git add .
-            git commit -m "Publish Build Files To Heroku Repository"
-      - run:
-          command: >
-            if << parameters.force >>;then
-              force="-f"
-            fi
-
-            heroku_url="https://heroku:$<< parameters.api-key >>@git.heroku.com/<< parameters.app-name >>.git"
-
-            if [ -n "<< parameters.branch >>" ]; then
-              git push $force $heroku_url << parameters.branch >>:main
-            elif [ -n "<< parameters.tag >>" ]; then
-              git push $force $heroku_url << parameters.tag >>^{}:main
-            else
-              echo "No branch or tag found."
-              exit 1
-            fi
-          name: Deploy branch or tag to Heroku via git push
-      - run: 
-          name: Deployment to Your Heroku Instance completed
-          command: echo "Congratulations Build has been Deployed"
+      - heroku/install
+      - heroku/check-authentication
+      - heroku/deploy-via-git
 
 workflows:
   # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows

@@ -1,17 +1,17 @@
 import React from 'react'
 
-import { Div, Info, InfoText, TelePhone } from './styled'
+import { AccountCircle } from '@mui/icons-material'
+import { InfoText } from './styled'
 
-export const Details = (): JSX.Element => (
-  <Div>
-    <Info>
-      <InfoText>H.S.R Layout, Bangalore.</InfoText>
-    </Info>
-    <Info>
-      <TelePhone>loke16779@gmail.com</TelePhone>
-    </Info>
-    <Info>
-      <TelePhone href="tel:+91-8971069379">+91-8971069379</TelePhone>
-    </Info>
-  </Div>
+export const Details = ({ text }: { text: string }): JSX.Element => (
+  <>
+    <AccountCircle
+      color="primary"
+      style={{
+        width: '3rem',
+        height: '3rem',
+      }}
+    />
+    <InfoText>{text}</InfoText>
+  </>
 )

@@ -3,8 +3,6 @@ import React, { useState, useRef } from 'react'
 import { Facebook, Twitter } from '@material-ui/icons'
 import LOGO from './Logo'
 
-import './login.css'
-
 const FormHeader = (props: {
   title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined
 }) => (

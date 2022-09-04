@@ -62,6 +62,7 @@ type CardProps = {
   iconColor?: string
   bannerColor: string
   iconRadius?: string
+  icon: string
 }
 
 export const ServiceCard = styled.div`
@@ -81,9 +82,6 @@ export const ServiceCard = styled.div`
   :hover h5,
   :hover p {
     color: #303030;
-  }
-  & @media (max-width:500px) {
-    padding: 0.6rem 1.3rem 1rem 1.1rem;
   }
   :after {
     content: '';
@@ -107,6 +105,10 @@ export const ServiceCard = styled.div`
     justify-content: center;
     align-items: center;
     margin-bottom: 2.7rem;
+    background-image: url(${({ icon }: CardProps) => icon});
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 6rem;
     border-radius: ${({ iconRadius }: CardProps) => iconRadius || '0'}%;
     background: ${({ iconColor }: CardProps) => iconColor || '#2b2b2b'};
   }
@@ -130,6 +132,21 @@ export const ServiceCard = styled.div`
     font-family: SF Pro Display, sans-serif;
     font-style: normal;
     color: #fff;
+  }
+  & @media (max-width:500px) {
+    width: 20rem;
+    & div {
+      width: 3rem;
+      height: 3rem;
+      background-size: 3rem;
+    }
+    & h5 {
+      font-size: 1.2rem;
+      margin-bottom: 0rem;
+    }
+    & p {
+      font-size: 1.2rem;
+    }
   }
 `
 

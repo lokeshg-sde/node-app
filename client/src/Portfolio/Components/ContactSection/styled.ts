@@ -71,7 +71,7 @@ export const Form = styled.form`
     justify-content: space-between;
     max-width: 1140px;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 760px) {
     & div[id='infoCards'] {
       display: none;
     }

@@ -1,3 +1,3 @@
-export * from './Header'
-export * from './Details'
+export * from './components'
 export * from './styled'
+export * from './Form'

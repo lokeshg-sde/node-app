@@ -25,6 +25,10 @@ export const Title = styled.h3`
   opacity: 1;
   transform: translateZ(0px);
   transition-delay: 0.1s;
+  @media (max-width: 500px) {
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+  }
 `
 const Header = styled.div`
   color: white;

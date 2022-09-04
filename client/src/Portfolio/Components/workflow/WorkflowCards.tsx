@@ -42,7 +42,7 @@ const cardsData = [
     title: 'Deploy',
     source: `${origin}/assets/deployment.png`,
     info: 'After completion of all the Previous Steps, Submit the code for the Deployment Process',
-    padding: '0.8rem 0.5rem 0.8rem',
+    padding: '0.8rem 1rem 0.8rem',
   },
 ]
 

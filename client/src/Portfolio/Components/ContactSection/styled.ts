@@ -1,4 +1,6 @@
 import styled from '@emotion/styled'
+import { TextField } from '@mui/material'
+import type { TextFieldProps } from '@mui/material'
 
 type CardProps = {
   width: number
@@ -36,17 +38,11 @@ export const TextWrapper = styled.p`
 
 export const Container = styled.div`
   max-width: 1140px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  @media (max-width: 1066px) {
-    justify-content: center;
-  }
 `
 
 export const InfoText = styled.p`
@@ -75,47 +71,10 @@ export const Form = styled.form`
     justify-content: space-between;
     max-width: 1140px;
   }
-`
-export const Input = styled.input`
-  width: ${({ width }: { width?: string }) => width || '100%'};
-  height: 3.8rem;
-  background: #dadade;
-  display: flex;
-  border-radius: 2rem;
-  align-items: center;
-  padding-left: 1.2rem;
-  padding-right: 1.2rem;
-  margin-bottom: 2.2rem;
-  font-family: SF Pro Display, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.6rem;
-  -webkit-text-fill-color: black;
-  line-height: 1.9rem;
-  & :focus {
-    box-shadow: none;
-    outline: none;
-    border: 0.1rem solid #0fb;
-  }
-`
-
-export const TextArea = styled.textarea`
-  border-radius: 1rem;
-  height: 20rem;
-  width: 33rem;
-  background: #dadade;
-  padding: 1.2rem 1.2rem;
-  margin-bottom: 2.4rem;
-  font-family: SF Pro Display, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 1.9rem;
-  -webkit-text-fill-color: black;
-  & :focus {
-    box-shadow: none;
-    outline: none;
-    border: 0.1rem solid #0fb;
+  @media (max-width: 500px) {
+    & div[id='infoCards'] {
+      display: none;
+    }
   }
 `
 
@@ -144,5 +103,23 @@ export const Button = styled.button`
   }
   @media (max-width: 1066px) {
     margin: 0 auto;
+  }
+`
+
+export const StyledTextField = styled(TextField)`
+  .MuiOutlinedInput-root {
+    background-color: whitesmoke;
+    border-radius: 2rem;
+    border-width: 0.5rem;
+    padding: 0.5rem;
+    padding-left: ${({ InputProps }: TextFieldProps) =>
+      InputProps?.startAdornment ? '0px' : '1rem'};
+    margin-bottom: 2.2rem;
+    font-family: SF Pro Display, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    -webkit-text-fill-color: black;
+    line-height: 1.9rem;
   }
 `

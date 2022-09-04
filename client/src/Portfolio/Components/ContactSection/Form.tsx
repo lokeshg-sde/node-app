@@ -49,15 +49,15 @@ export const Contact = (): JSX.Element => {
                 value={message}
               />
             </Card>
-            <div id={"infoCards"}>
+            <div id={'infoCards'}>
               <Card height={11} width={20}>
-                <Details text="H S R Layout, Bangalore." />
+                <Details iconValue={0} text="H S R Layout, Bangalore." />
               </Card>
               <Card height={11} width={20}>
-                <Details text="Email" />
+                <Details iconValue={1} text="loke16779@gmail.com" />
               </Card>
               <Card height={11} width={20}>
-                <Details text="Phone" />
+                <Details iconValue={2} text="Phone" />
               </Card>
             </div>
           </div>

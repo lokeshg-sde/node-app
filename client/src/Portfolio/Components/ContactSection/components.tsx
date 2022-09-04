@@ -1,22 +1,38 @@
 import React from 'react'
 import { InputAdornment } from '@mui/material'
-import { AccountCircle } from '@mui/icons-material'
 import type { TextFieldProps } from '@mui/material'
+import { LocationCity, Email, Phone } from '@mui/icons-material'
 
 import { InfoText, HeaderText, TextWrapper, StyledTextField } from './styled'
 
-export const Details = ({ text }: { text: string }): JSX.Element => (
-  <>
-    <AccountCircle
-      color="primary"
-      style={{
-        width: '3rem',
-        height: '3rem',
-      }}
-    />
-    <InfoText>{text}</InfoText>
-  </>
-)
+const Icons = {
+  0: LocationCity,
+  1: Email,
+  2: Phone,
+}
+
+export const Details = ({
+  text,
+  iconValue,
+}: {
+  text: string
+  iconValue: 0 | 1 | 2
+}): JSX.Element => {
+  const Icon = Icons[iconValue]
+
+  return (
+    <>
+      <Icon
+        color="primary"
+        style={{
+          width: '3rem',
+          height: '3rem',
+        }}
+      />
+      <InfoText>{text}</InfoText>
+    </>
+  )
+}
 
 export const Header = (): JSX.Element => (
   <HeaderText>

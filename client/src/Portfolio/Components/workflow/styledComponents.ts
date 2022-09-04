@@ -19,7 +19,7 @@ export const Card = styled.div`
   height: 20rem;
   border-radius: 0.8rem;
   background: #2b2b2b;
-  padding: ${({ padding }: { padding?: string }) => padding || '0.8rem 0.5rem 0.8rem'};
+  padding: ${({ padding }: { padding?: string }) => padding || '0.8rem 1rem 0.8rem'};
   box-shadow: 1rem 1.6rem 2.6rem rgb(64 124 119 / 95%);
   margin-bottom: 2.4rem;
   cursor: pointer;
@@ -51,6 +51,7 @@ export const Icon = styled.img`
 export const Text = styled.p`
   font-family: SF Pro Display, sans-serif;
   font-style: normal;
+  text-align: justify;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.9rem;
@@ -119,6 +120,7 @@ export const ServiceCard = styled.div`
     margin-bottom: 2rem;
   }
   & p {
+    text-align: justify;
     font-weight: 400;
     font-size: 1.6rem;
     line-height: 1.9rem;
@@ -133,12 +135,17 @@ export const ServiceCard = styled.div`
     font-style: normal;
     color: #fff;
   }
-  & @media (max-width:500px) {
+  @media (max-width:500px) {
     width: 20rem;
     & div {
       width: 3rem;
       height: 3rem;
       background-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    & div img {
+      width: 3rem;
+      height: 3rem;
     }
     & h5 {
       font-size: 1.2rem;

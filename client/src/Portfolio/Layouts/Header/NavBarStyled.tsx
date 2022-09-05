@@ -14,8 +14,6 @@ export default styled.nav`
     max-width: 1140px;
     display: flex;
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
   }
@@ -32,7 +30,6 @@ export default styled.nav`
     padding-top: 0.3125rem;
     padding-bottom: 0.3125rem;
     margin-right: 1rem;
-    padding-left: 15px;
     font-size: 1.25rem;
     line-height: inherit;
     white-space: nowrap;
@@ -148,5 +145,10 @@ export default styled.nav`
     justify-content: center;
     align-items: center;
     color: #303030;
+  }
+  @media (max-width: 880px) {
+    & ul {
+      display: none;
+    }
   }
 `

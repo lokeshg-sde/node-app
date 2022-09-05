@@ -4,7 +4,7 @@ import path from 'path'
 import fs from 'fs'
 import morgan from 'morgan'
 
-import { PORT_NUMBER, DATABASE_URL, URL_CONFIG } from './config'
+import { PORT_NUMBER, DATABASE_URL, URL_CONFIG, NODE_ENV } from './config'
 import { authenticateToken } from './auth/jwt'
 import excludePublicUrlOnAuthenticate from './auth/authentication'
 import middlewareWrapper from './auth/cors'
@@ -17,10 +17,9 @@ const buildPublicDir = [__dirname, '../client', 'public']
 const publicDir = [__dirname, '/public']
 const assets = [__dirname, '../assets']
 
-const accessLogStream = fs.createWriteStream(
-  path.join(__dirname, `../logs/${process.env.NODE_ENV || 'development'}.log`),
-  { flags: 'a' }
-)
+const accessLogStream = fs.createWriteStream(path.join(__dirname, `../logs/${NODE_ENV}.log`), {
+  flags: 'a',
+})
 
 // middleware for authenticating token submitted with requests
 app.use(express.json())

@@ -5,6 +5,7 @@ config()
 const defaultPort = 5000
 
 export const PORT_NUMBER = (process.env.PORT || defaultPort) as number
+export const NODE_ENV = process.env.NODE_ENV || 'development'
 export const JWT_TOKEN_SECRET = process.env.JWT_TOKEN_SECRET as string
 export const DATABASE_URL = process.env.DATABASE_URL as string
 export const MAIL_TRANSPORTER_EMAIL = process.env.NODE_MAILER_EMAIL as string

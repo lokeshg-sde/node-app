@@ -30,7 +30,7 @@ export default function HeaderSection(): JSX.Element {
             </a>
           </div>
           <div className="hero-image-wrapper">
-            <img src={image} title="hero image" />
+            <img src={image} />
           </div>
         </div>
       </div>

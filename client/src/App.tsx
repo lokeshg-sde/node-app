@@ -8,6 +8,7 @@ import PortfolioPage from './Portfolio'
 const App = (): JSX.Element => (
   <Routes>
     <Route element={<PortfolioPage />} key="login" path="/" />
+    <Route element={<PortfolioPage />} key="login" path="/portfolio" />
     <Route element={<LoginForm />} key="login" path="users/login" />
     <Route element={<SignUp />} key="register" path="users/register" />
   </Routes>

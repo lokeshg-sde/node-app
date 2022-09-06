@@ -16,6 +16,7 @@ export const MailTransporter = createTransport({
     clientId: GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
     refreshToken: GOOGLE_REFRESH_TOKEN,
+    accessToken: process.env.GOOGLE_CLIENT_ACCESS,
   },
   service: 'gmail',
 })

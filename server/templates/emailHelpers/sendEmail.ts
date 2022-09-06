@@ -1,23 +1,34 @@
 import type { Response } from 'express'
 import type { SendMailOptions, SentMessageInfo } from 'nodemailer'
 
-import { MailTransporter, MAIL_TRANSPORTER_EMAIL, STATUS_CODES } from '../../config'
+import {
+  MailTransporter,
+  MAIL_TRANSPORTER_EMAIL,
+  STATUS_CODES,
+  PORTFOLIO_EMAIL,
+} from '../../config'
 
 import { getMessageBody } from '../email/registerToJob'
 
-export const getMailOptions = (
-  from: string,
-  to: string,
-  name: string,
+type MailOptionsConfig = {
+  from: string
+  name: string
   message: string
-): SendMailOptions => {
+  subject: string
+}
+
+export const getMailOptions = ({
+  from,
+  name,
+  message,
+  subject,
+}: MailOptionsConfig): SendMailOptions => {
   const html = getMessageBody(name, message)
-  const subject = 'Job Proposal for your technical skills'
 
   return {
-    from: `Express App ${MAIL_TRANSPORTER_EMAIL}`,
-    to: `Lokesh G ${to}`,
-    cc: [`${name} ${from}`, `Express App ${MAIL_TRANSPORTER_EMAIL}`],
+    from: MAIL_TRANSPORTER_EMAIL,
+    to: PORTFOLIO_EMAIL,
+    cc: [from, MAIL_TRANSPORTER_EMAIL],
     html,
     subject,
   }

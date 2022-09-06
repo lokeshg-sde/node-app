@@ -16,3 +16,4 @@ export const GOOGLE_REFRESH_TOKEN = process.env.GOOGLE_REFRESH_TOKEN as string
 export const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID as string
 export const AWS_SECRET_KEY_VALUE = process.env.AWS_SECRET_KEY_VALUE as string
 export const AWS_REGION_LOCATION = process.env.AWS_REGION_LOCATION as string
+export const PORTFOLIO_EMAIL = process.env.PORTFOLIO_EMAIL as string

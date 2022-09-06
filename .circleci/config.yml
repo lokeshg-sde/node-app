@@ -135,7 +135,7 @@ jobs:
           command: >
             git config --global user.email "you@example.com"
 
-            git config --global user.name "you@example.com"
+            git config --global user.name ""
       - run:
           name: Commit Build Files to CI/CD Branch 
           command: git commit -m "Publish Build Files To Heroku Repository"

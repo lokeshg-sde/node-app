@@ -7,6 +7,7 @@ orbs:
   # Orbs reduce the amount of configuration required for common tasks.
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/node
   node: circleci/node@4.7
+  heroku: circleci/heroku@1.2.6
 
 jobs:
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
@@ -120,6 +121,9 @@ jobs:
         type: string
     steps:
       - checkout
+      - heroku/check-authentication
+      - run: 
+          command: heroku login
       - node/install-packages:
           pkg-manager: yarn
       - run:
@@ -139,6 +143,8 @@ jobs:
       - run:
           name: Commit Build Files to CI/CD Branch 
           command: git commit -m "Publish Build Files To Heroku Repository"
+      - run: 
+          command: heroku login
       - run:
           command: >
             if << parameters.force >>;then

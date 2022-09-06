@@ -185,10 +185,6 @@ workflows:
       - deploy:
             name: Deploy
             force: true
-            filters:
-              branches:
-                only:
-                  - main
             requires:
               - Build
               - Code Tests

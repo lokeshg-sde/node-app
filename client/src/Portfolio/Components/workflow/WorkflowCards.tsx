@@ -1,10 +1,8 @@
 import React from 'react'
 
 import { getApiConfig } from '../../../utils/getApiConfig'
-import { Wrapper, TitleWrapper } from './styledComponents'
+import { Wrapper } from './styledComponents'
 import Card from './workflowCard'
-import { Title } from '../SectionHeader'
-import { Services } from './services'
 
 const origin = getApiConfig()
 
@@ -48,10 +46,6 @@ const cardsData = [
 
 export const WorkFlowCards = (): JSX.Element => (
   <Wrapper>
-    <Services />
-    <TitleWrapper>
-      <Title> My Work Flow </Title>
-    </TitleWrapper>
     {cardsData.map(({ title, info, padding, source }) => (
       <Card info={info} key={title} padding={padding} source={source} title={title} />
     ))}

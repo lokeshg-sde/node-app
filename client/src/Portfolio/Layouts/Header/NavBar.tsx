@@ -2,6 +2,9 @@ import React from 'react'
 
 import Logo from '../../Components/brand'
 import NavBarStyled from './NavBarStyled'
+import HeaderMenu from './Menu'
+
+import { MENU_ITEMS } from './constants'
 
 const MenuItem = ({ label, href }: { label: string; href: string }) => (
   <li className="nav-item">
@@ -19,10 +22,11 @@ export default (): JSX.Element => (
       </a>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul>
-          <MenuItem href="#home" label="Home" />
-          <MenuItem href="#about" label="About" />
-          <MenuItem href="#portfolio" label="Services" />
-          <MenuItem href="#contact" label="Contact Me" />
+          {MENU_ITEMS.map(
+            ({ href, label, hidden }) =>
+              !hidden && <MenuItem href={href} key={href} label={label} />
+          )}
+          <HeaderMenu />
         </ul>
       </div>
     </div>

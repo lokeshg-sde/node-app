@@ -147,7 +147,7 @@ export default styled.nav`
     color: #303030;
   }
   @media (max-width: 880px) {
-    & ul {
+    & ul li {
       display: none;
     }
   }

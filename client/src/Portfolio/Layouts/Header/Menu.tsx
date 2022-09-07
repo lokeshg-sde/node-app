@@ -26,7 +26,7 @@ const StyledMenu = styled((props: MenuProps) => (
     marginTop: '1rem',
     maxWidth: '10rem',
     color: 'rgb(55, 65, 81)',
-    boxShadow: '1rem 1.6rem 2.6rem rgb(64 124 119 / 95%)',
+    boxShadow: '0rem 0rem 3rem darkcyan;',
     '& .MuiMenu-list': {
       padding: 0,
     },
@@ -43,7 +43,7 @@ const StyledMenu = styled((props: MenuProps) => (
     textDecoration: 'none',
     color: '#303030',
     fontWeight: 700,
-    width: '100%'
+    width: '100%',
   },
 }))
 
@@ -68,7 +68,7 @@ export default function HeaderMenu(): JSX.Element {
 
   return (
     <div>
-      <StyledButton id="long-button" onClick={handleClick}>
+      <StyledButton id="long-button" onClick={handleClick} size="large">
         <MenuIcon />
       </StyledButton>
       <StyledMenu

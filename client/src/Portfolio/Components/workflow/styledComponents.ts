@@ -71,7 +71,7 @@ export const ServiceCard = styled.div`
   box-shadow: 0 1.6rem 2.4rem rgba(0, 0, 0, 0.25);
   border-radius: 0.8rem;
   width: 32rem;
-  height: 40rem;
+  min-height: 40rem;
   padding: 0.6rem 1.3rem 1.2rem 1.5rem;
   position: relative;
   margin-bottom: 2.7rem;
@@ -135,7 +135,7 @@ export const ServiceCard = styled.div`
     font-style: normal;
     color: #fff;
   }
-  @media (max-width:500px) {
+  @media (max-width: 500px) {
     width: 20rem;
     & div {
       width: 3rem;

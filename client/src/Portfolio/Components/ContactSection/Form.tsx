@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import type { MouseEvent } from 'react'
+// import { useMediaQuery } from '@mui/material'
 import { Person, Info } from '@mui/icons-material'
 
 import { Container, Form, Button, Card } from './styled'
@@ -12,6 +13,8 @@ export const Contact = (): JSX.Element => {
   const [name, setName] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
+
+  // const isMobile = useMediaQuery('max-width: 500px')
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onSubmit = (event: MouseEvent<HTMLButtonElement>) => {
@@ -30,6 +33,7 @@ export const Contact = (): JSX.Element => {
                 key="full-name"
                 placeHolder="Full Name"
                 setValue={setName}
+                size="small"
                 value={name}
               />
               <EmailField isError={error} setError={setError} setValue={setEmail} value={email} />
@@ -38,14 +42,16 @@ export const Contact = (): JSX.Element => {
                 key="subject"
                 placeHolder="Subject"
                 setValue={setSubject}
+                size="small"
                 value={subject}
               />
               <InputField
                 key="message"
                 multiline
                 placeHolder="Enter your message"
-                rows={8}
+                rows={6}
                 setValue={setMessage}
+                size="small"
                 value={message}
               />
             </Card>

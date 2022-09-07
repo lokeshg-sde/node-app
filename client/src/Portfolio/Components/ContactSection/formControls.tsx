@@ -56,6 +56,7 @@ export const EmailField = ({ value, setValue, setError }: EmailProps): JSX.Eleme
       onChange={OnChange}
       placeholder="Email"
       required
+      size="small"
       type="email"
       value={value}
     />

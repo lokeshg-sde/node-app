@@ -17,9 +17,16 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: yarn
+      - run: yarn install-react
       - run:
           name: Build Server And Web App Package To Serve from Express Server
           command: yarn build-ci
+      - run:
+          name: Scan Build for Deployment
+          command: yarn post-build
+      - run:
+          name: List File structure on client directory
+          command: ls client
 
   eslint:
     docker:
@@ -28,6 +35,7 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: yarn
+      - run: yarn install-react
       - run:
           name: Run Eslint  On ExpressJS Code Base
           command: yarn eslint
@@ -42,6 +50,7 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: yarn
+      - run: yarn install-react
       - run:
           name: Run Prettier On ExpressJS Code Base
           command: yarn prettier:fix
@@ -56,6 +65,7 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: yarn
+      - run: yarn install-react
       - run:
           name: Run Prettier On ExpressJS Code Base
           command: yarn run tsc --noEmit
@@ -70,6 +80,7 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: yarn
+      - run: yarn install-react
       - run:
           name: NodeJS Tests On Express JS Server
           command: yarn test
@@ -122,12 +133,13 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: yarn
-      - run:
-          name: Remove Git Ignore on React Code
-          command: yarn pre-build-ci
+      - run: yarn install-react
       - run:
           name: Build React App Code
           command: yarn build-ci
+      - run:
+          name: Remove Git Ignore and Node Modules React Code
+          command: yarn post-build-ci
       - run:
           name: Add Build Files to CI/CD Branch
           command: git add .
@@ -135,7 +147,7 @@ jobs:
           command: >
             git config --global user.email "you@example.com"
 
-            git config --global user.name "you@example.com"
+            git config --global user.name "example-com"
       - run:
           name: Commit Build Files to CI/CD Branch 
           command: git commit -m "Publish Build Files To Heroku Repository"

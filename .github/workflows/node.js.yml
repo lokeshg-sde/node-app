@@ -25,5 +25,37 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+    - run: yarn install-react
+    - run:
+        name: ESLint Scan
+        command: >
+        yarn eslint
 
-    - run: npm test
+        yarn eslint:react
+    - run:
+        name: Prettier Scan
+        command: >
+        yarn prettier:fix
+
+        yarn prettier:fix:react
+    - run:
+        name: TypeScript Scan
+        command: >
+        yarn run tsc --noEmit
+
+        cd client && yarn run tsc --noEmit
+    - run:
+        name: Verify Tests
+        command: >
+        yarn test
+
+        cd client && yarn test
+    - run:
+        name: Build React Code
+        command: yarn build-ci
+    - run:
+        name: Scan Build for Deployment
+        command: yarn post-build
+    - run:
+        name: List File structure on client directory
+        command: ls client

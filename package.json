@@ -16,11 +16,12 @@
     "prettier:fix:react": "cd client && yarn prettier:fix",
     "start": "nodemon server/index.ts",
     "start:server": "nodemon --ignore client server/index.ts",
-    "postinstall": "cd client && yarn install",
+    "install-react": "cd client && yarn install",
     "build": "echo \"Error: Build Is Already Found\"",
     "webpack-dev-server": "cd client && yarn start",
-    "pre-build-ci": "ts-node bin/pre-build.ts",
-    "build-ci": "cd client && yarn build"
+    "pre-build-ci": "ts-node bin/pre-build",
+    "build-ci": "cd client && yarn build",
+    "post-build-ci": "bin/post-build"
   },
   "repository": {
     "type": "git",

@@ -5,17 +5,16 @@ import ProjectsSection from './ProjectsSection'
 import About from './About'
 import Contact from './Contact'
 import { WorkFlowCards, Services } from '../../Components/workflow'
-import RecipeReviewCard from '../../Components/WorkExperiences'
+import { WorkCards } from '../../Components/WorkExperiences'
 
 export default (): JSX.Element => (
   <main>
     <Section component={<About />} name="Who I am" sectionId="about" title="About My Profession" />
-    <Section name="Studies" sectionId="study" title="Education & Honors" />
     <Section
-      component={<RecipeReviewCard />}
+      component={<WorkCards />}
       name="Experiences"
       sectionId="work"
-      title="Work History"
+      title="Work History & Education"
     />
     <Section
       component={<ProjectsSection />}

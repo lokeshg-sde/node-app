@@ -1,7 +1,6 @@
 export const MENU_ITEMS = [
   { href: '#home', label: 'Home' },
   { href: '#about', label: 'About' },
-  { href: '#study', label: 'Education', hidden: true },
   { href: '#work', label: 'Experience', hidden: true },
   { href: '#portfolio', label: 'Services' },
   { href: '#tech', label: 'Technology', hidden: true },

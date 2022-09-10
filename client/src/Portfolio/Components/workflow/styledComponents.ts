@@ -4,6 +4,8 @@ export const ServicesWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  max-width: 1140px;
+  margin: auto;
 `
 
 export const Wrapper = styled.div`

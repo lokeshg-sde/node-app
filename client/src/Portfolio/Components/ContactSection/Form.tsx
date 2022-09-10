@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import type { MouseEvent } from 'react'
-// import { useMediaQuery } from '@mui/material'
+import { useMediaQuery } from '@mui/material'
 import { Person, Info } from '@mui/icons-material'
 
 import { Container, Form, Button, Card } from './styled'
@@ -13,13 +13,14 @@ export const Contact = (): JSX.Element => {
   const [name, setName] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
+  const isMobile = useMediaQuery('max-width: 768px')
 
-  // const isMobile = useMediaQuery('max-width: 500px')
+  const fieldSize = useMemo(() => (isMobile ? 'small' : 'medium'), [isMobile])
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onSubmit = (event: MouseEvent<HTMLButtonElement>) => {
     // eslint-disable-next-line no-alert
-    alert('Form Submitted')
+    console.log('Form Submitted')
   }
 
   return (
@@ -33,25 +34,32 @@ export const Contact = (): JSX.Element => {
                 key="full-name"
                 placeHolder="Full Name"
                 setValue={setName}
-                size="small"
+                size={fieldSize}
                 value={name}
               />
-              <EmailField isError={error} setError={setError} setValue={setEmail} value={email} />
+              <EmailField
+                isError={error}
+                setError={setError}
+                setValue={setEmail}
+                size={fieldSize}
+                value={email}
+              />
               <InputField
                 icon={<Info color="info" sx={{ color: 'grey', fontSize: '2rem' }} />}
                 key="subject"
                 placeHolder="Subject"
                 setValue={setSubject}
-                size="small"
+                size={fieldSize}
                 value={subject}
               />
               <InputField
+                id="message"
                 key="message"
                 multiline
                 placeHolder="Enter your message"
                 rows={6}
                 setValue={setMessage}
-                size="small"
+                size={fieldSize}
                 value={message}
               />
             </Card>

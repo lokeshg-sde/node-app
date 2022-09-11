@@ -33,7 +33,7 @@ const workCardsData: {
     good team player/member on the project. I was more Enthusiast on finding/giving better understandable code to
     project client and get involve on sharing any Tech / Product improvement which can make more efficient on product.
     amd making sure that the product work on the production with high performance.`,
-    textColorBack: '#00FFBB'
+    textColorBack: '#00FFBB',
   },
   {
     title: 'Software Engineering Trainee',
@@ -47,8 +47,8 @@ const workCardsData: {
     Using ReactJS as front end Library. In Ruby On Rails I have Learned about MVC architecture and how it works to
     make the product work on live. along with these Learning I started Giving support to the Project which was on ROR
      with ReactJS`,
-     textColorBack: 'green',
-     textColorFront: '#00FFBB'
+    textColorBack: 'green',
+    textColorFront: '#00FFBB',
   },
   {
     title: 'Student',

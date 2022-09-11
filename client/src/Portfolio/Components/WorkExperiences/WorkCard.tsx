@@ -108,11 +108,24 @@ export const FlipFlop = ({
         />
       }
       FrontCard={
-        <WorkCard backgroundColor={backgroundColorFront}
-        info={info} logo={logo} media={image} subTitle={duration} textColor={textColorFront} title={title} />
+        <WorkCard
+          backgroundColor={backgroundColorFront}
+          info={info}
+          logo={logo}
+          media={image}
+          subTitle={duration}
+          textColor={textColorFront}
+          title={title}
+        />
       }
     />
   ) : (
-    <WorkCard backgroundColor={backgroundColorFront}
-    info={info} logo={logo} subTitle={duration} textColor={textColorFront} title={title} />
+    <WorkCard
+      backgroundColor={backgroundColorFront}
+      info={info}
+      logo={logo}
+      subTitle={duration}
+      textColor={textColorFront}
+      title={title}
+    />
   )

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Remove the gitignore file after after  production build completes"
+
+sudo rm -rf client/.gitignore
+
+echo "Git Igonre has been removed"
+
+echo "Remove node modules directory to reduce memory on the heroku"
+
+sudo rmdir -rf client/node_modules
+
+echo "Node Modules has been Deleted from the Express App"

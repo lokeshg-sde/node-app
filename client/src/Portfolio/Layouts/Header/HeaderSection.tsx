@@ -1,7 +1,5 @@
 import React from 'react'
 
-import image from './programmer.png'
-
 import NavBar from './NavBar'
 
 export default function HeaderSection(): JSX.Element {
@@ -28,9 +26,6 @@ export default function HeaderSection(): JSX.Element {
             <a href="#contact">
               <span>Hire Me</span>
             </a>
-          </div>
-          <div className="hero-image-wrapper">
-            <img src={image} />
           </div>
         </div>
       </div>

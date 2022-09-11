@@ -21,6 +21,11 @@ export const HeaderSectionStyles = css`
     padding-bottom: 7rem;
     position: relative;
     margin-top: 10rem;
+    background-image: url(/static/media/programmer.d6eed67d.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-origin: content-box;
+    background-size: 50% 100%;
   }
   @media (max-width: 600px) {
     .hero-wrapper {
@@ -95,8 +100,8 @@ export const HeaderSectionStyles = css`
   .hero-wrapper .hero-text-wrapper a span {
     font-family: SF Pro Display, sans-serif;
     font-style: normal;
-    font-weight: 500;
-    font-size: 1.1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
     line-height: 1.2rem;
     text-align: center;
   }
@@ -133,21 +138,9 @@ export const HeaderSectionStyles = css`
       font-size: 1.3rem;
     }
   }
-  .hero-wrapper .hero-image-wrapper {
-    overflow: hidden;
-  }
   @media (max-width: 880px) {
-    .hero-wrapper .hero-image-wrapper {
-      display: none;
-    }
-  }
-  .hero-wrapper .hero-image-wrapper img {
-    height: 34rem;
-    width: 34rem;
-  }
-  @media (max-width: 930px) {
-    .hero-wrapper .hero-image-wrapper img {
-      width: 36rem;
+    .hero-wrapper {
+      background-image: none;
     }
   }
 `

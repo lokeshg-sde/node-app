@@ -23,11 +23,12 @@ const AboutContainer = styled.div`
   & p {
     color: rgb(255, 255, 255);
     font-size: 1.6rem;
+    text-align: center;
   }
   & button {
     width: 10.7rem;
     height: 3.8rem;
-    margin-left: 40%;
+    margin: auto;
     background: #0fb;
     box-shadow: 0 1.6rem 1.6rem rgba(51, 51, 51, 0.25);
     border-radius: 3rem;
@@ -39,8 +40,8 @@ const AboutContainer = styled.div`
     color: #303030;
     font-family: SF Pro Display, sans-serif;
     font-style: normal;
-    font-weight: 500;
-    font-size: 1.1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
     line-height: 1.2rem;
     text-align: center;
   }

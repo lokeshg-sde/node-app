@@ -12,7 +12,9 @@ const ProjectInfo = ({ title, description, link }: Props) => (
   <ProjectCardInfo className="profile-card">
     <h4>{title}</h4>
     <p>{description}</p>
-    <a href={link} target="_blank">Find Resource</a>
+    <a href={link} target="_blank">
+      Find Resource
+    </a>
   </ProjectCardInfo>
 )
 

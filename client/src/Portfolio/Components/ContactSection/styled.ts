@@ -109,6 +109,7 @@ export const Button = styled.button`
 export const StyledTextField = styled(TextField)`
   .MuiOutlinedInput-root {
     background-color: whitesmoke;
+    max-height: ${({ id }) => (id === 'message' ? '' : '200px !important')};
     border-radius: 2rem;
     border-width: 0.5rem;
     padding: 0.5rem;

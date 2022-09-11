@@ -26,9 +26,10 @@ type EmailProps = {
   isError: boolean
   setValue: (val: string) => void
   setError: (val: boolean) => void
+  size: 'small' | 'medium'
 }
 
-export const EmailField = ({ value, setValue, setError }: EmailProps): JSX.Element => {
+export const EmailField = ({ value, setValue, setError, size }: EmailProps): JSX.Element => {
   const OnChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const isValid = Regex.email.test(event.currentTarget.value as string)
 
@@ -56,6 +57,7 @@ export const EmailField = ({ value, setValue, setError }: EmailProps): JSX.Eleme
       onChange={OnChange}
       placeholder="Email"
       required
+      size={size}
       type="email"
       value={value}
     />

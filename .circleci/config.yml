@@ -23,7 +23,10 @@ jobs:
           command: yarn build-ci
       - run:
           name: Scan Build for Deployment
-          command: yarn post-build-ci
+          command: |
+            rm -rf client/.gitignore
+
+            rm -rf client/node_modules
       - run:
           name: List File structure on client directory
           command: ls client
@@ -138,8 +141,11 @@ jobs:
           name: Build React App Code
           command: yarn build-ci
       - run:
-          name: Remove Git Ignore and Node Modules React Code
-          command: yarn post-build-ci
+          name: Scan Build for Deployment
+          command: |
+            rm -rf client/.gitignore
+
+            rm -rf client/node_modules
       - run:
           name: Add Build Files to CI/CD Branch
           command: git add .

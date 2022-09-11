@@ -23,7 +23,7 @@ jobs:
           command: yarn build-ci
       - run:
           name: Scan Build for Deployment
-          command: bin/post-build
+          command: yarn post-build
       - run:
           name: List File structure on client directory
           command: ls client

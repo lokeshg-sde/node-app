@@ -17,10 +17,20 @@ type CardProps = {
   subTitle: string
   media?: string
   info: string
+  textColor?: string
+  backgroundColor?: string
 }
 
-const WorkCard = ({ logo, title, subTitle, media, info }: CardProps): JSX.Element => (
-  <Card>
+const WorkCard = ({
+  logo,
+  title,
+  subTitle,
+  media,
+  info,
+  textColor,
+  backgroundColor,
+}: CardProps): JSX.Element => (
+  <Card backgroundColor={backgroundColor} textColor={textColor}>
     <CardHeader
       avatar={
         <Avatar aria-label={logo} src={logo}>
@@ -67,6 +77,10 @@ type Props = {
   image?: string
   info: string
   backSideText?: string
+  textColorFront?: string
+  backgroundColorFront?: string
+  textColorBack?: string
+  backgroundColorBack?: string
 }
 
 export const FlipFlop = ({
@@ -76,14 +90,29 @@ export const FlipFlop = ({
   image,
   info,
   backSideText,
+  textColorBack,
+  textColorFront,
+  backgroundColorBack,
+  backgroundColorFront,
 }: Props): JSX.Element =>
   backSideText ? (
     <FlipFlopCard
-      BackCard={<WorkCard info={backSideText} logo={logo} subTitle={duration} title={title} />}
+      BackCard={
+        <WorkCard
+          backgroundColor={backgroundColorBack}
+          info={backSideText}
+          logo={logo}
+          subTitle={duration}
+          textColor={textColorBack}
+          title={title}
+        />
+      }
       FrontCard={
-        <WorkCard info={info} logo={logo} media={image} subTitle={duration} title={title} />
+        <WorkCard backgroundColor={backgroundColorFront}
+        info={info} logo={logo} media={image} subTitle={duration} textColor={textColorFront} title={title} />
       }
     />
   ) : (
-    <WorkCard info={info} logo={logo} subTitle={duration} title={title} />
+    <WorkCard backgroundColor={backgroundColorFront}
+    info={info} logo={logo} subTitle={duration} textColor={textColorFront} title={title} />
   )

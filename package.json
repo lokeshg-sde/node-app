@@ -21,7 +21,7 @@
     "webpack-dev-server": "cd client && yarn start",
     "pre-build-ci": "ts-node bin/pre-build",
     "build-ci": "cd client && yarn build",
-    "post-build-ci": "bin/post-build"
+    "post-build-ci": "ts-node bin/post-build.ts"
   },
   "repository": {
     "type": "git",

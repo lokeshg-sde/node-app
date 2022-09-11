@@ -30,25 +30,21 @@ jobs:
         name: ESLint Scan
         command: |
           yarn eslint
-
           yarn eslint:react
     - run:
         name: Prettier Scan
         command: |
           yarn prettier:fix
-
           yarn prettier:fix:react
     - run:
         name: TypeScript Scan
         command: |
           yarn run tsc --noEmit
-
           cd client && yarn run tsc --noEmit
     - run:
         name: Verify Tests
         command: |
           yarn test
-
           cd client && yarn test
     - run:
         name: Build React Code
@@ -61,4 +57,4 @@ jobs:
           rm -rf client/node_modules
     - run:
         name: List File structure on client directory
-        command: ls client
+        command: du -h --max-depth=1 | sort -rh

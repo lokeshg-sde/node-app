@@ -28,8 +28,11 @@ jobs:
 
             rm -rf client/node_modules
       - run:
-          name: List File structure on client directory
-          command: ls client
+          name: List File structure on working directory directory
+          command: ls client -l -s -n
+      - run:
+          name: List the Current Directory  with its Allocated Size
+          command: du -h --max-depth=1 | sort -rh
 
   eslint:
     docker:

@@ -4,7 +4,7 @@
   "description": "Rest Full API Built on top of Express and MongoDB with NodeJS",
   "main": "server/index.ts",
   "engines": {
-    "node": ">=12.22.0 <15"
+    "node": ">=12.22.0 <=15.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\"",

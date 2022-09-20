@@ -13,7 +13,7 @@ export const Contact = (): JSX.Element => {
   const [name, setName] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
-  const isMobile = useMediaQuery('max-width: 768px')
+  const isMobile = useMediaQuery('(max-width: 768px)')
 
   const fieldSize = useMemo(() => (isMobile ? 'small' : 'medium'), [isMobile])
 

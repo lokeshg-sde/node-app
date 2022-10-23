@@ -1,7 +1,7 @@
 import React from 'react'
 
-import downLoadCV from '../../../utils/downloadCV'
-import AboutContainer from '../../Components/AboutContainer'
+import downLoadCV from '../../utils/downloadCV'
+import AboutContainer from '../Components/AboutContainer'
 
 export default (): JSX.Element => (
   <AboutContainer>

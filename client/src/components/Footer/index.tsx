@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Logo from '../../Components/brand'
+import Logo from '../../Portfolio/Components/brand'
 import FooterBase from './FooterStyles'
 import { GitIcon, LinkedInIcon } from './icons'
 

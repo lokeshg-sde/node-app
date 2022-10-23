@@ -2,7 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import path from 'path'
 
-import { PORT_NUMBER, DATABASE_URL, URL_CONFIG } from './config'
+import { PORT_NUMBER, DATABASE_URL, URL_CONFIG, NODE_ENV } from './config'
 import { authenticateToken } from './auth/jwt'
 import excludePublicUrlOnAuthenticate from './auth/authentication'
 import middlewareWrapper from './auth/cors'
@@ -51,6 +51,6 @@ database.on('error', (error: unknown) => {
 database.once('connected', () => {
   app.listen(PORT_NUMBER, '0.0.0.0', () => {
     console.log('Database Connected')
-    console.log(`Server Started at ${PORT_NUMBER}`)
+    console.log(`Server Started at ${PORT_NUMBER} on ${NODE_ENV} mode`)
   })
 })

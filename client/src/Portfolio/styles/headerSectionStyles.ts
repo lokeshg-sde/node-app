@@ -21,7 +21,7 @@ export const HeaderSectionStyles = css`
     padding-bottom: 7rem;
     position: relative;
     margin-top: 10rem;
-    background-image: url(/static/media/programmer.d6eed67d.png);
+    background-image: url(/assets/programmer.png);
     background-repeat: no-repeat;
     background-position: right center;
     background-origin: content-box;

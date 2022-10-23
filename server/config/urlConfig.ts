@@ -9,4 +9,5 @@ export const URL_EXCLUDED = [
   '/portfolio',
   '/cv',
   '/email/notify-job-proposal',
+  '/web-traffic',
 ]

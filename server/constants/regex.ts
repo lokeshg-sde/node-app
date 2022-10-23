@@ -6,6 +6,6 @@ export const FormValidationRegex = {
   url: /(https?:\/\/)?(www\.)[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)|(https?:\/\/)?(www\.)?(?!ww)[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/,
 }
 
-const allowedFiles = ['.js', '.svg', '.pdf', '.png', '.json']
+const allowedFiles = ['.js', '.svg', '.pdf', '.png', '.json', '.ico', '.map', '.txt']
 
 export const LOGGER_URL_REGEX = new RegExp(`([a-zA-Z0-9\\s_\\.\\-:])+(${allowedFiles.join('|')})$`)

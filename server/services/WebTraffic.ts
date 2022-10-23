@@ -1,4 +1,4 @@
-import type { DocumentClient } from 'aws-sdk/clients/dynamodb'
+import type { Response } from 'express'
 
 import { DynamoDBClient } from '../config'
 import { generateUniqueId } from '../helpers'
@@ -34,24 +34,24 @@ export const AddRequestLog = (info: LOGGER_INFO): void => {
   )
 }
 
-export const getRequestLogs = async (): Promise<LOGGER_INFO & { uuid: string }[]> => {
-  let dataRows: Promise<unknown> | DocumentClient.AttributeMap[] | undefined
-
+export const getRequestLogs = async (res: Response): Promise<void> => {
   try {
-    DynamoDBClient.scan(PARAMS, (err, data) => {
+    await DynamoDBClient.scan(PARAMS, (err, data) => {
       if (err) {
         console.log(err)
+        res.send({ message: 'Error Occurred', status: 401, err })
       } else {
         const { Items } = data
 
         if (Items) {
-          dataRows = [...Items]
+          console.log('Record Count: %d', Items.length)
+
+          res.send(Items)
         }
       }
     })
   } catch (error) {
     console.log('Error Found On Request')
+    res.send({ message: 'Error Occurred', status: 401, error })
   }
-
-  return dataRows as Promise<LOGGER_INFO & { uuid: string }[]>
 }

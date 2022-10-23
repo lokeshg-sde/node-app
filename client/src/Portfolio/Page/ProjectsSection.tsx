@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { ProjectsContainer } from '../../Components/Projects/CardItem'
-import ProjectCard from '../../Components/Projects/ProjectCard'
+import { ProjectsContainer } from '../Components/Projects/CardItem'
+import ProjectCard from '../Components/Projects/ProjectCard'
 
 type ProjectInfo = {
   title: string

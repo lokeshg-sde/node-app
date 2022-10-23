@@ -4,9 +4,9 @@ import { Global } from '@emotion/react'
 import { usePageConfig } from '../hooks/useTabConfig'
 
 import { GlobalStyles, HeaderSectionStyles, AnimateOnScrollStyles } from './styles'
-import HeaderSection from './Layouts/Header/HeaderSection'
-import Footer from './Layouts/Footer'
-import Page from './Layouts/Page'
+import HeaderSection from '../components/Header/HeaderSection'
+import Footer from '../components/Footer'
+import Page from './Page'
 import { PageDesigns } from './Components/PageDesigns'
 
 const PortfolioPage = (): JSX.Element => {

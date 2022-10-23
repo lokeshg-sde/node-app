@@ -1,11 +1,12 @@
 import React from 'react'
 
-import Section from '../../Components/Section'
+import Section from '../Components/Section'
 import ProjectsSection from './ProjectsSection'
+import { WorkFlowCards, Services } from '../Components/workflow'
+import { WorkCards } from '../Components/WorkExperiences'
+
 import About from './About'
 import Contact from './Contact'
-import { WorkFlowCards, Services } from '../../Components/workflow'
-import { WorkCards } from '../../Components/WorkExperiences'
 
 export default (): JSX.Element => (
   <main>
